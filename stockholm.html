@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ME Production Stockholm – Evenemangsproduktion i Stockholm</title>
+  <meta name="description" content="ME Production Stockholm – din lokala partner för mässmontrar, events och evenemangsproduktion. Vi finns på Sjöviksvägen 104 i Stockholm." />
+  <meta name="keywords" content="evenemangsproduktion stockholm, mässmonter stockholm, eventproduktion stockholm, ME production stockholm" />
+  <meta property="og:title" content="ME Production Stockholm" />
+  <meta property="og:description" content="ME Production Stockholm – din lokala partner för mässmontrar, events och evenemangsproduktion i Stockholm." />
+  <link rel="preload" as="image" href="https://images.pexels.com/photos/34303325/pexels-photo-34303325.jpeg?auto=compress&cs=tinysrgb&w=1920&fm=webp" />
+  <link rel="canonical" href="https://meproduction.se/stockholm" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    @font-face { font-family: 'Candara'; font-weight: 100 900; font-style: normal;
+      src: local('Candara'), local('Candara Regular'), local('Candara-Regular'),
+           local('Candara Light'), local('Candara Bold'), local('Candara-Bold'); }
+    @font-face { font-family: 'Candara'; font-weight: 600 900; font-style: normal;
+      src: local('Candara Bold'), local('Candara-Bold'), local('Candara SemiBold'); }
+  </style>
+  
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #111;
+      --yellow: #F2C840;
+      --yellow2: #c9a020;
+      --body: #F4EFE6;
+      --gray: #666;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Candara', 'Candara Condensed', 'Inter', sans-serif; background: var(--body); color: var(--black); cursor: none; overflow-x: hidden; }
+    a { text-decoration: none; color: inherit; }
+    @media (hover: none) { body { cursor: auto; } #cur-dot, #cur-ring { display: none; } }
+
+    #cur-dot, #cur-ring {
+      position: fixed; border-radius: 50%; pointer-events: none; z-index: 9999;
+      transform: translate(-50%,-50%);
+    }
+    #cur-dot { width:8px;height:8px;background:var(--yellow);mix-blend-mode:difference; }
+    #cur-ring { width:36px;height:36px;border:1.5px solid rgba(242,200,64,0.6);z-index:9998;transition:width .25s,height .25s,border-color .25s; }
+
+    /* NAV */
+    nav {
+      position: fixed; top:0;left:0;right:0; z-index:100;
+      display:flex;align-items:center;justify-content:space-between;padding:22px 5vw;
+      background:rgba(17,17,17,0.92);backdrop-filter:blur(14px);
+      border-bottom:1px solid rgba(255,255,255,0.06);
+    }
+    .nav-logo { font-size:1.5rem;font-weight:900;letter-spacing:-0.05em;color:#fff; }
+    .nav-logo span { color:var(--yellow); }
+    .nav-badge {
+      font-size:0.6rem;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;
+      background:var(--yellow);color:#111;padding:3px 8px;border-radius:2px;margin-left:10px;
+      vertical-align:middle;
+    }
+    .nav-links { display:flex;gap:28px;align-items:center;list-style:none; }
+    .nav-links a { font-size:0.82rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.6);transition:color .2s; }
+    .nav-links a:hover { color:#fff; }
+    .nav-cta { background:var(--yellow)!important;color:#111!important;padding:10px 20px;border-radius:4px;font-weight:700!important;transition:background .2s,transform .2s; }
+    .nav-cta:hover { background:var(--yellow2)!important;transform:translateY(-1px); }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      background: #0d0d0d;
+      display: flex;
+      align-items: flex-end;
+      padding: 0 5vw 10vh;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-map {
+      position: absolute; inset: 0;
+      background-image: url('https://images.pexels.com/photos/34303325/pexels-photo-34303325.jpeg?auto=compress&cs=tinysrgb&w=1920&fm=webp');
+      background-size: cover;
+      background-position: center 55%;
+      filter: brightness(0.45) saturate(0.75);
+    }
+    .hero-glow {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%,-50%);
+      width: 800px; height: 800px;
+      background: radial-gradient(circle, rgba(242,200,64,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(13,13,13,1) 0%, rgba(13,13,13,0.4) 60%, rgba(13,13,13,0.7) 100%);
+    }
+    .hero-content { position:relative;z-index:2;max-width:900px; }
+    .hero-location {
+      display:inline-flex;align-items:center;gap:10px;
+      font-size:0.72rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;
+      color:var(--yellow);margin-bottom:24px;
+    }
+    .hero-location-dot {
+      width:8px;height:8px;border-radius:50%;background:var(--yellow);
+      box-shadow:0 0 0 4px rgba(242,200,64,0.2);
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%,100% { box-shadow:0 0 0 4px rgba(242,200,64,0.2); }
+      50% { box-shadow:0 0 0 10px rgba(242,200,64,0); }
+    }
+    .hero h1 {
+      font-size:clamp(3rem,9vw,8.5rem);font-weight:900;letter-spacing:-0.05em;
+      line-height:0.93;color:#fff;margin-bottom:32px;
+    }
+    .hero h1 em { font-style:normal;color:var(--yellow); }
+    .hero-sub {
+      font-size:clamp(1rem,1.5vw,1.2rem);color:rgba(255,255,255,0.5);
+      max-width:540px;line-height:1.8;font-weight:300;margin-bottom:48px;
+    }
+    .hero-btns { display:flex;gap:16px;flex-wrap:wrap; }
+    .btn-primary {
+      background:var(--yellow);color:#111;padding:16px 36px;
+      font-weight:800;font-size:0.88rem;letter-spacing:0.06em;text-transform:uppercase;
+      border-radius:4px;transition:background .2s,transform .3s;
+    }
+    .btn-primary:hover { background:var(--yellow2);transform:translateY(-2px); }
+    .btn-ghost {
+      border:1px solid rgba(255,255,255,0.25);color:#fff;padding:16px 36px;
+      font-weight:500;font-size:0.88rem;letter-spacing:0.06em;text-transform:uppercase;
+      border-radius:4px;transition:border-color .2s,transform .2s;
+    }
+    .btn-ghost:hover { border-color:rgba(255,255,255,0.7);transform:translateY(-2px); }
+
+    /* ADDRESS BAR */
+    .address-bar {
+      background: var(--yellow);
+      padding: 22px 5vw;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .address-bar-left {
+      display:flex;align-items:center;gap:16px;
+    }
+    .address-bar-icon { font-size:1.4rem; }
+    .address-bar-text strong { display:block;font-size:1rem;font-weight:800;color:#111;letter-spacing:-0.01em; }
+    .address-bar-text span { font-size:0.82rem;color:rgba(0,0,0,0.55); }
+    .address-bar a {
+      font-size:0.78rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;
+      color:#111;border-bottom:1px solid rgba(0,0,0,0.3);padding-bottom:2px;
+      transition:border-color .2s;
+    }
+    .address-bar a:hover { border-color:#111; }
+
+    /* INTRO */
+    .intro {
+      display:grid;grid-template-columns:1fr 1fr;gap:2px;
+      background:#ddd;
+    }
+    .intro-block {
+      background:var(--body);padding:80px 5vw;
+    }
+    .intro-block.dark { background:#111;color:#fff; }
+    .intro-label {
+      font-size:0.68rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;
+      color:var(--yellow);margin-bottom:20px;
+    }
+    .intro-block h2 {
+      font-size:clamp(1.8rem,3vw,2.6rem);font-weight:900;letter-spacing:-0.04em;
+      line-height:1.1;margin-bottom:20px;
+    }
+    .intro-block p { font-size:0.98rem;line-height:1.85;color:var(--gray); }
+    .intro-block.dark p { color:rgba(255,255,255,0.5); }
+
+    /* SERVICES */
+    .services { padding:100px 5vw;background:#fff; }
+    .services h2 {
+      font-size:clamp(2rem,4vw,3rem);font-weight:900;letter-spacing:-0.04em;margin-bottom:60px;
+    }
+    .services-grid {
+      display:grid;grid-template-columns:repeat(3,1fr);gap:2px;
+    }
+    .service-item {
+      padding:40px 36px;background:var(--body);
+      position:relative;overflow:hidden;
+      transition:background .3s;
+    }
+    .service-item::after {
+      content:'';position:absolute;bottom:0;left:0;width:100%;height:2px;
+      background:var(--yellow);transform:scaleX(0);transform-origin:left;
+      transition:transform .3s;
+    }
+    .service-item:hover::after { transform:scaleX(1); }
+    .service-item:hover { background:#ede7dc; }
+    .service-num { font-size:0.65rem;font-weight:700;letter-spacing:0.14em;color:#aaa;margin-bottom:18px; }
+    .service-item h3 { font-size:1.1rem;font-weight:800;letter-spacing:-0.02em;margin-bottom:10px; }
+    .service-item p { font-size:0.88rem;color:var(--gray);line-height:1.7; }
+
+    /* MAP SECTION */
+    .map-section {
+      display:grid;grid-template-columns:1fr 1fr;
+      min-height:520px;
+    }
+    .map-embed {
+      position:relative;overflow:hidden;
+    }
+    .map-embed iframe {
+      width:100%;height:100%;border:none;min-height:400px;
+      filter:grayscale(20%) contrast(1.05);
+    }
+    .map-info {
+      background:#111;padding:80px 5vw;
+      display:flex;flex-direction:column;justify-content:center;gap:40px;
+    }
+    .map-info h2 { font-size:clamp(1.8rem,3vw,2.6rem);font-weight:900;letter-spacing:-0.04em;color:#fff;margin-bottom:8px; }
+    .map-info-item { display:flex;gap:18px;align-items:flex-start; }
+    .map-info-icon { font-size:1.2rem;margin-top:2px;flex-shrink:0; }
+    .map-info-text strong { display:block;font-size:0.9rem;font-weight:700;color:#fff;margin-bottom:4px; }
+    .map-info-text span, .map-info-text a {
+      font-size:0.88rem;color:rgba(255,255,255,0.45);line-height:1.6;
+    }
+    .map-info-text a:hover { color:var(--yellow); }
+
+    /* TEAM STOCKHOLM */
+    .team-sto {
+      padding:100px 5vw;background:var(--body);
+    }
+    .team-sto h2 { font-size:clamp(2rem,4vw,3rem);font-weight:900;letter-spacing:-0.04em;margin-bottom:12px; }
+    .team-sto .sub { font-size:1rem;color:var(--gray);margin-bottom:60px;max-width:500px;line-height:1.75; }
+    .team-sto-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:0; }
+    .team-card-sto {
+      display:grid;grid-template-columns:100px 1fr;gap:0;
+      background:#111;overflow:hidden;
+    }
+    .team-card-sto-img {
+      background-size:cover;background-position:center top;
+      filter:grayscale(30%);
+      min-height:140px;
+    }
+    .team-card-sto-info { padding:28px 28px; }
+    .team-card-sto-info h3 { font-size:1rem;font-weight:800;color:#fff;margin-bottom:6px; }
+    .team-card-sto-info .city { font-size:0.65rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--yellow);margin-bottom:12px;display:block; }
+    .team-card-sto-info a { display:block;font-size:0.78rem;color:rgba(255,255,255,0.4);margin-bottom:3px;transition:color .2s; }
+    .team-card-sto-info a:hover { color:var(--yellow); }
+
+    /* CTA */
+    .cta {
+      background:#0a0a0a;padding:120px 5vw;text-align:center;
+    }
+    .cta h2 {
+      font-size:clamp(2.2rem,5vw,4.5rem);font-weight:900;letter-spacing:-0.05em;
+      color:#fff;line-height:1.05;margin-bottom:20px;
+    }
+    .cta h2 em { font-style:normal;color:var(--yellow); }
+    .cta p { font-size:1rem;color:rgba(255,255,255,0.4);max-width:480px;margin:0 auto 44px;line-height:1.75; }
+
+    /* FOOTER */
+    footer {
+      background:#0a0a0a;padding:40px 5vw;
+      display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;
+      border-top:1px solid rgba(255,255,255,0.05);
+    }
+    footer p { font-size:0.82rem;color:rgba(255,255,255,0.3); }
+    footer a { color:rgba(255,255,255,0.5);transition:color .2s; }
+    footer a:hover { color:var(--yellow); }
+
+    /* REVEAL */
+    .reveal { opacity:0;transform:translateY(44px);transition:opacity .85s cubic-bezier(.16,1,.3,1),transform .85s cubic-bezier(.16,1,.3,1); }
+    .reveal.visible { opacity:1;transform:translateY(0); }
+
+    /* RESPONSIVE */
+    @media (max-width:960px) {
+      .intro { grid-template-columns:1fr; }
+      .services-grid { grid-template-columns:1fr 1fr; }
+      .map-section { grid-template-columns:1fr; }
+      .map-embed { min-height:350px; }
+    }
+    @media (max-width:600px) {
+      .nav-links li:not(:last-child) { display:none; }
+      .services-grid { grid-template-columns:1fr; }
+      .team-sto-grid { grid-template-columns:1fr; }
+      .team-card-sto { grid-template-columns:100px 1fr; }
+      .team-card-sto-img { min-height:120px; }
+      footer { flex-direction:column;text-align:center; }
+    }
+  </style>
+
+  <!-- SEO: Open Graph extra -->
+  <meta property="og:image" content="https://meproduction.se/og-image-stockholm.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://meproduction.se/stockholm" />
+  <!-- SEO: Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="ME Production Stockholm – Evenemangsproduktion i Stockholm" />
+  <meta name="twitter:description" content="ME Production Stockholm – din lokala partner för mässmontrar, events och evenemangsproduktion." />
+  <meta name="twitter:image" content="https://meproduction.se/og-image-stockholm.jpg" />
+  <!-- SEO: Structured Data -->
+  <script type="application/ld+json">
+  {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "ME Production Stockholm",
+      "url": "https://meproduction.se/stockholm",
+      "description": "Din lokala partner för mässmontrar, events och evenemangsproduktion i Stockholm.",
+      "address": {"@type": "PostalAddress", "streetAddress": "Sjöviksvägen 104", "addressLocality": "Stockholm", "postalCode": "117 43", "addressCountry": "SE"},
+      "geo": {"@type": "GeoCoordinates", "latitude": 59.3090, "longitude": 18.0102},
+      "areaServed": "Stockholm"
+    }
+  </script>
+</head>
+<body>
+
+  <div id="cur-dot"></div>
+  <div id="cur-ring"></div>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo"><img fetchpriority="high" decoding="async" src="me_production_vit_vit_gul_prick (kopia).webp" alt="ME Production" style="height:34px;width:auto;display:inline-block;vertical-align:middle;"><span class="nav-badge">Stockholm</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html#tjanster">Tjänster</a></li>
+      <li><a href="index.html#case">Case</a></li>
+      <li><a href="ganget.html">Gänget</a></li>
+      <li><a href="index.html#kontakt" class="nav-cta">Kontakta oss</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-map"></div>
+    <div class="hero-glow"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-location">
+        <span class="hero-location-dot"></span>
+        Nu i Stockholm
+      </div>
+      <h1>Evenemangsproduktion &amp; Mässmontrar<br /><em>i Stockholm.</em></h1>
+      <p class="hero-sub">
+        Samma gäng. Samma kvalitet. Nu med lokal närvaro i Stockholm – redo att bygga ditt nästa evenemang precis utanför din dörr.
+      </p>
+      <div class="hero-btns">
+        <a href="mailto:hampus.klozz@meproduction.se" class="btn-primary">Kontakta Stockholm →</a>
+        <a href="index.html#case" class="btn-ghost">Se våra case</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ADDRESS BAR -->
+  <div class="address-bar">
+    <div class="address-bar-left">
+      <span class="address-bar-icon">📍</span>
+      <div class="address-bar-text">
+        <strong>Sjöviksvägen 104, Stockholm</strong>
+        <span>Liljeholmen · Stockholms stad</span>
+      </div>
+    </div>
+    <a href="https://maps.google.com/?q=Sjöviksvägen+104+Stockholm" target="_blank" rel="noopener">Öppna i Google Maps ↗</a>
+  </div>
+
+  <!-- INTRO -->
+  <div class="intro">
+    <div class="intro-block">
+      <div class="intro-label reveal">Varför Stockholm</div>
+      <h2 class="reveal">Nära dig.<br />Från dag ett.</h2>
+      <p class="reveal" style="transition-delay:.1s">
+        ME Production har rötterna i Göteborg men hjärtat på rätt plats – och nu är det hjärtat i Stockholm också. Vi är trötta på långa restider och korta svarstider. Med kontor i Liljeholmen kan vi vara på plats, snabbt.
+      </p>
+    </div>
+    <div class="intro-block dark">
+      <div class="intro-label reveal">Vad vi gör</div>
+      <h2 class="reveal">Mässmonter, monterproduktion<br />&amp; eventproduktion i Stockholm.</h2>
+      <p class="reveal" style="transition-delay:.1s">
+        Mässmontrar, eventproduktion, skyltning, etablering och rivning. Vi tar hela paketet – så du kan fokusera på det som faktiskt spelar roll för ditt varumärke.
+      </p>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section class="services">
+    <div class="reveal"><div class="intro-label">Vad vi levererar i Stockholm</div></div>
+    <h2 class="reveal">Från första skiss<br />till färdigt resultat.</h2>
+    <div class="services-grid">
+      <div class="service-item reveal">
+        <div class="service-num">01</div>
+        <h3>Mässmontrar</h3>
+        <p>Design, produktion och montering av montrar på Stockholmsmässan, Kistamässan och alla andra arenor i Storstockholm.</p>
+      </div>
+      <div class="service-item reveal" style="transition-delay:.07s">
+        <div class="service-num">02</div>
+        <h3>Eventproduktion</h3>
+        <p>Från kick-offs och produktlanseringar till galamiddagar och konferenser – vi sköter hela produktionen.</p>
+      </div>
+      <div class="service-item reveal" style="transition-delay:.07s">
+        <div class="service-num">03</div>
+        <h3>Skyltning &amp; Grafik</h3>
+        <p>Tryckt och digital skyltning, fasaddekor, mässgrafik och allt däremellan. Produktion och montage i ett.</p>
+      </div>
+      <div class="service-item reveal" style="transition-delay:.14s">
+        <div class="service-num">04</div>
+        <h3>Projektledning</h3>
+        <p>En kontaktpunkt. Hela vägen. Vi koordinerar leverantörer, tidplaner och logistik – du pratar bara med oss.</p>
+      </div>
+      <div class="service-item reveal" style="transition-delay:.21s">
+        <div class="service-num">05</div>
+        <h3>Etablering &amp; Rivning</h3>
+        <p>Vi är på plats dag ett och lämnar när det är klart och rent. Ingen detalj glöms, ingen skruv lämnas kvar.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAP -->
+  <div class="map-section">
+    <div class="map-embed">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2036.097!2d18.018!3d59.3106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f77a3e7c2f4cf%3A0xb9d9c7f3a8e1b2d4!2zU2rDtnZpa3N2w6RnZW4gMTA0LCAxMTcgNDMgU3RvY2tob2xt!5e0!3m2!1ssv!2sse!4v1746787200000"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="ME Production Stockholm karta">
+      </iframe>
+    </div>
+    <div class="map-info">
+      <div>
+        <div class="intro-label">Hitta hit</div>
+        <h2 class="reveal">Vi finns här.</h2>
+      </div>
+      <div class="map-info-item reveal">
+        <span class="map-info-icon">📍</span>
+        <div class="map-info-text">
+          <strong>Adress</strong>
+          <span>Sjöviksvägen 104<br />117 43 Stockholm</span>
+        </div>
+      </div>
+      <div class="map-info-item reveal" style="transition-delay:.08s">
+        <span class="map-info-icon">🚇</span>
+        <div class="map-info-text">
+          <strong>Kollektivtrafik</strong>
+          <span>Tunnelbana Liljeholmen (röd &amp; grön linje)<br />5 min promenad</span>
+        </div>
+      </div>
+      <div class="map-info-item reveal" style="transition-delay:.16s">
+        <span class="map-info-icon">📞</span>
+        <div class="map-info-text">
+          <strong>Stockholmskontoret</strong>
+          <a href="tel:+46733324439">+46 733 324 439</a>
+          <a href="mailto:hampus.klozz@meproduction.se">hampus.klozz@meproduction.se</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TEAM STOCKHOLM -->
+  <section class="team-sto">
+    <div class="intro-label reveal">Teamet i Stockholm</div>
+    <h2 class="reveal">Era kontakter<br />på plats.</h2>
+    <p class="sub reveal" style="transition-delay:.08s">Tre erfarna ME Production-profiler med Stockholmsregionen som hemmaplan.</p>
+    <div class="team-sto-grid">
+      <div class="team-card-sto reveal" style="transition-delay:.08s">
+        <div class="team-card-sto-img" style="background-image:url('https://media.meproduction.se/2019/08/6-uai-193x258.jpg')"></div>
+        <div class="team-card-sto-info">
+          <h3>Hampus Klozz</h3>
+          <span class="city">Stockholm</span>
+          <a href="tel:+46733324439">+46 733 324 439</a>
+        </div>
+      </div>
+      <div class="team-card-sto reveal" style="transition-delay:.16s">
+        <div class="team-card-sto-img" style="background-image:url('https://media.meproduction.se/2019/08/2-uai-193x258.jpg')"></div>
+        <div class="team-card-sto-info">
+          <h3>Magnus Jarkvist</h3>
+          <span class="city">Stockholm</span>
+          <a href="tel:+46702074626">+46 702 074 626</a>
+        </div>
+      </div>
+      <div class="team-card-sto reveal" style="transition-delay:.24s">
+        <div class="team-card-sto-img" style="background-image:url('https://media.meproduction.se/2019/08/5-uai-193x258.jpg')"></div>
+        <div class="team-card-sto-info">
+          <h3>Jacob Forssblad</h3>
+          <span class="city">Stockholm</span>
+          <a href="tel:+46739935095">+46 739 935 095</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <h2>Har du ett projekt<br />på <em>gång i Stockholm?</em></h2>
+    <p>Hör av dig till Hampus – så tar vi ett snack om hur vi kan hjälpa dig.</p>
+    <a href="mailto:hampus.klozz@meproduction.se?subject=Projekt i Stockholm" class="btn-primary" id="ctaBtn">Skicka ett mail →</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div>
+      <a href="index.html"><img fetchpriority="high" decoding="async" src="me_production_vit_vit_gul_prick (kopia).webp" alt="ME Production" style="height:26px;width:auto;display:inline-block;vertical-align:middle;"></a>
+      <span style="font-size:0.72rem;color:rgba(255,255,255,0.3);margin-left:12px;letter-spacing:0.1em;text-transform:uppercase;">Stockholm</span>
+    </div>
+    <p>Sjöviksvägen 104, Stockholm · <a href="mailto:hampus.klozz@meproduction.se">hampus.klozz@meproduction.se</a> · <a href="index.html">meproduction.se</a></p>
+  </footer>
+
+  <script>
+    // Cursor
+    const dot=document.getElementById('cur-dot'),ring=document.getElementById('cur-ring');
+    let mx=-200,my=-200,rx=-200,ry=-200;
+    document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;dot.style.left=mx+'px';dot.style.top=my+'px';});
+    (function f(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(f);})();
+    document.querySelectorAll('a,button,.service-item').forEach(el=>{
+      el.addEventListener('mouseenter',()=>{ring.style.width=ring.style.height='60px';ring.style.borderColor='#F2C840';dot.style.opacity='0';});
+      el.addEventListener('mouseleave',()=>{ring.style.width=ring.style.height='36px';ring.style.borderColor='rgba(242,200,64,0.6)';dot.style.opacity='1';});
+    });
+
+    // Scroll reveal
+    const obs=new IntersectionObserver(entries=>{
+      entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});
+    },{threshold:0.12});
+    document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+    // Hero stagger
+    const heroEls=document.querySelectorAll('.hero-location,.hero h1,.hero-sub,.hero-btns');
+    heroEls.forEach((el,i)=>{
+      el.style.cssText+=`opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.16,1,.3,1) ${i*.14}s,transform .9s cubic-bezier(.16,1,.3,1) ${i*.14}s;`;
+    });
+    window.addEventListener('load',()=>setTimeout(()=>{
+      heroEls.forEach(el=>{el.style.opacity='1';el.style.transform='translateY(0)';});
+    },150));
+
+    // Magnetic CTA
+    const ctaBtn=document.getElementById('ctaBtn');
+    ctaBtn.addEventListener('mousemove',e=>{
+      const r=ctaBtn.getBoundingClientRect();
+      ctaBtn.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.3}px,${(e.clientY-r.top-r.height/2)*.3}px) translateY(-2px)`;
+    });
+    ctaBtn.addEventListener('mouseleave',()=>{ctaBtn.style.transform='';ctaBtn.style.transition='transform .5s cubic-bezier(.16,1,.3,1),background .2s';});
+
+    // Pulsing dot on hero
+    const glow = document.querySelector('.hero-glow');
+    document.addEventListener('mousemove', e => {
+      const x = (e.clientX / window.innerWidth - 0.5) * 40;
+      const y = (e.clientY / window.innerHeight - 0.5) * 40;
+      glow.style.transform = `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`;
+    });
+  </script>
+
+</body>
+</html>

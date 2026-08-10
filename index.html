@@ -1,0 +1,2157 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ME Production – Evenemangsproduktion från A till över förväntan</title>
+  <meta name="description" content="ME Production är din helhetsleverantör inom evenemangsproduktion. Vi sköter allt från planering och design till monter, skyltning och rivning. Göteborg & Stockholm." />
+  <meta name="keywords" content="evenemangsproduktion, mässmonter, eventproduktion, skyltning, göteborg, stockholm, meproduction" />
+  <meta property="og:title" content="ME Production – Evenemangsproduktion från A till över förväntan" />
+  <meta property="og:description" content="Från minsta monter till största evenemang. Vi tar hand om hela processen." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://meproduction.se" />
+  <link rel="canonical" href="https://meproduction.se" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet" />
+  <style>
+    @font-face { font-family: 'Candara'; font-weight: 100 900; font-style: normal;
+      src: local('Candara'), local('Candara Regular'), local('Candara-Regular'),
+           local('Candara Light'), local('Candara Bold'), local('Candara-Bold'); }
+    @font-face { font-family: 'Candara'; font-weight: 600 900; font-style: normal;
+      src: local('Candara Bold'), local('Candara-Bold'), local('Candara SemiBold'); }
+  </style>
+  
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #F4EFE6;
+      --dark: #EDE7DC;
+      --card: #E6DFD3;
+      --accent: #1a1a1a;
+      --accent2: #333333;
+      --orange: #F2C840;
+      --orange2: #c9a020;
+      --white: #1a1a1a;
+      --gray: #6b6560;
+      --light: #d8d0c4;
+      --radius: 4px;
+      --font: 'Candara', 'Candara Condensed', 'Inter', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: var(--font);
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+      cursor: none;
+    }
+    @media (hover: none) { body { cursor: auto; } }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 5vw;
+      transition: background 0.3s, backdrop-filter 0.3s;
+    }
+    nav.scrolled {
+      background: rgba(244,239,230,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #222;
+    }
+    .nav-logo {
+      font-size: 1.4rem;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      color: var(--white);
+    }
+    .nav-logo span { color: var(--accent); }
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      list-style: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .nav-links a { opacity: 0.7; transition: opacity 0.2s; }
+    .nav-links a:hover { opacity: 1; }
+    .nav-cta {
+      background: #F2C840;
+      color: #fff;
+      padding: 10px 22px;
+      font-weight: 700;
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border-radius: var(--radius);
+      transition: background 0.2s, transform 0.2s;
+    }
+    .nav-cta:hover { background: #c9a020; transform: translateY(-1px); }
+
+    /* ─── HERO ─── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 0 5vw 8vh;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-video-wrap {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+    .hero-video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .hero-video-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.35) 0%,
+        rgba(0,0,0,0.15) 40%,
+        rgba(0,0,0,0.75) 100%
+      );
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+    .mute-btn {
+      position: absolute;
+      bottom: 44px;
+      left: 5vw;
+      z-index: 10;
+      background: rgba(255,255,255,0.12);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: #fff;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      font-size: 1.1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+    .mute-btn { display: none !important; }
+    .hero-tag {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.25);
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 2px;
+      margin-bottom: 28px;
+      width: fit-content;
+    }
+    .hero h1 {
+      font-size: clamp(2.4rem, 6vw, 5.5rem);
+      font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+      max-width: 820px;
+      margin-bottom: 28px;
+      color: #fff;
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: #F2C840;
+    }
+    .hero-sub {
+      font-size: clamp(1rem, 1.5vw, 1.2rem);
+      color: rgba(255,255,255,0.72);
+      max-width: 520px;
+      margin-bottom: 44px;
+      font-weight: 300;
+      line-height: 1.7;
+    }
+    .hero-btns {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      background: #F2C840;
+      color: #fff;
+      padding: 16px 36px;
+      font-weight: 700;
+      font-size: 0.88rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border-radius: var(--radius);
+      transition: background 0.2s, transform 0.2s;
+    }
+    .btn-primary:hover { background: #c9a020; transform: translateY(-2px); }
+    .btn-ghost {
+      border: 1px solid rgba(255,255,255,0.35);
+      color: #fff;
+      color: var(--white);
+      padding: 16px 36px;
+      font-weight: 500;
+      font-size: 0.88rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border-radius: var(--radius);
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .btn-ghost:hover { border-color: rgba(255,255,255,0.7); transform: translateY(-2px); }
+    .hero-scroll {
+      position: absolute;
+      bottom: 40px;
+      right: 5vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      opacity: 1;
+      z-index: 2;
+    }
+    .scroll-line {
+      width: 1px;
+      height: 50px;
+      background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.4));
+    }
+
+    /* ─── MARQUEE ─── */
+    .marquee-wrap {
+      border-top: 1px solid #D8D0C4;
+      border-bottom: 1px solid #D8D0C4;
+      overflow: hidden;
+      padding: 16px 0;
+      background: var(--dark);
+    }
+    .marquee-track {
+      display: flex;
+      gap: 0;
+      width: max-content;
+      animation: marquee 24s linear infinite;
+    }
+    .marquee-track span {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gray);
+      padding: 0 40px;
+      white-space: nowrap;
+    }
+    .marquee-track span.dot {
+      color: var(--accent);
+      padding: 0;
+    }
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    /* ─── SECTIONS ─── */
+    section { padding: 100px 5vw; }
+    .section-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #F2C840;
+      margin-bottom: 20px;
+    }
+    h2 {
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+    .section-intro {
+      color: var(--gray);
+      font-size: 1.05rem;
+      max-width: 560px;
+      line-height: 1.75;
+      margin-bottom: 60px;
+      font-weight: 300;
+    }
+
+    /* ─── SERVICES ─── */
+    #tjanster { background: var(--dark); }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2px;
+    }
+    .service-card {
+      background: var(--card);
+      padding: 40px 36px;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.3s;
+      cursor: default;
+    }
+    .service-card::before {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 100%; height: 3px;
+      background: #F2C840;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s;
+    }
+    .service-card:hover::before { transform: scaleX(1); }
+    .service-card:hover { background: #DDD5C8; }
+    .service-num {
+      font-size: 0.68rem;
+      font-weight: 700;
+      color: #AAA098;
+      letter-spacing: 0.12em;
+      margin-bottom: 20px;
+      opacity: 0.8;
+    }
+    .service-card h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
+    .service-card p {
+      font-size: 0.9rem;
+      color: var(--gray);
+      line-height: 1.7;
+    }
+
+    /* ─── CASE / PORTFOLIO ─── */
+    .cases-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 50px;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .cases-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 12px;
+    }
+    a.case-card { display: block; }
+    .case-card {
+      position: relative;
+      overflow: hidden;
+      background: var(--card);
+      border-radius: var(--radius);
+      aspect-ratio: 4/3;
+    }
+    .case-card.large { grid-column: span 7; }
+    .case-card.small { grid-column: span 5; }
+    .case-card.full { grid-column: span 12; aspect-ratio: 21/7; }
+    .case-card.half { grid-column: span 6; }
+    .case-bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      transition: transform 0.6s ease;
+      filter: brightness(0.5);
+    }
+    .case-card:hover .case-bg { transform: scale(1.05); }
+    .case-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 60%);
+    }
+    .case-info {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 28px 28px 24px;
+    }
+    .case-tag {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #F2C840;
+      margin-bottom: 8px;
+    }
+    .case-info h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.3;
+    }
+    .case-info p {
+      font-size: 0.85rem;
+      color: rgba(245,245,245,0.65);
+      margin-top: 6px;
+    }
+    .case-arrow {
+      position: absolute;
+      top: 24px; right: 24px;
+      width: 38px; height: 38px;
+      background: #F4EFE6;
+      color: #1a1a1a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      font-size: 1rem;
+      opacity: 0;
+      transform: translateY(6px);
+      transition: opacity 0.3s, transform 0.3s;
+    }
+    .case-card:hover .case-arrow { opacity: 1; transform: translateY(0); }
+
+    /* ─── NUMBERS ─── */
+    .numbers { background: #1a1a1a; }
+    .numbers h2 { color: #F4EFE6; }
+    .numbers .section-label { color: #C8C0B4; }
+    .numbers .section-intro { color: #888; }
+    .numbers-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+    }
+    .number-item h3 {
+      font-size: clamp(2.8rem, 5vw, 4.5rem);
+      font-weight: 900;
+      letter-spacing: -0.06em;
+      color: #F4EFE6;
+      line-height: 1;
+    }
+    .number-item p {
+      font-size: 0.9rem;
+      color: rgba(244,239,230,0.5);
+      margin-top: 8px;
+      font-weight: 500;
+    }
+
+    /* ─── OM OSS ─── */
+    #om-oss { background: var(--dark); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .about-visual {
+      position: relative;
+    }
+    .about-img {
+      width: 100%;
+      aspect-ratio: 3/4;
+      background: var(--card);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .about-img-placeholder {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #DDD5C8, #C8C0B4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+      color: #333;
+    }
+    .about-badge {
+      position: absolute;
+      bottom: -20px;
+      right: -20px;
+      background: #F2C840;
+      color: #fff;
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-weight: 900;
+      font-size: 0.75rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      line-height: 1.3;
+    }
+    .about-badge strong { font-size: 2rem; letter-spacing: -0.04em; display: block; }
+    .about-text h2 { margin-bottom: 24px; }
+    .about-text p {
+      color: var(--gray);
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+    .about-list {
+      list-style: none;
+      margin: 32px 0;
+    }
+    .about-list li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.9rem;
+      padding: 10px 0;
+      border-bottom: 1px solid #D8D0C4;
+      color: var(--white);
+      font-weight: 500;
+    }
+    .about-list li::before {
+      content: '→';
+      color: #F2C840;
+      font-weight: 700;
+    }
+
+    /* ─── PROCESS ─── */
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0;
+      border: 1px solid #D8D0C4;
+    }
+    .process-step {
+      padding: 44px 36px;
+      border-right: 1px solid #D8D0C4;
+      position: relative;
+    }
+    .process-step:last-child { border-right: none; }
+    .step-num {
+      font-size: 3rem;
+      font-weight: 900;
+      color: #C8C0B4;
+      letter-spacing: -0.06em;
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+    .process-step h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .process-step p {
+      font-size: 0.88rem;
+      color: var(--gray);
+      line-height: 1.7;
+    }
+
+    /* ─── KUNDER ─── */
+    .clients { background: var(--dark); }
+    .clients-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1px;
+      border: 1px solid #D8D0C4;
+    }
+    .client-item {
+      flex: 1 1 180px;
+      padding: 36px 28px;
+      border-right: 1px solid #D8D0C4;
+      border-bottom: 1px solid #D8D0C4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #AAA098;
+      transition: color 0.2s;
+    }
+    .client-item:hover { color: var(--white); }
+
+    /* ─── KONTAKT ─── */
+    #kontakt { background: var(--black); }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .contact-info h2 { margin-bottom: 20px; }
+    .contact-info p {
+      color: var(--gray);
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-bottom: 40px;
+    }
+    .contact-details { list-style: none; }
+    .contact-details li {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 0;
+      border-bottom: 1px solid #D8D0C4;
+      font-size: 0.9rem;
+    }
+    .contact-icon {
+      width: 36px; height: 36px;
+      background: var(--accent);
+      color: var(--black);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+    .contact-form {
+      background: var(--card);
+      border: 1px solid #D8D0C4;
+      padding: 48px 44px;
+      border-radius: var(--radius);
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin-bottom: 8px;
+    }
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      background: #222;
+      border: 1px solid #2a2a2a;
+      color: #fff;
+      padding: 14px 16px;
+      font-family: var(--font);
+      font-size: 0.9rem;
+      border-radius: var(--radius);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: rgba(255,255,255,0.3); }
+    .form-group select option { background: #222; color: #fff; }
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus { border-color: var(--accent); }
+    .form-group textarea { resize: vertical; min-height: 120px; }
+    .form-submit {
+      width: 100%;
+      background: #F2C840;
+      color: #fff;
+      padding: 16px;
+      font-weight: 700;
+      font-size: 0.88rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border: none;
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: background 0.2s;
+      font-family: var(--font);
+    }
+    .form-submit:hover { background: #c9a020; }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--dark);
+      border-top: 1px solid #D8D0C4;
+      padding: 60px 5vw 36px;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 50px;
+      margin-bottom: 50px;
+      padding-bottom: 50px;
+      border-bottom: 1px solid #D8D0C4;
+    }
+    .footer-brand p {
+      color: var(--gray);
+      font-size: 0.88rem;
+      line-height: 1.75;
+      margin: 16px 0 24px;
+      max-width: 300px;
+    }
+    .social-links {
+      display: flex;
+      gap: 10px;
+    }
+    .social-link {
+      width: 38px; height: 38px;
+      background: #E6DFD3;
+      border: 1px solid #C8C0B4;
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--radius);
+      font-size: 0.8rem;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .social-link:hover { background: var(--accent); border-color: var(--accent); color: var(--black); }
+    .footer-col h4 {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li {
+      margin-bottom: 10px;
+    }
+    .footer-col ul li a {
+      color: var(--gray);
+      font-size: 0.88rem;
+      transition: color 0.2s;
+    }
+    .footer-col ul li a:hover { color: var(--white); }
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.78rem;
+      color: #AAA098;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    section#team {
+      padding: 100px 40px;
+    }
+    section#team .section-label { color: #F2C840; }
+    section#team h2 { color: var(--white); }
+    .section-intro {
+      color: var(--gray);
+      max-width: 520px;
+      margin-bottom: 60px;
+      font-size: 1.05rem;
+    }
+
+    /* ─── TEAM ─── */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 2px;
+    }
+    .team-card {
+      background: var(--card);
+      overflow: hidden;
+      position: relative;
+      cursor: default;
+    }
+    .team-card:hover .team-img { transform: scale(1.05); }
+    .team-img {
+      width: 100%;
+      aspect-ratio: 3/4;
+      background-size: cover;
+      background-position: center top;
+      transition: transform 0.5s ease;
+      filter: grayscale(20%);
+    }
+    .team-info {
+      padding: 20px 22px;
+      border-top: 3px solid transparent;
+      transition: border-color 0.2s;
+    }
+    .team-card:hover .team-info { border-color: #F2C840; }
+    .team-info h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      margin-bottom: 6px;
+      color: var(--white);
+    }
+    .team-info a {
+      display: block;
+      font-size: 0.75rem;
+      color: var(--gray);
+      margin-bottom: 4px;
+      word-break: break-all;
+      transition: color 0.2s;
+    }
+    .team-info a:hover { color: #F2C840; }
+    .team-info span {
+      font-size: 0.75rem;
+      color: var(--gray);
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 960px) {
+      .nav-links { display: none; }
+      .case-card.large, .case-card.small { grid-column: span 12; }
+      .case-card.half { grid-column: span 12; }
+      .about-grid { grid-template-columns: 1fr; gap: 40px; }
+      .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      section { padding: 70px 5vw; }
+      .form-row { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr; }
+      .process-steps { grid-template-columns: 1fr; }
+      .process-step { border-right: none; border-bottom: 1px solid #1f1f1f; }
+    }
+  </style>
+
+  <!-- SEO: Open Graph extra -->
+  <meta property="og:image" content="https://meproduction.se/og-image.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://meproduction.se" />
+  <!-- SEO: Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="ME Production – Evenemangsproduktion från A till över förväntan" />
+  <meta name="twitter:description" content="Från minsta monter till största evenemang. Vi tar hand om hela processen." />
+  <meta name="twitter:image" content="https://meproduction.se/og-image.jpg" />
+  <!-- SEO: Structured Data -->
+  <script type="application/ld+json">
+  {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "ME Production",
+      "url": "https://meproduction.se",
+      "description": "ME Production är din helhetsleverantör inom evenemangsproduktion.",
+      "address": [
+        {"@type": "PostalAddress", "streetAddress": "Hulda Lindgrens Gata 9-11", "addressLocality": "Göteborg", "addressCountry": "SE"},
+        {"@type": "PostalAddress", "streetAddress": "Sjöviksvägen 104", "addressLocality": "Stockholm", "addressCountry": "SE"}
+      ]
+    }
+  </script>
+
+  <!-- FAQ STYLES -->
+  <style>
+    .faq-section { background: #F4EFE6; padding: 100px 5vw; }
+    .faq-section .section-label { color: var(--gray, #666); font-size: 0.72rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 16px; }
+    .faq-section h2 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; margin-bottom: 48px; }
+    .faq-list { max-width: 800px; margin: 0 auto; }
+    .faq-item { border-bottom: 1px solid rgba(17,17,17,0.12); }
+    .faq-item summary { list-style: none; cursor: pointer; padding: 24px 0; font-size: 1.05rem; font-weight: 700; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after { content: '+'; font-size: 1.4rem; font-weight: 300; color: #F2C840; flex-shrink: 0; transition: transform .25s; }
+    .faq-item[open] summary::after { transform: rotate(45deg); }
+    .faq-item p { padding: 0 0 24px; color: #444; line-height: 1.7; font-size: 0.97rem; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type": "Question", "name": "Vad kostar en mässmonter?", "acceptedAnswer": {"@type": "Answer", "text": "Priset varierar beroende på storlek och komplexitet. En enklare monter från 30 000 kr, custom-lösningar kan landa på flera hundra tusen. Vi skräddarsyr alltid efter er budget."}},
+      {"@type": "Question", "name": "Hur lång tid tar det att bygga en mässmonter?", "acceptedAnswer": {"@type": "Answer", "text": "Normalt 4–8 veckor från godkänd design till färdig monter. Etablering på mässgolvet sker 1–2 dagar före öppning."}},
+      {"@type": "Question", "name": "Vad ingår i evenemangsproduktion?", "acceptedAnswer": {"@type": "Answer", "text": "Projektledning, monterproduktion, grafik och skyltning, samt etablering och rivning. Vi tar ett helhetsansvar."}},
+      {"@type": "Question", "name": "Jobbar ni i hela Sverige?", "acceptedAnswer": {"@type": "Answer", "text": "Ja, vi har kontor i Göteborg och Stockholm men levererar i hela Sverige."}},
+      {"@type": "Question", "name": "Kan ni hjälpa till med både mässor och festivaler?", "acceptedAnswer": {"@type": "Answer", "text": "Absolut. Från B2B-mässor till musikfestivaler som Way Out West – vi behärskar hela spektrumet av eventproduktion."}},
+      {"@type": "Question", "name": "Hur går jag tillväga för att anlita er?", "acceptedAnswer": {"@type": "Answer", "text": "Fyll i kontaktformuläret eller ring oss. Vi sätter upp ett möte, lyssnar på era behov och tar fram ett förslag utan kostnad."}}
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <a href="#" class="nav-logo"><img fetchpriority="high" decoding="async" id="nav-logo-img" src="me_production_vit_vit_gul_prick (kopia).webp" alt="ME Production" style="height:34px;width:auto;display:inline-block;vertical-align:middle;"></a>
+    <ul class="nav-links">
+      <li><a href="#tjanster">Tjänster</a></li>
+      <li><a href="#case">Case</a></li>
+      <li><a href="ganget.html">Gänget</a></li>
+      <li><a href="hallbarhet.html">Hållbarhet</a></li>
+      
+      <li><a href="#om-oss">Om oss</a></li>
+      <li><a href="#kontakt">Kontakt</a></li>
+    </ul>
+    <a href="#kontakt" class="nav-cta">Prata med oss</a>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <!-- VIDEO BACKGROUND LOOP -->
+    <div class="hero-video-wrap">
+      <video class="hero-video" autoplay muted loop playsinline preload="auto">
+        <source src="https://videos.pexels.com/video-files/3209828/3209828-uhd_2560_1440_25fps.mp4" type="video/mp4" />
+      </video>
+      <div class="hero-video-overlay"></div>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="hero-content">
+      <div class="hero-tag">Evenemangsproduktion · Göteborg & Stockholm</div>
+      <h1>Evenemangsproduktion &amp; Mässmontrar<br /><em>från första skiss till färdigt resultat.</em></h1>
+      <p class="hero-sub">
+        Från infrastruktur till teknik. Från planering till rivning.
+        Från helhet till detaljnivå. Från A till över förväntan.
+      </p>
+      <div class="hero-btns">
+        <a href="#case" class="btn-primary">Se våra case →</a>
+        <a href="#kontakt" class="btn-ghost">Kontakta oss</a>
+      </div>
+    </div>
+
+    <!-- MUTE TOGGLE -->
+    <button class="mute-btn" id="muteBtn" aria-label="Slå på/av ljud">
+      <span id="muteIcon">🔇</span>
+    </button>
+
+    <div class="hero-scroll">
+      <div class="scroll-line"></div>
+      Scrolla
+    </div>
+  </header>
+
+  <!-- MARQUEE -->
+  <div class="marquee-wrap" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Mässmontrar</span><span class="dot">✦</span>
+      <span>Festivaler</span><span class="dot">✦</span>
+      <span>Skyltning</span><span class="dot">✦</span>
+      <span>Projektledning</span><span class="dot">✦</span>
+      <span>Produktionsledning</span><span class="dot">✦</span>
+      <span>Evenemangsproduktion</span><span class="dot">✦</span>
+      <span>Etablering</span><span class="dot">✦</span>
+      <span>Design & Skiss</span><span class="dot">✦</span>
+      <span>Göteborg & Stockholm</span><span class="dot">✦</span>
+      <span>Mässmontrar</span><span class="dot">✦</span>
+      <span>Festivaler</span><span class="dot">✦</span>
+      <span>Skyltning</span><span class="dot">✦</span>
+      <span>Projektledning</span><span class="dot">✦</span>
+      <span>Produktionsledning</span><span class="dot">✦</span>
+      <span>Evenemangsproduktion</span><span class="dot">✦</span>
+      <span>Etablering</span><span class="dot">✦</span>
+      <span>Design & Skiss</span><span class="dot">✦</span>
+      <span>Göteborg & Stockholm</span><span class="dot">✦</span>
+    </div>
+  </div>
+
+  <!-- TJÄNSTER -->
+  <section id="tjanster">
+    <div class="section-label">Vad vi gör</div>
+    <h2>Mässmontrar &amp; Eventproduktion – allt under ett tak.</h2>
+    <p class="section-intro">
+      Vi är din helhetsleverantör – oavsett om det gäller en mässmonter, ett
+      festival­event eller en butiksinredning. Du slipper pussla – vi tar hand om allt.
+    </p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-num">01</div>
+        <h3>Projektledning</h3>
+        <p>En dedikerad projektledare som är med dig hela vägen – från idé till efterarbete. Alltid tillgänglig, alltid ett steg före.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">02</div>
+        <h3>Idé, Design & Skiss</h3>
+        <p>Vi visualiserar projektet så att alla inblandade får en gemensam bild. Från skiss till detaljritning.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">03</div>
+        <h3>Produktion & Byggnation</h3>
+        <p>Montrar, inredningar och konstruktioner – vi bygger det mesta. Oavsett storlek, form eller material.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">04</div>
+        <h3>Skyltning & Branding</h3>
+        <p>Grafisk profil, skyltar, tryck och wrap. Vi ser till att ditt varumärke syns och sitter precis rätt.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">05</div>
+        <h3>Etablering & Rivning</h3>
+        <p>Leverans, montering, nedmontering – vi tar hand om det praktiska så att du kan fokusera på ditt event.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CASE -->
+  <section id="case">
+    <div class="cases-header">
+      <div>
+        <div class="section-label">Utvalda case</div>
+        <h2>Sagt och gjort.</h2>
+      </div>
+      <a href="#kontakt" class="btn-ghost">Se alla projekt →</a>
+    </div>
+    <div class="cases-grid">
+
+      <a href="case-way-out-west.html" class="case-card large">
+        <div class="case-bg" style="background-image: url('https://media.meproduction.se/2019/06/WOW_4-uai-258x172.png');"></div>
+        <div class="case-overlay"></div>
+        <div class="case-info">
+          <div class="case-tag">Festival</div>
+          <h3>Way Out West</h3>
+          <p>Produktionsledning, infrastruktur och teknik för Göteborgs ikoniska musik- och kulturfestival.</p>
+        </div>
+        <div class="case-arrow">→</div>
+      </a>
+
+      <a href="case-nordsjo.html" class="case-card small">
+        <div class="case-bg" style="background-image: url('https://media.meproduction.se/2019/06/Nordsjo_3-uai-258x172.png');"></div>
+        <div class="case-overlay"></div>
+        <div class="case-info">
+          <div class="case-tag">Mässa</div>
+          <h3>Nordsjö – Årets Monter</h3>
+          <p>En första plats och utmärkelsen "Årets Monter" var ett faktum.</p>
+        </div>
+        <div class="case-arrow">→</div>
+      </a>
+
+      <a href="case-vasaloppet.html" class="case-card half">
+        <div class="case-bg" style="background-image: url('https://media.meproduction.se/2019/06/vasaloppet_8-uai-258x172.png');"></div>
+        <div class="case-overlay"></div>
+        <div class="case-info">
+          <div class="case-tag">Event</div>
+          <h3>Vasaloppet</h3>
+          <p>En pampig parkering och 51 000 åkare i Volvospåret.</p>
+        </div>
+        <div class="case-arrow">→</div>
+      </a>
+
+      <a href="case-clarion.html" class="case-card half">
+        <div class="case-bg" style="background-image: url('https://media.meproduction.se/2019/06/Clarion_4-uai-258x172.png');"></div>
+        <div class="case-overlay"></div>
+        <div class="case-info">
+          <div class="case-tag">Installation</div>
+          <h3>Clarion Hotel Post</h3>
+          <p>Avancerad julbelysning och LED-installation för en av Göteborgs mest ikoniska byggnader.</p>
+        </div>
+        <div class="case-arrow">→</div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- NUMBERS -->
+  <section class="numbers">
+    <div class="section-label">ME Production i siffror</div>
+    <div class="numbers-grid">
+      <div class="number-item">
+        <h3>11+</h3>
+        <p>År i branschen</p>
+      </div>
+      <div class="number-item">
+        <h3>5500+</h3>
+        <p>Genomförda projekt</p>
+      </div>
+      <div class="number-item">
+        <h3>100%</h3>
+        <p>Helhetsleverans</p>
+      </div>
+      <div class="number-item">
+        <h3>2</h3>
+        <p>Kontor – Göteborg & Stockholm</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- OM OSS -->
+  <section id="om-oss">
+    <div class="about-grid">
+      <div class="about-visual">
+        <div class="about-img">
+          <div class="about-img-placeholder">📸</div>
+        </div>
+        <div class="about-badge">
+          <strong>25+</strong>
+          År av<br />event
+        </div>
+      </div>
+      <div class="about-text">
+        <div class="section-label">Det här är vi</div>
+        <h2>Vi frigör tid –<br />så du kan fokusera på rätt saker.</h2>
+        <p>
+          Genom ett brett kontaktnät och gedigen erfarenhet av produktion levererar vi
+          en helhetslösning. Du ska inte behöva vända dig till ett tryckeri, en teknikfirma
+          och en produktionsbyrå var för sig. Låt oss sköta det åt dig.
+        </p>
+        <p>
+          Vi älskar att bygga – att få vara på plats och se en idé formas till verklighet.
+          Det kan vara på en mässa i Göteborg, i en skog utanför Mora, på en pir i Norge
+          eller på ett event i Paris. Ingen utmaning är för stor eller för liten.
+        </p>
+        <ul class="about-list">
+          <li>Helhetsleverantör – tryckeri, teknik och produktion under ett tak</li>
+          <li>Varje projekt är unikt – vi anpassar kompetens och leverantörer</li>
+          <li>Vi har byggt på mässor, festivaler och event i hela världen</li>
+          <li>Kontor i Göteborg (Västra Frölunda) & Stockholm</li>
+        </ul>
+        <a href="#kontakt" class="btn-primary">Jobba med oss →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="process">
+    <div class="section-label">Hur vi jobbar</div>
+    <h2>Enkelt från start till mål.</h2>
+    <p class="section-intro">Vi tar hand om hela processen – du fokuserar på ditt evenemang, vi fixar resten.</p>
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="step-num">01</div>
+        <h3>Briefing & Idé</h3>
+        <p>Vi lyssnar, frågar och förstår vad du vill uppnå. Tillsammans tar vi fram rätt riktning.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">02</div>
+        <h3>Design & Skiss</h3>
+        <p>Visualisering och skisser så att alla parter ser exakt vad som ska levereras.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">03</div>
+        <h3>Produktion</h3>
+        <p>Vi bygger, trycker och tillverkar – allt under samma tak, med full kontroll.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">04</div>
+        <h3>Etablering</h3>
+        <p>Leverans och montering på plats. Vi ser till att allt sitter och ser rätt ut.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">05</div>
+        <h3>Genomförande</h3>
+        <p>Vi finns på plats under evenemanget om något behöver justeras i sista sekund.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">06</div>
+        <h3>Rivning & Uppföljning</h3>
+        <p>Vi demonterar och städar. Sedan utvärderar vi tillsammans inför nästa gång.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM TEASER -->
+  <section id="team" style="background:var(--black);padding:100px 5vw;">
+    <div class="section-label" style="color:#F2C840;">Folket bakom allt</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;">
+      <div>
+        <h2 style="color:#fff;font-size:clamp(2.4rem,5vw,4.5rem);margin-bottom:24px;">10 personer.<br />2 kontor.<br /><em style="color:#F2C840;font-style:normal;">Oändligt engagemang.</em></h2>
+        <p style="color:rgba(255,255,255,0.5);font-size:1.05rem;line-height:1.75;max-width:460px;margin-bottom:40px;">
+          Vi bygger evenemang, montrar och upplevelser – men vi är framför allt ett gäng som brinner för det vi gör och alltid är på plats när det gäller.
+        </p>
+        <a href="ganget.html" style="display:inline-flex;align-items:center;gap:12px;background:#F2C840;color:#111;font-weight:800;font-size:0.88rem;letter-spacing:0.08em;text-transform:uppercase;padding:18px 36px;border-radius:4px;transition:background .2s,transform .3s;">
+          Möt gänget →
+        </a>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:3px;">
+        <div style="aspect-ratio:3/4;background-image:url('https://media.meproduction.se/2019/08/1-uai-193x258.jpg');background-size:cover;background-position:center top;filter:grayscale(20%);"></div>
+        <div style="aspect-ratio:3/4;background-image:url('https://media.meproduction.se/2019/08/3-uai-193x258.jpg');background-size:cover;background-position:center top;filter:grayscale(20%);margin-top:24px;"></div>
+        <div style="aspect-ratio:3/4;background-image:url('https://media.meproduction.se/2019/08/6-uai-193x258.jpg');background-size:cover;background-position:center top;filter:grayscale(20%);"></div>
+        <div style="aspect-ratio:3/4;background-image:url('https://media.meproduction.se/2024/04/IMG_0682-uai-193x258.jpg');background-size:cover;background-position:center top;filter:grayscale(20%);margin-top:24px;"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KUNDER -->
+  <section class="clients">
+    <div class="section-label">Våra kunder</div>
+    <h2>Monterbyggare &amp; eventproducent åt Sveriges starkaste varumärken.</h2>
+    <p class="section-intro">Från lokala varumärken till världsledande bolag – vi levererar med samma passion varje gång.</p>
+    <div class="clients-grid">
+      <div class="client-item">Volvo</div>
+      <div class="client-item">Way Out West</div>
+      <div class="client-item">Vasaloppet</div>
+      <div class="client-item">Nordsjö</div>
+      <div class="client-item">Clarion Hotel</div>
+      <div class="client-item">Sagaform</div>
+      <div class="client-item">Göteborgs Stad</div>
+      <div class="client-item">Ditt varumärke?</div>
+    </div>
+  </section>
+
+  <!-- KONTAKT -->
+  <section id="kontakt">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="section-label">Kontakta oss</div>
+        <h2>Låt oss prata om ditt nästa event.</h2>
+        <p>
+          Oavsett storlek eller budget – vi älskar utmaningar.
+          Hör av dig så berättar vi vad vi kan göra för dig.
+        </p>
+        <ul class="contact-details">
+          <li>
+            <div class="contact-icon">📍</div>
+            <div>
+              <strong>Göteborg</strong><br />
+              <span style="color:var(--gray);font-size:0.85rem;">Hulda Lindgrens Gata 9–11, 421 32 Västra Frölunda</span>
+            </div>
+          </li>
+          <li>
+            <div class="contact-icon">📍</div>
+            <div>
+              <strong>Stockholm</strong><br />
+              <span style="color:var(--gray);font-size:0.85rem;">Sjöviksvägen 104, 117 43 Liljeholmen</span>
+            </div>
+          </li>
+          <li>
+            <div class="contact-icon">✉️</div>
+            <div>
+              <a href="mailto:info@meproduction.se">info@meproduction.se</a>
+            </div>
+          </li>
+          <li>
+            <div class="contact-icon">📞</div>
+            <div>
+              <a href="tel:+46739935095">+46 739 935 095</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="contact-form">
+        <form action="https://formspree.io/f/mnjlwerq" method="POST" id="kontakt-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Förnamn</label>
+              <input type="text" name="förnamn" placeholder="Anna" required />
+            </div>
+            <div class="form-group">
+              <label>Efternamn</label>
+              <input type="text" name="efternamn" placeholder="Andersson" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>E-post</label>
+            <input type="email" name="email" placeholder="anna@foretaget.se" required />
+          </div>
+          <div class="form-group">
+            <label>Tjänst</label>
+            <select name="tjänst">
+              <option value="">Välj tjänst...</option>
+              <option>Mässmonter</option>
+              <option>Festival / Event</option>
+              <option>Skyltning & Branding</option>
+              <option>Övrigt</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Meddelande</label>
+            <textarea name="meddelande" placeholder="Berätta om ditt projekt..." required></textarea>
+          </div>
+          <input type="hidden" name="_subject" value="Ny förfrågan via meproduction.se" />
+          <input type="hidden" name="_language" value="sv" />
+          <button type="submit" class="form-submit" id="form-btn">Skicka meddelande →</button>
+        </form>
+        <div id="form-success" style="display:none;margin-top:28px;padding:28px 32px;background:rgba(242,200,64,0.12);border:1px solid #F2C840;border-radius:8px;text-align:center;">
+          <div style="font-size:2rem;margin-bottom:12px;">✅</div>
+          <p style="font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:8px;">Tack! Vi återkommer snart.</p>
+          <p style="font-size:0.9rem;color:rgba(255,255,255,0.55);">Ditt meddelande har skickats till ME Production.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KONTOR / KARTA -->
+  <section id="kontor" style="background:#111 !important;padding:100px 5vw;text-align:center;">
+    <div class="section-label" style="color:#F2C840;">Var finns vi</div>
+    <h2 style="color:#fff;font-size:clamp(2rem,4vw,3rem);margin:12px 0 16px;">Två kontor. Hela Sverige.</h2>
+    <p class="section-intro" style="color:rgba(255,255,255,0.55);max-width:540px;margin:0 auto 60px;">Vi är stationerade i Göteborg och Stockholm – men levererar från Malmö till Kiruna och allt däremellan.</p>
+
+    <!-- SVG SVERIGE-KARTA -->
+    <div style="display:flex;flex-direction:column;align-items:center;gap:60px;">
+      <svg viewBox="0 0 340 620" xmlns="http://www.w3.org/2000/svg"
+           style="width:min(220px,55vw);height:auto;filter:drop-shadow(0 0 40px rgba(242,200,64,0.12));">
+
+        <!-- Sverige-siluett (geografiskt korrekt, koordinater konverterade från WGS84) -->
+        <path d="
+          M 247,0
+          L 270,18 L 295,65 L 320,105 L 338,145
+          L 288,157 L 257,195 L 239,236
+          L 210,262 L 179,291 L 163,302
+          L 159,340 L 159,379
+          L 180,405 L 199,420 L 190,432 L 183,440
+          L 175,448 L 158,462
+          L 146,511 L 139,561 L 130,572 L 119,583
+          L 98,600 L 75,615 L 57,619
+          L 52,609 L 45,588
+          L 49,560 L 38,530
+          L 26,514
+          L 12,487 L 5,457
+          L 4,450 L 14,424 L 27,401
+          L 40,365 L 52,320 L 65,256
+          L 91,207 L 117,162 L 143,116
+          L 169,71 L 182,49
+          L 207,31 L 233,17
+          Z
+        " fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.6)" stroke-width="2.5" stroke-linejoin="round"/>
+
+        <!-- GÖTEBORG – pulsringring + prick -->
+        <a href="goteborg.html" style="cursor:pointer;">
+          <circle cx="26" cy="514" r="18" fill="rgba(242,200,64,0.25)">
+            <animate attributeName="r" values="14;22;14" dur="2.8s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0.5;0;0.5" dur="2.8s" repeatCount="indefinite"/>
+          </circle>
+          <circle cx="26" cy="514" r="7" fill="#F2C840" stroke="#fff" stroke-width="1.5"/>
+          <!-- Label höger om punkten -->
+          <text x="40" y="511" fill="#fff" font-size="14" font-family="Candara,Inter,sans-serif" font-weight="700">Göteborg</text>
+          <text x="40" y="526" fill="rgba(255,255,255,0.7)" font-size="10" font-family="Candara,Inter,sans-serif">Västra Frölunda</text>
+        </a>
+
+        <!-- STOCKHOLM – pulsring + prick -->
+        <a href="stockholm.html" style="cursor:pointer;">
+          <circle cx="183" cy="440" r="18" fill="rgba(242,200,64,0.25)">
+            <animate attributeName="r" values="14;22;14" dur="2.8s" begin="1.4s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0.5;0;0.5" dur="2.8s" begin="1.4s" repeatCount="indefinite"/>
+          </circle>
+          <circle cx="183" cy="440" r="7" fill="#F2C840" stroke="#fff" stroke-width="1.5"/>
+          <!-- Label vänster om punkten -->
+          <text x="196" y="437" fill="#fff" font-size="14" font-family="Candara,Inter,sans-serif" font-weight="700">Stockholm</text>
+          <text x="196" y="452" fill="rgba(255,255,255,0.7)" font-size="10" font-family="Candara,Inter,sans-serif">Liljeholmen</text>
+        </a>
+      </svg>
+
+      <!-- Adresskort under kartan -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:700px;width:100%;">
+        <a href="goteborg.html" style="text-decoration:none;display:block;border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:28px 28px;text-align:left;transition:border-color .2s,transform .2s;" onmouseover="this.style.borderColor='#F2C840';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.1)';this.style.transform='none'">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+            <span style="width:7px;height:7px;border-radius:50%;background:#F2C840;display:inline-block;"></span>
+            <span style="color:#F2C840;font-size:0.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;">Göteborg</span>
+          </div>
+          <div style="color:#fff;font-size:1rem;font-weight:700;margin-bottom:4px;">Hulda Lindgrens Gata 9–11</div>
+          <div style="color:rgba(255,255,255,0.45);font-size:0.85rem;">Västra Frölunda, 421 32</div>
+        </a>
+        <a href="stockholm.html" style="text-decoration:none;display:block;border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:28px 28px;text-align:left;transition:border-color .2s,transform .2s;" onmouseover="this.style.borderColor='#F2C840';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.1)';this.style.transform='none'">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+            <span style="width:7px;height:7px;border-radius:50%;background:#F2C840;display:inline-block;"></span>
+            <span style="color:#F2C840;font-size:0.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;">Stockholm</span>
+          </div>
+          <div style="color:#fff;font-size:1rem;font-weight:700;margin-bottom:4px;">Sjöviksvägen 104</div>
+          <div style="color:rgba(255,255,255,0.45);font-size:0.85rem;">Liljeholmen, 117 43</div>
+        </a>
+      </div>
+    </div>
+
+    <style>
+      @media(max-width:600px){
+        #kontor > div > div[style*="grid"] { grid-template-columns: 1fr !important; }
+      }
+    </style>
+  </section>
+      <!-- GÖTEBORG KORT -->
+      <a href="goteborg.html" style="text-decoration:none;display:block;border:1.5px solid rgba(255,255,255,0.12);border-radius:16px;padding:40px 36px;text-align:left;transition:border-color .2s,background .2s,transform .2s;" onmouseover="this.style.borderColor='#F2C840';this.style.background='rgba(242,200,64,0.05)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.12)';this.style.background='transparent';this.style.transform='none'">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:18px;">
+          <span style="width:10px;height:10px;border-radius:50%;background:#F2C840;display:inline-block;flex-shrink:0;"></span>
+          <span style="color:#F2C840;font-size:0.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;">Göteborg</span>
+        </div>
+        <div style="color:#fff;font-size:1.5rem;font-weight:800;margin-bottom:8px;line-height:1.2;">Hulda Lindgrens<br>Gata 9–11</div>
+        <div style="color:rgba(255,255,255,0.45);font-size:0.88rem;margin-bottom:28px;">Västra Frölunda, 421 32</div>
+        <span style="color:#F2C840;font-size:0.85rem;font-weight:700;">Utforska kontoret →</span>
+      </a>
+
+      <!-- STOCKHOLM KORT -->
+      <a href="stockholm.html" style="text-decoration:none;display:block;border:1.5px solid rgba(255,255,255,0.12);border-radius:16px;padding:40px 36px;text-align:left;transition:border-color .2s,background .2s,transform .2s;" onmouseover="this.style.borderColor='#F2C840';this.style.background='rgba(242,200,64,0.05)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.12)';this.style.background='transparent';this.style.transform='none'">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:18px;">
+          <span style="width:10px;height:10px;border-radius:50%;background:#F2C840;display:inline-block;flex-shrink:0;"></span>
+          <span style="color:#F2C840;font-size:0.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;">Stockholm</span>
+        </div>
+        <div style="color:#fff;font-size:1.5rem;font-weight:800;margin-bottom:8px;line-height:1.2;">Sjöviksvägen 104</div>
+        <div style="color:rgba(255,255,255,0.45);font-size:0.88rem;margin-bottom:28px;">Liljeholmen, 117 43</div>
+        <span style="color:#F2C840;font-size:0.85rem;font-weight:700;">Utforska kontoret →</span>
+      </a>
+    </div>
+
+    <style>
+      @media(max-width:700px){
+        #kontor > div[style*="grid"] { grid-template-columns: 1fr !important; }
+        #kontor > div[style*="grid"] > a { height: 340px !important; }
+      }
+    </style>
+  </section>
+
+
+  <!-- FAQ -->
+  <section class="faq-section" id="faq">
+    <div style="max-width:900px;margin:0 auto;">
+      <div class="section-label">Vanliga frågor</div>
+      <h2>Det du undrar – vi svarar.</h2>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Vad kostar en mässmonter?</summary>
+          <p>Priset på en mässmonter varierar beroende på storlek, material och komplexitet. En enklare monter kan kosta från 30 000 kr, medan en custom-byggd monter med avancerad teknik och grafik kan landa på flera hundra tusen kronor. Vi skräddarsyr alltid lösningen efter er budget och era mål – kontakta oss så tar vi fram ett kostnadsförslag utan kostnad.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Hur lång tid tar det att bygga en mässmonter?</summary>
+          <p>Produktionstiden beror på montrarnas storlek och komplexitet. Normalt räknar vi med 4–8 veckor från godkänd design till färdig monter. Etablering på mässgolvet sker vanligtvis 1–2 dagar före mässöppning. Vi hanterar hela processen – från brief och design till transport, byggnation och rivning.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Vad ingår i evenemangsproduktion?</summary>
+          <p>Evenemangsproduktion hos ME Production innebär att vi tar ett helhetsansvar för ditt event. Det inkluderar projektledning, monterproduktion, grafik och skyltning, samt etablering och rivning. Vi är er enda kontaktpunkt från idé till genomfört evenemang.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Jobbar ni i hela Sverige?</summary>
+          <p>Ja! Vi har kontor i Göteborg och Stockholm men levererar evenemang och mässmontrar i hela Sverige – från Malmö till Kiruna. Vi hanterar transport och logistik oavsett var i landet ert event äger rum.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Kan ni hjälpa till med både mässor och festivaler?</summary>
+          <p>Absolut. Vi jobbar lika hemma på en B2B-mässa som på en musikfestival. Bland våra referenskunder finns Way Out West, Vasaloppet och Volvo Cars – en bredd som visar att vi behärskar hela spektrumet av eventproduktion.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Hur går jag tillväga för att anlita er?</summary>
+          <p>Enklaste sättet är att fylla i kontaktformuläret här på sidan eller ringa oss direkt. Vi sätter upp ett kort möte, lyssnar på era behov och tar fram ett förslag – utan kostnad och utan förpliktelse. Ju tidigare vi kommer in i processen, desto bättre resultat kan vi leverera.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="nav-logo"><img fetchpriority="high" decoding="async" src="me_production_svart_svart_gul_prick (kopia 2).webp" alt="ME Production" style="height:34px;width:auto;display:inline-block;vertical-align:middle;"></div>
+        <p>Helhetsleverantör inom evenemangsproduktion. Från monter till festival – i Göteborg, Stockholm och resten av världen.</p>
+        <div class="social-links">
+          <a href="https://www.instagram.com/meproductionsweden/" class="social-link" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+          <a href="https://www.facebook.com/meproductionsweden/" class="social-link" target="_blank" rel="noopener" aria-label="Facebook">FB</a>
+          <a href="https://www.linkedin.com/company/meproduction/" class="social-link" target="_blank" rel="noopener" aria-label="LinkedIn">IN</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Tjänster</h4>
+        <ul>
+          <li><a href="#tjanster">Projektledning</a></li>
+          <li><a href="#tjanster">Design & Skiss</a></li>
+          <li><a href="#tjanster">Produktion</a></li>
+          <li><a href="#tjanster">Skyltning</a></li>
+          <li><a href="#tjanster">Etablering</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Företaget</h4>
+        <ul>
+          <li><a href="#om-oss">Om oss</a></li>
+          <li><a href="#case">Case</a></li>
+          <li><a href="#kontakt">Jobba hos oss</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Kontor</h4>
+        <ul>
+          <li><a href="mailto:info@meproduction.se">info@meproduction.se</a></li>
+          <li><a href="tel:+46739935095">+46 739 935 095</a></li>
+          <li><span style="color:var(--gray)">Göteborg – Västra Frölunda</span></li>
+          <li><span style="color:var(--gray)">Stockholm – Liljeholmen</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 ME Production AB. Alla rättigheter förbehållna.</span>
+      <span>Evenemangsproduktion i världsklass – sedan dag ett.</span>
+    </div>
+  </footer>
+
+  <script>
+    /* ============================================================
+       WOW-EFFEKTER – custom cursor, scroll reveal, count-up,
+       magnetic buttons, hero stagger, progress bar, parallax
+    ============================================================ */
+
+    // ── 1. SCROLL PROGRESS BAR ──────────────────────────────────
+    const progressBar = document.createElement('div');
+    progressBar.style.cssText = `
+      position:fixed;top:0;left:0;height:2px;width:0%;
+      background:linear-gradient(90deg,#F2C840,#fff);
+      z-index:9999;transition:width 0.1s linear;pointer-events:none;
+    `;
+    document.body.appendChild(progressBar);
+
+    // ── 2. CUSTOM CURSOR ────────────────────────────────────────
+    const cursorDot  = document.createElement('div');
+    const cursorRing = document.createElement('div');
+    cursorDot.style.cssText = `
+      position:fixed;width:8px;height:8px;border-radius:50%;
+      background:#F2C840;pointer-events:none;z-index:9999;
+      transform:translate(-50%,-50%);transition:opacity 0.3s;
+      mix-blend-mode:difference;
+    `;
+    cursorRing.style.cssText = `
+      position:fixed;width:36px;height:36px;border-radius:50%;
+      border:1.5px solid rgba(242,200,64,0.6);pointer-events:none;
+      z-index:9998;transform:translate(-50%,-50%);
+      transition:width 0.25s,height 0.25s,border-color 0.25s,opacity 0.3s;
+    `;
+    document.body.appendChild(cursorDot);
+    document.body.appendChild(cursorRing);
+
+    let mx = -200, my = -200, rx = -200, ry = -200;
+    document.addEventListener('mousemove', e => {
+      mx = e.clientX; my = e.clientY;
+      cursorDot.style.left  = mx + 'px';
+      cursorDot.style.top   = my + 'px';
+    });
+    // Smooth ring follow
+    function followCursor() {
+      rx += (mx - rx) * 0.12;
+      ry += (my - ry) * 0.12;
+      cursorRing.style.left = rx + 'px';
+      cursorRing.style.top  = ry + 'px';
+      requestAnimationFrame(followCursor);
+    }
+    followCursor();
+
+    // Cursor grow on links/buttons
+    document.querySelectorAll('a, button, .service-card, .case-card').forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        cursorRing.style.width  = '60px';
+        cursorRing.style.height = '60px';
+        cursorRing.style.borderColor = '#F2C840';
+        cursorDot.style.opacity = '0';
+      });
+      el.addEventListener('mouseleave', () => {
+        cursorRing.style.width  = '36px';
+        cursorRing.style.height = '36px';
+        cursorRing.style.borderColor = 'rgba(242,200,64,0.6)';
+        cursorDot.style.opacity = '1';
+      });
+    });
+
+    // ── 3. HERO TEXT STAGGER ────────────────────────────────────
+    const heroEls = document.querySelectorAll(
+      '.hero-tag, .hero h1, .hero-sub, .hero-btns, .hero-scroll'
+    );
+    heroEls.forEach((el, i) => {
+      el.style.cssText += `
+        opacity:0;transform:translateY(32px);
+        transition:opacity 0.8s cubic-bezier(.16,1,.3,1) ${i * 0.13}s,
+                   transform 0.8s cubic-bezier(.16,1,.3,1) ${i * 0.13}s;
+      `;
+    });
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        heroEls.forEach(el => {
+          el.style.opacity  = '1';
+          el.style.transform = 'translateY(0)';
+        });
+      }, 200);
+    });
+
+    // ── 4. SCROLL REVEAL ────────────────────────────────────────
+    const revealStyle = document.createElement('style');
+    revealStyle.textContent = `
+      .reveal {
+        opacity: 0;
+        transform: translateY(48px);
+        transition: opacity 0.85s cubic-bezier(.16,1,.3,1),
+                    transform 0.85s cubic-bezier(.16,1,.3,1);
+      }
+      .reveal.visible {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+      }
+      .reveal-left  { transform: translateX(-48px) !important; }
+      .reveal-right { transform: translateX(48px) !important; }
+      .reveal-left.visible,
+      .reveal-right.visible { transform: translateX(0) !important; }
+    `;
+    document.head.appendChild(revealStyle);
+
+    // Tag klasser på element
+    const revealTargets = [
+      { sel: '.section-label',  cls: 'reveal' },
+      { sel: 'h2',              cls: 'reveal' },
+      { sel: '.section-intro',  cls: 'reveal' },
+      { sel: '.service-card',   cls: 'reveal' },
+      { sel: '.case-card',      cls: 'reveal' },
+      { sel: '.number-item',    cls: 'reveal' },
+      { sel: '.about-visual',   cls: 'reveal reveal-left' },
+      { sel: '.about-text',     cls: 'reveal reveal-right' },
+      { sel: '.process-step',   cls: 'reveal' },
+      { sel: '.team-card',      cls: 'reveal' },
+      { sel: '.contact-info',   cls: 'reveal reveal-left' },
+      { sel: '.contact-form',   cls: 'reveal reveal-right' },
+      { sel: '.client-item',    cls: 'reveal' },
+    ];
+    revealTargets.forEach(({ sel, cls }) => {
+      document.querySelectorAll(sel).forEach((el, i) => {
+        // Skip hero children
+        if (el.closest('.hero')) return;
+        cls.split(' ').forEach(c => el.classList.add(c));
+        el.style.transitionDelay = (i % 6) * 0.07 + 's';
+      });
+    });
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          revealObserver.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    // ── 5. COUNT-UP NUMBERS ─────────────────────────────────────
+    function animateCount(el) {
+      const raw   = el.textContent.trim();           // "25+" or "500+" etc
+      const num   = parseInt(raw.replace(/\D/g,''));
+      const suffix = raw.replace(/[0-9]/g,'');
+      const dur   = 1600;
+      const start = performance.now();
+      function frame(now) {
+        const p = Math.min((now - start) / dur, 1);
+        const ease = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.round(ease * num) + suffix;
+        if (p < 1) requestAnimationFrame(frame);
+      }
+      requestAnimationFrame(frame);
+    }
+    const countObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          animateCount(e.target);
+          countObserver.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('.number-item h3').forEach(el => countObserver.observe(el));
+
+    // ── 6. MAGNETIC BUTTONS ─────────────────────────────────────
+    document.querySelectorAll('.btn-primary, .btn-ghost, .nav-cta').forEach(btn => {
+      btn.addEventListener('mousemove', e => {
+        const r  = btn.getBoundingClientRect();
+        const dx = e.clientX - (r.left + r.width  / 2);
+        const dy = e.clientY - (r.top  + r.height / 2);
+        btn.style.transform = `translate(${dx * 0.28}px, ${dy * 0.28}px)`;
+      });
+      btn.addEventListener('mouseleave', () => {
+        btn.style.transform = '';
+        btn.style.transition = 'transform 0.5s cubic-bezier(.16,1,.3,1)';
+      });
+    });
+
+    // ── 7. CASE CARD TILT ───────────────────────────────────────
+    document.querySelectorAll('.case-card').forEach(card => {
+      card.style.transition = 'transform 0.4s cubic-bezier(.16,1,.3,1), box-shadow 0.4s';
+      card.addEventListener('mousemove', e => {
+        const r  = card.getBoundingClientRect();
+        const dx = (e.clientX - r.left) / r.width  - 0.5;
+        const dy = (e.clientY - r.top)  / r.height - 0.5;
+        card.style.transform = `perspective(800px) rotateY(${dx * 8}deg) rotateX(${-dy * 8}deg) scale(1.025)`;
+        card.style.boxShadow = `${-dx*20}px ${-dy*20}px 40px rgba(0,0,0,0.35)`;
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = '';
+        card.style.boxShadow = '';
+      });
+    });
+
+    // ── 8. STICKY NAV + PROGRESS ────────────────────────────────
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 60);
+      const logoImg = document.getElementById('nav-logo-img');
+      if (logoImg) {
+        logoImg.src = window.scrollY > 60
+          ? 'me_production_svart_svart_gul_prick (kopia 2).webp'
+          : 'me_production_vit_vit_gul_prick (kopia).webp';
+      }
+      const docH = document.documentElement.scrollHeight - window.innerHeight;
+      progressBar.style.width = (window.scrollY / docH * 100) + '%';
+    });
+
+    // Form AJAX – stanna på sidan
+    const kontaktForm = document.getElementById('kontakt-form');
+    if (kontaktForm) {
+      kontaktForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const btn = document.getElementById('form-btn');
+        // Bygg dynamiskt ämne: "Förnamn Efternamn – Tjänst"
+        const fornamn  = (kontaktForm.querySelector('[name="förnamn"]')?.value || '').trim();
+        const efternamn = (kontaktForm.querySelector('[name="efternamn"]')?.value || '').trim();
+        const tjanst   = (kontaktForm.querySelector('[name="tjänst"]')?.value || 'Övrigt').trim();
+        const namn = [fornamn, efternamn].filter(Boolean).join(' ') || 'Okänd';
+        kontaktForm.querySelector('[name="_subject"]').value = `${namn} – ${tjanst} | meproduction.se`;
+        btn.textContent = 'Skickar...';
+        btn.disabled = true;
+        try {
+          const res = await fetch(kontaktForm.action, {
+            method: 'POST',
+            body: new FormData(kontaktForm),
+            headers: { 'Accept': 'application/json' }
+          });
+          if (res.ok) {
+            kontaktForm.style.display = 'none';
+            document.getElementById('form-success').style.display = 'block';
+          } else {
+            btn.textContent = 'Något gick fel – försök igen';
+            btn.disabled = false;
+          }
+        } catch(err) {
+          btn.textContent = 'Något gick fel – försök igen';
+          btn.disabled = false;
+        }
+      });
+    }
+
+    // Mute toggle
+    const video = document.querySelector('.hero-video');
+    const muteBtn = document.getElementById('muteBtn');
+    const muteIcon = document.getElementById('muteIcon');
+    if (muteBtn) {
+      muteBtn.style.display = 'flex';
+      muteBtn.addEventListener('click', () => {
+        video.muted = !video.muted;
+        muteIcon.textContent = video.muted ? '🔇' : '🔊';
+      });
+    }
+    const canvas = document.getElementById('buildCanvas');
+    const ctx = canvas.getContext('2d');
+    let W, H, t = 0;
+
+    function resize() {
+      W = canvas.width  = canvas.offsetWidth;
+      H = canvas.height = canvas.offsetHeight;
+    }
+    window.addEventListener('resize', resize);
+    resize();
+
+    // ── Partiklar ──
+    const particles = [];
+    function spawnParticle(x, y, type) {
+      const count = type === 'spark' ? 6 : 2;
+      for (let i = 0; i < count; i++) {
+        particles.push({
+          x, y,
+          vx: (Math.random() - 0.5) * (type === 'spark' ? 4 : 1.2),
+          vy: -(Math.random() * (type === 'spark' ? 5 : 2) + 1),
+          life: 1,
+          decay: Math.random() * 0.03 + (type === 'spark' ? 0.04 : 0.015),
+          r: Math.random() * (type === 'spark' ? 3 : 6) + 1,
+          color: type === 'spark'
+            ? `hsl(${50 + Math.random()*30}, 100%, ${70 + Math.random()*20}%)`
+            : `rgba(244,239,230,${Math.random() * 0.15})`,
+          type
+        });
+      }
+    }
+
+    // ── Hjälpfunktioner ──
+    function ease(x) { return x < 0.5 ? 2*x*x : 1-Math.pow(-2*x+2,2)/2; }
+    function clamp(v,a,b){ return Math.max(a, Math.min(b, v)); }
+    function lerp(a,b,t){ return a + (b-a)*t; }
+
+    // ── Rita människa (silhuett) ──
+    function drawPerson(x, y, scale, legPhase, armAngle, holdPanel, readClip) {
+      ctx.save();
+      ctx.translate(x, y);
+      ctx.scale(scale, scale);
+      const c = 'rgba(20,16,10,0.95)';
+      const sh = 'rgba(0,0,0,0.3)';
+
+      // Skugga
+      ctx.beginPath();
+      ctx.ellipse(0, 0, 28*scale, 6, 0, 0, Math.PI*2);
+      ctx.fillStyle = sh;
+      ctx.fill();
+
+      // Ben
+      const lk = Math.sin(legPhase) * 14;
+      const rk = -Math.sin(legPhase) * 14;
+      // vänster ben
+      ctx.save(); ctx.translate(-8, 0);
+      ctx.rotate(lk * Math.PI/180);
+      ctx.fillStyle = c;
+      ctx.beginPath(); ctx.roundRect(-5, 0, 10, 46, 4); ctx.fill();
+      // fot
+      ctx.beginPath(); ctx.ellipse(2 + lk*0.3, 46, 10, 5, 0.2, 0, Math.PI*2); ctx.fill();
+      ctx.restore();
+      // höger ben
+      ctx.save(); ctx.translate(8, 0);
+      ctx.rotate(rk * Math.PI/180);
+      ctx.fillStyle = c;
+      ctx.beginPath(); ctx.roundRect(-5, 0, 10, 46, 4); ctx.fill();
+      ctx.beginPath(); ctx.ellipse(2 + rk*0.3, 46, 10, 5, -0.2, 0, Math.PI*2); ctx.fill();
+      ctx.restore();
+
+      // Kropp
+      ctx.fillStyle = c;
+      ctx.beginPath(); ctx.roundRect(-16, -58, 32, 62, [4,4,8,8]); ctx.fill();
+
+      // Vänster arm
+      ctx.save(); ctx.translate(-16, -50);
+      const la = holdPanel ? -70 : armAngle;
+      ctx.rotate(la * Math.PI/180);
+      ctx.fillStyle = c;
+      ctx.beginPath(); ctx.roundRect(-5, 0, 10, 36, 4); ctx.fill();
+      ctx.restore();
+
+      // Höger arm
+      ctx.save(); ctx.translate(16, -50);
+      const ra = holdPanel ? -70 : -armAngle * 0.6;
+      ctx.rotate(ra * Math.PI/180);
+      ctx.fillStyle = c;
+      ctx.beginPath(); ctx.roundRect(-5, 0, 10, 36, 4); ctx.fill();
+      ctx.restore();
+
+      // Panel som bärs
+      if (holdPanel) {
+        ctx.save();
+        ctx.translate(-36, -90);
+        ctx.fillStyle = 'rgba(180,160,110,0.55)';
+        ctx.strokeStyle = 'rgba(180,160,110,0.8)';
+        ctx.lineWidth = 2;
+        ctx.beginPath(); ctx.roundRect(0, 0, 68, 44, 3); ctx.fill(); ctx.stroke();
+        ctx.restore();
+      }
+
+      // Clipboard
+      if (readClip) {
+        ctx.save();
+        ctx.translate(-28, -55);
+        ctx.rotate(-0.2);
+        ctx.fillStyle = '#EDE7DC';
+        ctx.strokeStyle = '#C8C0B4';
+        ctx.lineWidth = 1.5;
+        ctx.beginPath(); ctx.roundRect(0, 0, 36, 26, 2); ctx.fill(); ctx.stroke();
+        ctx.strokeStyle = '#aaa'; ctx.lineWidth = 1;
+        [8,13,18,23].forEach(ly => {
+          ctx.beginPath(); ctx.moveTo(4, ly); ctx.lineTo(32, ly); ctx.stroke();
+        });
+        ctx.restore();
+      }
+
+      // Huvud med hjälm
+      ctx.fillStyle = c;
+      ctx.beginPath(); ctx.arc(0, -74, 14, 0, Math.PI*2); ctx.fill();
+      // Hjälm
+      ctx.fillStyle = holdPanel ? '#e8f040' : readClip ? '#f08040' : '#4080f0';
+      ctx.beginPath();
+      ctx.ellipse(0, -82, 17, 9, 0, Math.PI, Math.PI*2);
+      ctx.fill();
+      ctx.beginPath();
+      ctx.ellipse(0, -82, 20, 5, 0, Math.PI, Math.PI*2);
+      ctx.fill();
+
+      ctx.restore();
+    }
+
+    // ── Rita monter ──
+    function drawBooth(progress) {
+      const bx = W * 0.5;
+      const by = H * 0.68;
+      const bw = Math.min(W * 0.52, 500);
+      const bh = Math.min(H * 0.42, 340);
+
+      // Perspektiv-sida (höger)
+      const depth = bw * 0.14;
+      const p = clamp(progress, 0, 1);
+
+      // ── Bakvägg (byggs upp) ──
+      const wallH = bh * ease(clamp(p * 3, 0, 1));
+      if (wallH > 0) {
+        // Bakpanel vänster
+        ctx.fillStyle = '#1a1612';
+        ctx.beginPath();
+        ctx.rect(bx - bw/2, by - wallH, bw * 0.48, wallH);
+        ctx.fill();
+        // Bakpanel höger
+        const p2 = ease(clamp((p - 0.15) * 3, 0, 1));
+        ctx.fillStyle = '#1c1814';
+        ctx.beginPath();
+        ctx.rect(bx - bw/2 + bw*0.5, by - bh*p2, bw*0.48, bh*p2);
+        ctx.fill();
+      }
+
+      // ── Sidovägg (perspektiv) ──
+      const sw = ease(clamp((p - 0.3) * 2.5, 0, 1));
+      if (sw > 0) {
+        ctx.fillStyle = '#141210';
+        ctx.beginPath();
+        ctx.moveTo(bx + bw/2, by);
+        ctx.lineTo(bx + bw/2 + depth, by - depth*0.6);
+        ctx.lineTo(bx + bw/2 + depth, by - bh*sw - depth*0.6);
+        ctx.lineTo(bx + bw/2, by - bh*sw);
+        ctx.closePath();
+        ctx.fill();
+      }
+
+      // ── Golv ──
+      const gp = ease(clamp(p * 4, 0, 1));
+      ctx.fillStyle = '#111';
+      ctx.beginPath();
+      ctx.moveTo(bx - bw/2, by);
+      ctx.lineTo(bx + bw/2, by);
+      ctx.lineTo(bx + bw/2 + depth * gp, by - depth * 0.6 * gp);
+      ctx.lineTo(bx - bw/2 + depth * gp, by - depth * 0.6 * gp);
+      ctx.closePath();
+      ctx.fill();
+
+      // ── Vertikala profileer ──
+      const beams = [-bw/2, -bw/4 + 4, bw/4 - 4, bw/2 - 8];
+      beams.forEach((bxOff, i) => {
+        const bp = ease(clamp((p - i*0.08) * 2.5, 0, 1));
+        if (bp <= 0) return;
+        ctx.fillStyle = '#2a2218';
+        ctx.beginPath();
+        ctx.rect(bx + bxOff - 5, by - bh * bp, 10, bh * bp);
+        ctx.fill();
+        // Glans
+        const grad = ctx.createLinearGradient(bx+bxOff-5, 0, bx+bxOff+5, 0);
+        grad.addColorStop(0, 'rgba(255,255,200,0.06)');
+        grad.addColorStop(1, 'rgba(0,0,0,0)');
+        ctx.fillStyle = grad;
+        ctx.beginPath();
+        ctx.rect(bx + bxOff - 5, by - bh * bp, 10, bh * bp);
+        ctx.fill();
+      });
+
+      // ── Horisontella profileer ──
+      const hBeams = [0, 0.5, 1.0];
+      hBeams.forEach((frac, i) => {
+        const hp = ease(clamp((p - 0.4 - i*0.1) * 2, 0, 1));
+        if (hp <= 0) return;
+        ctx.fillStyle = '#2a2218';
+        ctx.beginPath();
+        ctx.rect(bx - bw/2, by - bh*frac - 5, bw * hp, 10);
+        ctx.fill();
+      });
+
+      // ── Fasadpaneler (grafik) ──
+      const fp = ease(clamp((p - 0.7) * 3, 0, 1));
+      if (fp > 0) {
+        // Vänster fasad
+        ctx.globalAlpha = fp;
+        const lg = ctx.createLinearGradient(bx - bw/2, by-bh, bx, by);
+        lg.addColorStop(0, '#1e1a12');
+        lg.addColorStop(1, '#2a2216');
+        ctx.fillStyle = lg;
+        ctx.beginPath();
+        ctx.rect(bx - bw/2 + 8, by - bh + 8, bw/2 - 16, bh/2 - 8);
+        ctx.fill();
+
+        // Höger fasad
+        ctx.beginPath();
+        ctx.rect(bx + 8, by - bh + 8, bw/2 - 16, bh/2 - 8);
+        ctx.fill();
+
+        // Logotype på montern
+        const lp = ease(clamp((p - 0.85) * 5, 0, 1));
+        if (lp > 0) {
+          ctx.globalAlpha = fp * lp;
+          ctx.fillStyle = '#F4EFE6';
+          ctx.font = `900 ${Math.round(bw*0.09)}px Inter, sans-serif`;
+          ctx.letterSpacing = '-2px';
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'middle';
+          ctx.fillText('ME', bx - bw/4, by - bh*0.75);
+          ctx.fillStyle = '#e8f040';
+          ctx.fillText('.', bx - bw/4 + bw*0.095, by - bh*0.75);
+
+          // Spotlights på montern
+          const sl1 = ctx.createRadialGradient(bx-bw/4, by-bh*0.5, 0, bx-bw/4, by-bh*0.5, bw*0.3);
+          sl1.addColorStop(0, `rgba(255,245,200,${0.08 * lp})`);
+          sl1.addColorStop(1, 'rgba(0,0,0,0)');
+          ctx.globalAlpha = 1;
+          ctx.fillStyle = sl1;
+          ctx.beginPath();
+          ctx.rect(bx - bw/2, by - bh, bw, bh);
+          ctx.fill();
+        }
+        ctx.globalAlpha = 1;
+      }
+
+      // ── Spotlight-koner uppifrån ──
+      const sp = clamp((p - 0.8) * 5, 0, 1);
+      if (sp > 0) {
+        [-bw/3, bw/3].forEach(ox => {
+          const sg = ctx.createLinearGradient(bx+ox, 0, bx+ox, by);
+          sg.addColorStop(0, `rgba(255,245,180,${0.06*sp})`);
+          sg.addColorStop(1, `rgba(255,245,180,0)`);
+          ctx.fillStyle = sg;
+          ctx.beginPath();
+          ctx.moveTo(bx + ox, 0);
+          ctx.lineTo(bx + ox - bw*0.08, by - bh*0.1);
+          ctx.lineTo(bx + ox + bw*0.08, by - bh*0.1);
+          ctx.closePath();
+          ctx.fill();
+        });
+      }
+
+      return { bx, by, bw, bh };
+    }
+
+    // ── Rita golv & bakgrund ──
+    function drawBackground() {
+      // Bakgrundsgrad
+      const bg = ctx.createLinearGradient(0, 0, 0, H);
+      bg.addColorStop(0, '#080806');
+      bg.addColorStop(0.6, '#0e0d0a');
+      bg.addColorStop(1, '#141210');
+      ctx.fillStyle = bg;
+      ctx.fillRect(0, 0, W, H);
+
+      // Mässhallsgolv
+      const floor = ctx.createLinearGradient(0, H*0.65, 0, H);
+      floor.addColorStop(0, '#111008');
+      floor.addColorStop(1, '#1a180e');
+      ctx.fillStyle = floor;
+      ctx.fillRect(0, H*0.65, W, H*0.35);
+
+      // Golvreflektion / glans
+      const floorGlow = ctx.createRadialGradient(W/2, H*0.68, 0, W/2, H*0.68, W*0.5);
+      floorGlow.addColorStop(0, 'rgba(200,180,100,0.06)');
+      floorGlow.addColorStop(1, 'rgba(0,0,0,0)');
+      ctx.fillStyle = floorGlow;
+      ctx.fillRect(0, H*0.55, W, H*0.45);
+
+      // Takljus / rampljus
+      for (let i = 0; i < 5; i++) {
+        const lx = W * (i+1)/6;
+        const lg = ctx.createRadialGradient(lx, 0, 0, lx, H*0.3, H*0.5);
+        lg.addColorStop(0, 'rgba(255,250,220,0.04)');
+        lg.addColorStop(1, 'rgba(0,0,0,0)');
+        ctx.fillStyle = lg;
+        ctx.fillRect(0, 0, W, H);
+      }
+    }
+
+    // ── Filmkorn (cinematic grain) ──
+    function drawGrain() {
+      const imageData = ctx.createImageData(W, H);
+      const data = imageData.data;
+      for (let i = 0; i < data.length; i += 4) {
+        const g = (Math.random() * 14)|0;
+        data[i] = data[i+1] = data[i+2] = g;
+        data[i+3] = 18;
+      }
+      ctx.putImageData(imageData, 0, 0);
+    }
+
+    // ── Vinjett ──
+    function drawVignette() {
+      const vg = ctx.createRadialGradient(W/2, H/2, H*0.2, W/2, H/2, H*0.85);
+      vg.addColorStop(0, 'rgba(0,0,0,0)');
+      vg.addColorStop(1, 'rgba(0,0,0,0.72)');
+      ctx.fillStyle = vg;
+      ctx.fillRect(0, 0, W, H);
+    }
+
+    // ── Kamera-langsom slow zoom ──
+    let camScale = 1.0;
+    const CAM_ZOOM_SPEED = 0.00012;
+
+    // ── Huvudloop ──
+    function draw() {
+      t += 0.016;
+      const progress = Math.min(t / 6, 1); // 6 sek att bygga
+
+      ctx.clearRect(0, 0, W, H);
+
+      // Slow zoom med transform
+      camScale += CAM_ZOOM_SPEED;
+      ctx.save();
+      ctx.translate(W/2, H/2);
+      ctx.scale(camScale, camScale);
+      ctx.translate(-W/2, -H/2);
+
+      drawBackground();
+
+      const booth = drawBooth(progress);
+
+      // Gnistor när person 2 borrar (bygg-fas)
+      if (progress > 0.25 && progress < 0.75 && Math.random() < 0.3) {
+        spawnParticle(
+          booth.bx - booth.bw * 0.05 + (Math.random()-0.5)*40,
+          booth.by - booth.bh * (0.3 + Math.random()*0.5),
+          'spark'
+        );
+      }
+      // Damm hela tiden
+      if (Math.random() < 0.08) {
+        spawnParticle(
+          booth.bx + (Math.random()-0.5)*booth.bw*0.8,
+          booth.by - 10,
+          'dust'
+        );
+      }
+
+      // Partiklar
+      for (let i = particles.length-1; i >= 0; i--) {
+        const p = particles[i];
+        p.x += p.vx;
+        p.y += p.vy;
+        p.vy += p.type === 'dust' ? -0.02 : 0.08;
+        p.life -= p.decay;
+        if (p.life <= 0) { particles.splice(i,1); continue; }
+        ctx.globalAlpha = p.life * (p.type === 'dust' ? 0.5 : 0.9);
+        ctx.fillStyle = p.color;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r * p.life, 0, Math.PI*2);
+        ctx.fill();
+        ctx.globalAlpha = 1;
+      }
+
+      // Tre arbetare
+      const grd = H * 0.68;
+      const sc = Math.min(W, H) / 700;
+
+      // Person 1 – bär panel (kommer in från vänster)
+      const w1x = lerp(-100, booth.bx - booth.bw*0.38, ease(clamp(t/3, 0, 1)));
+      const w1leg = progress < 0.5 ? t * 180 : 0;
+      drawPerson(w1x, grd, sc, w1leg, 25, true, false);
+
+      // Person 2 – borrar (mitten)
+      const w2x = booth.bx - booth.bw*0.05;
+      const w2alpha = ease(clamp((t-0.5)/1, 0, 1));
+      ctx.globalAlpha = w2alpha;
+      const drillShake = progress < 0.8 ? Math.sin(t*18)*1.5 : 0;
+      drawPerson(w2x + drillShake, grd, sc, Math.sin(t*1.5)*3, -55, false, false);
+      ctx.globalAlpha = 1;
+
+      // Person 3 – läser ritning (höger)
+      const w3x = booth.bx + booth.bw*0.38;
+      const w3alpha = ease(clamp((t-0.3)/1, 0, 1));
+      ctx.globalAlpha = w3alpha;
+      drawPerson(w3x, grd, sc, Math.sin(t*0.6)*2, 10, false, true);
+      ctx.globalAlpha = 1;
+
+      ctx.restore(); // slut kamera-zoom
+
+      drawGrain();
+      drawVignette();
+
+      // Scanline-effekt (cinema)
+      ctx.fillStyle = 'rgba(0,0,0,0.03)';
+      for (let y = 0; y < H; y += 4) {
+        ctx.fillRect(0, y, W, 1);
+      }
+
+      requestAnimationFrame(draw);
+    }
+
+    requestAnimationFrame(draw);
+  </script>
+
+</body>
+</html>

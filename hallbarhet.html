@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hållbarhet – ME Production</title>
+  <meta name="description" content="ME Production arbetar aktivt med hållbarhet – från materialval och logistik till krav på leverantörer. Ansvar är en del av varje leverans." />
+  <meta property="og:title" content="Hållbarhet – ME Production" />
+  <meta property="og:description" content="ME Production arbetar aktivt med hållbarhet – från materialval och logistik till krav på leverantörer." />
+  <link rel="canonical" href="https://meproduction.se/hallbarhet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    @font-face { font-family: 'Candara'; font-weight: 100 900; font-style: normal;
+      src: local('Candara'), local('Candara Regular'), local('Candara-Regular'),
+           local('Candara Light'), local('Candara Bold'), local('Candara-Bold'); }
+    @font-face { font-family: 'Candara'; font-weight: 600 900; font-style: normal;
+      src: local('Candara Bold'), local('Candara-Bold'), local('Candara SemiBold'); }
+  </style>
+  
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #111;
+      --yellow: #F2C840;
+      --yellow2: #c9a020;
+      --body: #F4EFE6;
+      --gray: #666;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Candara', 'Candara Condensed', 'Inter', sans-serif; background: var(--body); color: var(--black); cursor: none; overflow-x: hidden; }
+    a { text-decoration: none; color: inherit; }
+    @media (hover: none) { body { cursor: auto; } #cur-dot, #cur-ring { display: none; } }
+
+    #cur-dot, #cur-ring {
+      position: fixed; border-radius: 50%; pointer-events: none; z-index: 9999;
+      transform: translate(-50%,-50%);
+    }
+    #cur-dot { width:8px;height:8px;background:var(--yellow);mix-blend-mode:difference; }
+    #cur-ring { width:36px;height:36px;border:1.5px solid rgba(242,200,64,0.6);z-index:9998;transition:width .25s,height .25s,border-color .25s; }
+
+    /* NAV */
+    nav {
+      position: fixed; top:0;left:0;right:0; z-index:100;
+      display:flex;align-items:center;justify-content:space-between;
+      padding:22px 5vw;
+      background:rgba(17,17,17,0.92);backdrop-filter:blur(14px);
+      border-bottom:1px solid rgba(255,255,255,0.06);
+    }
+    .nav-logo { font-size:1.5rem;font-weight:900;letter-spacing:-0.05em;color:#fff; }
+    .nav-logo span { color:var(--yellow); }
+    .nav-links { display:flex;gap:32px;align-items:center;list-style:none; }
+    .nav-links a { font-size:0.82rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.6);transition:color .2s; }
+    .nav-links a:hover, .nav-links a.active { color:#fff; }
+    .nav-cta { background:var(--yellow)!important;color:#111!important;padding:10px 20px;border-radius:4px;font-weight:700!important;transition:background .2s,transform .2s; }
+    .nav-cta:hover { background:var(--yellow2)!important;transform:translateY(-1px); }
+
+    /* HERO */
+    .hero {
+      min-height: 85vh;
+      background: #0d0d0d;
+      display: flex;
+      align-items: flex-end;
+      padding: 0 5vw 10vh;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-img {
+      position: absolute; inset: 0;
+      background: url('https://media.meproduction.se/2019/06/WOW_4-uai-258x172.png') center/cover no-repeat;
+      filter: brightness(0.3) saturate(0.6);
+      transform: scale(1.04);
+      transition: transform 8s ease;
+    }
+    .hero-img.loaded { transform: scale(1); }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0.5) 100%);
+    }
+    .hero-content { position:relative;z-index:2;max-width:780px; }
+    .hero-label {
+      font-size:0.7rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;
+      color:var(--yellow);margin-bottom:20px;display:flex;align-items:center;gap:10px;
+    }
+    .hero-label::before { content:'';width:24px;height:1px;background:var(--yellow); }
+    .hero h1 {
+      font-size:clamp(3rem,8vw,7rem);font-weight:900;letter-spacing:-0.05em;
+      line-height:0.95;color:#fff;margin-bottom:28px;
+    }
+    .hero h1 em { font-style:normal;color:var(--yellow); }
+    .hero-sub {
+      font-size:1.1rem;color:rgba(255,255,255,0.5);max-width:500px;
+      line-height:1.8;font-weight:300;
+    }
+
+    /* INTRO SPLIT */
+    .intro {
+      display:grid;grid-template-columns:1fr 2fr;gap:80px;
+      padding:100px 5vw;background:#fff;align-items:start;
+    }
+    .intro-label {
+      font-size:0.7rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;
+      color:var(--yellow2);position:sticky;top:100px;
+    }
+    .intro-text h2 {
+      font-size:clamp(1.8rem,3vw,2.6rem);font-weight:900;letter-spacing:-0.04em;
+      line-height:1.15;margin-bottom:28px;
+    }
+    .intro-text p { font-size:1.05rem;line-height:1.85;color:#444;margin-bottom:20px; }
+    .intro-text p strong { color:#111;font-weight:700; }
+
+    /* PILLARS */
+    .pillars {
+      background: var(--black);
+      padding: 100px 5vw;
+    }
+    .pillars-header {
+      display:flex;justify-content:space-between;align-items:flex-end;
+      margin-bottom:60px;flex-wrap:wrap;gap:20px;
+    }
+    .pillars-header h2 { font-size:clamp(2rem,4vw,3rem);font-weight:900;letter-spacing:-0.04em;color:#fff; }
+    .pillars-grid {
+      display:grid;grid-template-columns:repeat(3,1fr);gap:2px;
+    }
+    .pillar {
+      background:#1a1a1a;padding:48px 40px;position:relative;overflow:hidden;
+      transition:background .3s;
+    }
+    .pillar::before {
+      content:'';position:absolute;top:0;left:0;width:3px;height:0%;
+      background:var(--yellow);transition:height .4s cubic-bezier(.16,1,.3,1);
+    }
+    .pillar:hover::before { height:100%; }
+    .pillar:hover { background:#222; }
+    .pillar-num {
+      font-size:0.65rem;font-weight:900;letter-spacing:0.16em;
+      color:#F2C840;margin-bottom:28px;text-transform:uppercase;
+    }
+    .pillar h3 {
+      font-size:1.25rem;font-weight:800;letter-spacing:-0.02em;
+      color:#fff;margin-bottom:14px;line-height:1.2;
+    }
+    .pillar p { font-size:0.9rem;color:rgba(255,255,255,0.7);line-height:1.75; }
+
+    /* CASE ROW */
+    .case-row {
+      display:grid;grid-template-columns:1fr 1fr;
+      background:#f0ebe2;
+    }
+    .case-row-img {
+      min-height:480px;
+      background:center/cover no-repeat;
+      filter:grayscale(15%) brightness(0.9);
+      transition:filter .5s;
+    }
+    .case-row:hover .case-row-img { filter:grayscale(0%) brightness(1); }
+    .case-row-text {
+      padding:80px 72px;display:flex;flex-direction:column;justify-content:center;
+    }
+    .case-row-tag {
+      font-size:0.68rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;
+      color:var(--yellow2);margin-bottom:20px;
+    }
+    .case-row-text h3 {
+      font-size:clamp(1.6rem,2.5vw,2.2rem);font-weight:900;letter-spacing:-0.04em;
+      line-height:1.15;margin-bottom:18px;
+    }
+    .case-row-text p { font-size:0.98rem;line-height:1.8;color:#555; }
+
+    /* STATS */
+    .stats {
+      background:var(--yellow);
+      padding:80px 5vw;
+      display:grid;grid-template-columns:repeat(4,1fr);
+      gap:2px;
+    }
+    .stat-item {
+      background:rgba(0,0,0,0.06);padding:48px 40px;
+      transition:background .2s;
+    }
+    .stat-item:hover { background:rgba(0,0,0,0.1); }
+    .stat-item strong {
+      display:block;font-size:clamp(2.5rem,5vw,4rem);font-weight:900;
+      letter-spacing:-0.06em;color:#111;line-height:1;margin-bottom:8px;
+    }
+    .stat-item span { font-size:0.82rem;font-weight:600;color:rgba(0,0,0,0.5);letter-spacing:0.06em;text-transform:uppercase; }
+
+    /* CTA */
+    .cta-band {
+      background:#0a0a0a;padding:120px 5vw;text-align:center;
+    }
+    .cta-band h2 {
+      font-size:clamp(2.2rem,5vw,4.5rem);font-weight:900;letter-spacing:-0.05em;
+      color:#fff;line-height:1.05;margin-bottom:20px;
+    }
+    .cta-band h2 em { font-style:normal;color:var(--yellow); }
+    .cta-band p { font-size:1rem;color:rgba(255,255,255,0.4);max-width:480px;margin:0 auto 44px;line-height:1.75; }
+    .cta-btn {
+      display:inline-block;background:var(--yellow);color:#111;
+      font-weight:800;font-size:0.88rem;letter-spacing:0.08em;text-transform:uppercase;
+      padding:18px 44px;border-radius:4px;transition:background .2s,transform .3s;
+    }
+    .cta-btn:hover { background:var(--yellow2);transform:translateY(-3px); }
+
+    /* FOOTER */
+    footer {
+      background:#0a0a0a;padding:40px 5vw;
+      display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;
+      border-top:1px solid rgba(255,255,255,0.05);
+    }
+    footer p { font-size:0.82rem;color:rgba(255,255,255,0.3); }
+    footer a { color:rgba(255,255,255,0.5);transition:color .2s; }
+    footer a:hover { color:var(--yellow); }
+
+    /* REVEAL */
+    .reveal { opacity:0;transform:translateY(44px);transition:opacity .85s cubic-bezier(.16,1,.3,1),transform .85s cubic-bezier(.16,1,.3,1); }
+    .reveal.visible { opacity:1;transform:translateY(0); }
+
+    /* RESPONSIVE */
+    @media (max-width:960px) {
+      .intro { grid-template-columns:1fr;gap:32px; }
+      .intro-label { position:static; }
+      .pillars-grid { grid-template-columns:1fr; }
+      .case-row { grid-template-columns:1fr; }
+      .case-row-img { min-height:300px; }
+      .case-row-text { padding:48px 5vw; }
+      .stats { grid-template-columns:repeat(2,1fr); }
+    }
+    @media (max-width:600px) {
+      .nav-links li:not(:last-child) { display:none; }
+      .stats { grid-template-columns:1fr 1fr; }
+      footer { flex-direction:column;text-align:center; }
+    }
+  </style>
+
+  <!-- SEO: Open Graph extra -->
+  <meta property="og:image" content="https://meproduction.se/og-image.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://meproduction.se/hallbarhet" />
+  <!-- SEO: Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Hållbarhet – ME Production" />
+  <meta name="twitter:description" content="ME Production arbetar aktivt med hållbarhet – ansvar är en del av varje leverans." />
+  <meta name="twitter:image" content="https://meproduction.se/og-image.jpg" />
+  <!-- SEO: Structured Data -->
+  <script type="application/ld+json">
+  {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Hållbarhet – ME Production",
+      "url": "https://meproduction.se/hallbarhet",
+      "description": "ME Production arbetar aktivt med hållbarhet."
+    }
+  </script>
+</head>
+<body>
+
+  <div id="cur-dot"></div>
+  <div id="cur-ring"></div>
+
+  <nav>
+    <a href="index.html" class="nav-logo"><img fetchpriority="high" decoding="async" src="me_production_vit_vit_gul_prick (kopia).webp" alt="ME Production" style="height:34px;width:auto;display:inline-block;vertical-align:middle;"></a>
+    <ul class="nav-links">
+      <li><a href="index.html#tjanster">Tjänster</a></li>
+      <li><a href="index.html#case">Case</a></li>
+      <li><a href="ganget.html">Gänget</a></li>
+      <li><a href="hallbarhet.html" class="active">Hållbarhet</a></li>
+      
+      <li><a href="index.html#kontakt" class="nav-cta">Kontakta oss</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-img" id="heroImg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-label">Ansvar &amp; hållbarhet</div>
+      <h1>Vi bygger.<br />Vi tar <em>ansvar.</em></h1>
+      <p class="hero-sub">
+        Varje projekt vi levererar lämnar ett avtryck – vi jobbar hårt för att det avtrycket ska vara så litet som möjligt.
+      </p>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section class="intro">
+    <div class="intro-label reveal">Varför det spelar roll</div>
+    <div class="intro-text">
+      <h2 class="reveal">Hållbarhet är inte ett tillägg. Det är en del av jobbet.</h2>
+      <p class="reveal" style="transition-delay:.08s">
+        Eventbranschen rör sig fort. Det byggs, etableras, rivas ned – och sedan görs det om igen. Vi vet det bättre än de flesta. Och precis därför tar vi frågan på allvar.
+      </p>
+      <p class="reveal" style="transition-delay:.14s">
+        Det handlar inte om att sätta ett grönt märke på ett erbjudande. Det handlar om att <strong>välja rätt material</strong>, planera logistiken smart, ställa samma krav på underleverantörer som vi ställer på oss själva – och att lämna varje plats i bättre skick än vi hittade den.
+      </p>
+      <p class="reveal" style="transition-delay:.2s">
+        Vi är inte perfekta. Men vi rör oss i rätt riktning, projekt för projekt.
+      </p>
+    </div>
+  </section>
+
+  <!-- PILLARS -->
+  <section class="pillars">
+    <div class="pillars-header">
+      <h2 class="reveal">Hur vi faktiskt<br />arbetar med det.</h2>
+    </div>
+    <div class="pillars-grid">
+      <div class="pillar reveal">
+        <div class="pillar-num">01 — Material</div>
+        <h3>Återbruk före<br />nytillverkning</h3>
+        <p>Vi designar konstruktioner för att leva länge. Monterelement, rigg och inredning köps inte nytt om det redan finns i lager – och det vi bygger nytt konstrueras för att kunna användas igen.</p>
+      </div>
+      <div class="pillar reveal" style="transition-delay:.08s">
+        <div class="pillar-num">02 — Logistik</div>
+        <h3>Färre fordon,<br />bättre planering</h3>
+        <p>Vi samordnar transporter mellan projekt för att undvika tomkörningar. Etablering och rivning planeras i ett svep – inte som separata resor utan som en genomtänkt helhet.</p>
+      </div>
+      <div class="pillar reveal" style="transition-delay:.16s">
+        <div class="pillar-num">03 — Leverantörer</div>
+        <h3>Vi väljer partners<br />med omsorg</h3>
+        <p>Vårt leverantörsnät byggs på förtroende – och det innebär att vi ställer frågor. Hur hanterar ni avfall? Var tillverkas det? Vi väljer hellre rätt partner än billigaste alternativ.</p>
+      </div>
+      <div class="pillar reveal" style="transition-delay:.06s">
+        <div class="pillar-num">04 — På plats</div>
+        <h3>Sortering och<br />avfallshantering</h3>
+        <p>På evenemang som Way Out West och Vasaloppet arbetar vi aktivt med avfallssortering på plats. Rivningen avslutas inte förrän platsen är ren – det är en del av leveransen.</p>
+      </div>
+      <div class="pillar reveal" style="transition-delay:.12s">
+        <div class="pillar-num">05 — Energi</div>
+        <h3>Smart el och<br />LED-first</h3>
+        <p>Vi väljer LED-teknik och energieffektiva lösningar som standard. Elförsörjning på evenemang planeras för att minimera överskottskapacitet och onödig förbrukning.</p>
+      </div>
+      <div class="pillar reveal" style="transition-delay:.18s">
+        <div class="pillar-num">06 — Framåt</div>
+        <h3>Kontinuerligt<br />bättre</h3>
+        <p>Vi mäter, lär och förbättrar. Varje projekt ger oss ny kunskap om hur vi kan göra nästa ännu bättre. Det är inte en destination – det är en riktning vi aldrig slutar röra oss i.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CASE ROW 1 -->
+  <div class="case-row">
+    <div class="case-row-img" style="background-image:url('https://media.meproduction.se/2019/06/WOW_4-uai-258x172.png');"></div>
+    <div class="case-row-text">
+      <div class="case-row-tag">I praktiken — Way Out West</div>
+      <h3 class="reveal">Tusentals besökare.<br />Ett gemensamt ansvar.</h3>
+      <p class="reveal" style="transition-delay:.08s">
+        På Way Out West hanterar vi infrastruktur och etablering för ett av Göteborgs mest älskade evenemang. Det innebär samordning av hundratals leveranser, avfallshantering på festivalområdet och en rivning som lämnar Slottsskogen precis som vi hittade det – gärna lite bättre.
+      </p>
+    </div>
+  </div>
+
+  <!-- CASE ROW 2 -->
+  <div class="case-row" style="direction:rtl;">
+    <div class="case-row-img" style="background-image:url('https://media.meproduction.se/2019/06/vasaloppet_8-uai-258x172.png');direction:ltr;"></div>
+    <div class="case-row-text" style="direction:ltr;">
+      <div class="case-row-tag">I praktiken — Vasaloppet</div>
+      <h3 class="reveal">En skog utanför Mora.<br />Ingen ska märka att vi var där.</h3>
+      <p class="reveal" style="transition-delay:.08s">
+        Vasaloppet är ett naturupplevelseevenemang lika mycket som ett sportevenemang. Vi etablerar strukturer i en miljö som måste lämnas orörd. Det kräver precision, respekt för platsen och en nedrivningsplan som är lika genomarbetad som etableringen.
+      </p>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="stat-item reveal">
+      <strong>100%</strong>
+      <span>Platser lämnade<br />i gott skick</span>
+    </div>
+    <div class="stat-item reveal" style="transition-delay:.08s">
+      <strong>↻</strong>
+      <span>Återbruk som<br />standard</span>
+    </div>
+    <div class="stat-item reveal" style="transition-delay:.16s">
+      <strong>0</strong>
+      <span>Kompromisser<br />med kvalitet</span>
+    </div>
+    <div class="stat-item reveal" style="transition-delay:.24s">
+      <strong>→</strong>
+      <span>Alltid rör vi oss<br />framåt</span>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <section class="cta-band">
+    <h2>Vill du ha en partner<br />som tänker <em>ett steg längre?</em></h2>
+    <p>Hör av dig – vi berättar gärna hur vi kan anpassa ett hållbart upplägg för just ditt projekt.</p>
+    <a href="mailto:info@meproduction.se?subject=Hållbarhet" class="cta-btn">Prata med oss →</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <a href="index.html"><img fetchpriority="high" decoding="async" src="me_production_vit_vit_gul_prick (kopia).webp" alt="ME Production" style="height:26px;width:auto;display:inline-block;vertical-align:middle;"></a>
+    <p>© 2025 ME Production AB · <a href="mailto:info@meproduction.se">info@meproduction.se</a></p>
+  </footer>
+
+  <script>
+    // Cursor
+    const dot = document.getElementById('cur-dot');
+    const ring = document.getElementById('cur-ring');
+    let mx=-200,my=-200,rx=-200,ry=-200;
+    document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;dot.style.left=mx+'px';dot.style.top=my+'px';});
+    (function f(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(f);})();
+    document.querySelectorAll('a,button,.pillar').forEach(el=>{
+      el.addEventListener('mouseenter',()=>{ring.style.width=ring.style.height='60px';ring.style.borderColor='#F2C840';dot.style.opacity='0';});
+      el.addEventListener('mouseleave',()=>{ring.style.width=ring.style.height='36px';ring.style.borderColor='rgba(242,200,64,0.6)';dot.style.opacity='1';});
+    });
+
+    // Scroll reveal
+    const obs = new IntersectionObserver(entries=>{
+      entries.forEach(e=>{ if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);} });
+    },{threshold:0.12});
+    document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+    // Hero stagger + slow zoom
+    const heroEls = document.querySelectorAll('.hero-label,.hero h1,.hero-sub');
+    heroEls.forEach((el,i)=>{
+      el.style.cssText+=`opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.16,1,.3,1) ${i*.14}s,transform .9s cubic-bezier(.16,1,.3,1) ${i*.14}s;`;
+    });
+    window.addEventListener('load',()=>{
+      setTimeout(()=>{heroEls.forEach(el=>{el.style.opacity='1';el.style.transform='translateY(0)';});},150);
+      document.getElementById('heroImg').classList.add('loaded');
+    });
+
+    // Magnetic CTA
+    const ctaBtn = document.querySelector('.cta-btn');
+    if(ctaBtn){
+      ctaBtn.addEventListener('mousemove',e=>{
+        const r=ctaBtn.getBoundingClientRect();
+        ctaBtn.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.3}px,${(e.clientY-r.top-r.height/2)*.3}px) translateY(-3px)`;
+      });
+      ctaBtn.addEventListener('mouseleave',()=>{ctaBtn.style.transform='';ctaBtn.style.transition='transform .5s cubic-bezier(.16,1,.3,1),background .2s';});
+    }
+  </script>
+
+</body>
+</html>

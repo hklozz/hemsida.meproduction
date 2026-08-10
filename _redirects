@@ -1,0 +1,24 @@
+# 301-redirects: gamla meproduction.se URLs → nya sidor
+# Netlify läser denna fil automatiskt
+
+# Gamla URL-strukturer → nya
+/om-oss                 /ganget.html            301
+/om-oss/                /ganget.html            301
+/hallbarhet/            /hallbarhet.html        301
+/kontakt                /index.html#kontakt     301
+/kontakt/               /index.html#kontakt     301
+/tjanster               /index.html#tjanster    301
+/tjanster/              /index.html#tjanster    301
+/case                   /index.html#case        301
+/case/                  /index.html#case        301
+/stockholm/             /stockholm.html         301
+/goteborg/              /goteborg.html          301
+
+# Case-sidor (gamla slugs om de finns)
+/case/clarion           /case-clarion.html      301
+/case/nordsjo           /case-nordsjo.html      301
+/case/vasaloppet        /case-vasaloppet.html   301
+/case/way-out-west      /case-way-out-west.html 301
+
+# Fallback: okända URLs → startsidan
+/*                      /index.html             200
