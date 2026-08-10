@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ME Production – Evenemangsproduktion från A till över förväntan</title>
-  <meta name="description" content="ME Production är din helhetsleverantör inom evenemangsproduktion. Vi sköter allt från planering och design till monter, skyltning och rivning. Göteborg & Stockholm." />
-  <meta name="keywords" content="evenemangsproduktion, mässmonter, eventproduktion, skyltning, göteborg, stockholm, meproduction" />
-  <meta property="og:title" content="ME Production – Evenemangsproduktion från A till över förväntan" />
-  <meta property="og:description" content="Från minsta monter till största evenemang. Vi tar hand om hela processen." />
+  <title>{{seo.title}}</title>
+  <meta name="description" content="{{seo.description}}" />
+  <meta name="keywords" content="{{seo.keywords}}" />
+  <meta property="og:title" content="{{seo.ogTitle}}" />
+  <meta property="og:description" content="{{seo.ogDescription}}" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://meproduction.se" />
   <link rel="canonical" href="https://meproduction.se" />
@@ -885,7 +885,7 @@
 
   <!-- NAV -->
   <nav id="navbar">
-    <a href="#" class="nav-logo"><img fetchpriority="high" decoding="async" id="nav-logo-img" src="me_production_vit_vit_gul_prick (kopia).webp" alt="ME Production" style="height:34px;width:auto;display:inline-block;vertical-align:middle;"></a>
+    <a href="#" class="nav-logo"><img fetchpriority="high" decoding="async" id="nav-logo-img" src="me_production_vit_vit_gul_prick (kopia).webp" alt="{{site.logoAlt}}" style="height:34px;width:auto;display:inline-block;vertical-align:middle;"></a>
     <ul class="nav-links">
       <li><a href="#tjanster">Tjänster</a></li>
       <li><a href="#case">Case</a></li>
@@ -910,15 +910,14 @@
 
     <!-- CONTENT -->
     <div class="hero-content">
-      <div class="hero-tag">Evenemangsproduktion · Göteborg & Stockholm</div>
-      <h1>Evenemangsproduktion &amp; Mässmontrar<br /><em>från första skiss till färdigt resultat.</em></h1>
+      <div class="hero-tag">{{home.hero.tag}}</div>
+      <h1>{{home.hero.heading}}<br /><em>{{home.hero.headingEm}}</em></h1>
       <p class="hero-sub">
-        Från infrastruktur till teknik. Från planering till rivning.
-        Från helhet till detaljnivå. Från A till över förväntan.
+        {{home.hero.sub}}
       </p>
       <div class="hero-btns">
-        <a href="#case" class="btn-primary">Se våra case →</a>
-        <a href="#kontakt" class="btn-ghost">Kontakta oss</a>
+        <a href="#case" class="btn-primary">{{home.hero.btnPrimary}}</a>
+        <a href="#kontakt" class="btn-ghost">{{home.hero.btnGhost}}</a>
       </div>
     </div>
 
@@ -959,37 +958,36 @@
 
   <!-- TJÄNSTER -->
   <section id="tjanster">
-    <div class="section-label">Vad vi gör</div>
-    <h2>Mässmontrar &amp; Eventproduktion – allt under ett tak.</h2>
+    <div class="section-label">{{home.services.label}}</div>
+    <h2>{{home.services.heading}}</h2>
     <p class="section-intro">
-      Vi är din helhetsleverantör – oavsett om det gäller en mässmonter, ett
-      festival­event eller en butiksinredning. Du slipper pussla – vi tar hand om allt.
+      {{home.services.intro}}
     </p>
     <div class="services-grid">
       <div class="service-card">
         <div class="service-num">01</div>
-        <h3>Projektledning</h3>
-        <p>En dedikerad projektledare som är med dig hela vägen – från idé till efterarbete. Alltid tillgänglig, alltid ett steg före.</p>
+        <h3>{{home.services.items.0.title}}</h3>
+        <p>{{home.services.items.0.desc}}</p>
       </div>
       <div class="service-card">
         <div class="service-num">02</div>
-        <h3>Idé, Design & Skiss</h3>
-        <p>Vi visualiserar projektet så att alla inblandade får en gemensam bild. Från skiss till detaljritning.</p>
+        <h3>{{home.services.items.1.title}}</h3>
+        <p>{{home.services.items.1.desc}}</p>
       </div>
       <div class="service-card">
         <div class="service-num">03</div>
-        <h3>Produktion & Byggnation</h3>
-        <p>Montrar, inredningar och konstruktioner – vi bygger det mesta. Oavsett storlek, form eller material.</p>
+        <h3>{{home.services.items.2.title}}</h3>
+        <p>{{home.services.items.2.desc}}</p>
       </div>
       <div class="service-card">
         <div class="service-num">04</div>
-        <h3>Skyltning & Branding</h3>
-        <p>Grafisk profil, skyltar, tryck och wrap. Vi ser till att ditt varumärke syns och sitter precis rätt.</p>
+        <h3>{{home.services.items.3.title}}</h3>
+        <p>{{home.services.items.3.desc}}</p>
       </div>
       <div class="service-card">
         <div class="service-num">05</div>
-        <h3>Etablering & Rivning</h3>
-        <p>Leverans, montering, nedmontering – vi tar hand om det praktiska så att du kan fokusera på ditt event.</p>
+        <h3>{{home.services.items.4.title}}</h3>
+        <p>{{home.services.items.4.desc}}</p>
       </div>
     </div>
   </section>
@@ -998,8 +996,8 @@
   <section id="case">
     <div class="cases-header">
       <div>
-        <div class="section-label">Utvalda case</div>
-        <h2>Sagt och gjort.</h2>
+        <div class="section-label">{{home.case.label}}</div>
+        <h2>{{home.case.heading}}</h2>
       </div>
       <a href="#kontakt" class="btn-ghost">Se alla projekt →</a>
     </div>
@@ -1054,23 +1052,23 @@
 
   <!-- NUMBERS -->
   <section class="numbers">
-    <div class="section-label">ME Production i siffror</div>
+    <div class="section-label">{{home.numbers.label}}</div>
     <div class="numbers-grid">
       <div class="number-item">
-        <h3>11+</h3>
-        <p>År i branschen</p>
+        <h3>{{home.numbers.items.0.value}}</h3>
+        <p>{{home.numbers.items.0.label}}</p>
       </div>
       <div class="number-item">
-        <h3>5500+</h3>
-        <p>Genomförda projekt</p>
+        <h3>{{home.numbers.items.1.value}}</h3>
+        <p>{{home.numbers.items.1.label}}</p>
       </div>
       <div class="number-item">
-        <h3>100%</h3>
-        <p>Helhetsleverans</p>
+        <h3>{{home.numbers.items.2.value}}</h3>
+        <p>{{home.numbers.items.2.label}}</p>
       </div>
       <div class="number-item">
-        <h3>2</h3>
-        <p>Kontor – Göteborg & Stockholm</p>
+        <h3>{{home.numbers.items.3.value}}</h3>
+        <p>{{home.numbers.items.3.label}}</p>
       </div>
     </div>
   </section>
@@ -1088,17 +1086,13 @@
         </div>
       </div>
       <div class="about-text">
-        <div class="section-label">Det här är vi</div>
-        <h2>Vi frigör tid –<br />så du kan fokusera på rätt saker.</h2>
+        <div class="section-label">{{home.about.label}}</div>
+        <h2>{{home.about.headingLine1}}<br />{{home.about.headingLine2}}</h2>
         <p>
-          Genom ett brett kontaktnät och gedigen erfarenhet av produktion levererar vi
-          en helhetslösning. Du ska inte behöva vända dig till ett tryckeri, en teknikfirma
-          och en produktionsbyrå var för sig. Låt oss sköta det åt dig.
+          {{home.about.paragraph1}}
         </p>
         <p>
-          Vi älskar att bygga – att få vara på plats och se en idé formas till verklighet.
-          Det kan vara på en mässa i Göteborg, i en skog utanför Mora, på en pir i Norge
-          eller på ett event i Paris. Ingen utmaning är för stor eller för liten.
+          {{home.about.paragraph2}}
         </p>
         <ul class="about-list">
           <li>Helhetsleverantör – tryckeri, teknik och produktion under ett tak</li>
@@ -1152,12 +1146,12 @@
 
   <!-- TEAM TEASER -->
   <section id="team" style="background:var(--black);padding:100px 5vw;">
-    <div class="section-label" style="color:#F2C840;">Folket bakom allt</div>
+    <div class="section-label" style="color:#F2C840;">{{home.team.label}}</div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;">
       <div>
-        <h2 style="color:#fff;font-size:clamp(2.4rem,5vw,4.5rem);margin-bottom:24px;">10 personer.<br />2 kontor.<br /><em style="color:#F2C840;font-style:normal;">Oändligt engagemang.</em></h2>
+        <h2 style="color:#fff;font-size:clamp(2.4rem,5vw,4.5rem);margin-bottom:24px;">{{home.team.headingLine1}}<br />{{home.team.headingLine2}}<br /><em style="color:#F2C840;font-style:normal;">{{home.team.headingEm}}</em></h2>
         <p style="color:rgba(255,255,255,0.5);font-size:1.05rem;line-height:1.75;max-width:460px;margin-bottom:40px;">
-          Vi bygger evenemang, montrar och upplevelser – men vi är framför allt ett gäng som brinner för det vi gör och alltid är på plats när det gäller.
+          {{home.team.paragraph}}
         </p>
         <a href="ganget.html" style="display:inline-flex;align-items:center;gap:12px;background:#F2C840;color:#111;font-weight:800;font-size:0.88rem;letter-spacing:0.08em;text-transform:uppercase;padding:18px 36px;border-radius:4px;transition:background .2s,transform .3s;">
           Möt gänget →
@@ -1174,9 +1168,9 @@
 
   <!-- KUNDER -->
   <section class="clients">
-    <div class="section-label">Våra kunder</div>
-    <h2>Monterbyggare &amp; eventproducent åt Sveriges starkaste varumärken.</h2>
-    <p class="section-intro">Från lokala varumärken till världsledande bolag – vi levererar med samma passion varje gång.</p>
+    <div class="section-label">{{home.clients.label}}</div>
+    <h2>{{home.clients.heading}}</h2>
+    <p class="section-intro">{{home.clients.intro}}</p>
     <div class="clients-grid">
       <div class="client-item">Volvo</div>
       <div class="client-item">Way Out West</div>
@@ -1193,11 +1187,10 @@
   <section id="kontakt">
     <div class="contact-grid">
       <div class="contact-info">
-        <div class="section-label">Kontakta oss</div>
-        <h2>Låt oss prata om ditt nästa event.</h2>
+        <div class="section-label">{{home.contact.label}}</div>
+        <h2>{{home.contact.heading}}</h2>
         <p>
-          Oavsett storlek eller budget – vi älskar utmaningar.
-          Hör av dig så berättar vi vad vi kan göra för dig.
+          {{home.contact.paragraph}}
         </p>
         <ul class="contact-details">
           <li>
@@ -1392,32 +1385,32 @@
   <!-- FAQ -->
   <section class="faq-section" id="faq">
     <div style="max-width:900px;margin:0 auto;">
-      <div class="section-label">Vanliga frågor</div>
-      <h2>Det du undrar – vi svarar.</h2>
+      <div class="section-label">{{home.faq.label}}</div>
+      <h2>{{home.faq.heading}}</h2>
       <div class="faq-list">
         <details class="faq-item">
-          <summary>Vad kostar en mässmonter?</summary>
-          <p>Priset på en mässmonter varierar beroende på storlek, material och komplexitet. En enklare monter kan kosta från 30 000 kr, medan en custom-byggd monter med avancerad teknik och grafik kan landa på flera hundra tusen kronor. Vi skräddarsyr alltid lösningen efter er budget och era mål – kontakta oss så tar vi fram ett kostnadsförslag utan kostnad.</p>
+          <summary>{{home.faq.items.0.q}}</summary>
+          <p>{{home.faq.items.0.a}}</p>
         </details>
         <details class="faq-item">
-          <summary>Hur lång tid tar det att bygga en mässmonter?</summary>
-          <p>Produktionstiden beror på montrarnas storlek och komplexitet. Normalt räknar vi med 4–8 veckor från godkänd design till färdig monter. Etablering på mässgolvet sker vanligtvis 1–2 dagar före mässöppning. Vi hanterar hela processen – från brief och design till transport, byggnation och rivning.</p>
+          <summary>{{home.faq.items.1.q}}</summary>
+          <p>{{home.faq.items.1.a}}</p>
         </details>
         <details class="faq-item">
-          <summary>Vad ingår i evenemangsproduktion?</summary>
-          <p>Evenemangsproduktion hos ME Production innebär att vi tar ett helhetsansvar för ditt event. Det inkluderar projektledning, monterproduktion, grafik och skyltning, samt etablering och rivning. Vi är er enda kontaktpunkt från idé till genomfört evenemang.</p>
+          <summary>{{home.faq.items.2.q}}</summary>
+          <p>{{home.faq.items.2.a}}</p>
         </details>
         <details class="faq-item">
-          <summary>Jobbar ni i hela Sverige?</summary>
-          <p>Ja! Vi har kontor i Göteborg och Stockholm men levererar evenemang och mässmontrar i hela Sverige – från Malmö till Kiruna. Vi hanterar transport och logistik oavsett var i landet ert event äger rum.</p>
+          <summary>{{home.faq.items.3.q}}</summary>
+          <p>{{home.faq.items.3.a}}</p>
         </details>
         <details class="faq-item">
-          <summary>Kan ni hjälpa till med både mässor och festivaler?</summary>
-          <p>Absolut. Vi jobbar lika hemma på en B2B-mässa som på en musikfestival. Bland våra referenskunder finns Way Out West, Vasaloppet och Volvo Cars – en bredd som visar att vi behärskar hela spektrumet av eventproduktion.</p>
+          <summary>{{home.faq.items.4.q}}</summary>
+          <p>{{home.faq.items.4.a}}</p>
         </details>
         <details class="faq-item">
-          <summary>Hur går jag tillväga för att anlita er?</summary>
-          <p>Enklaste sättet är att fylla i kontaktformuläret här på sidan eller ringa oss direkt. Vi sätter upp ett kort möte, lyssnar på era behov och tar fram ett förslag – utan kostnad och utan förpliktelse. Ju tidigare vi kommer in i processen, desto bättre resultat kan vi leverera.</p>
+          <summary>{{home.faq.items.5.q}}</summary>
+          <p>{{home.faq.items.5.a}}</p>
         </details>
       </div>
     </div>
@@ -1427,8 +1420,8 @@
   <footer>
     <div class="footer-top">
       <div class="footer-brand">
-        <div class="nav-logo"><img fetchpriority="high" decoding="async" src="me_production_svart_svart_gul_prick (kopia 2).webp" alt="ME Production" style="height:34px;width:auto;display:inline-block;vertical-align:middle;"></div>
-        <p>Helhetsleverantör inom evenemangsproduktion. Från monter till festival – i Göteborg, Stockholm och resten av världen.</p>
+        <div class="nav-logo"><img fetchpriority="high" decoding="async" src="me_production_svart_svart_gul_prick (kopia 2).webp" alt="{{site.logoAlt}}" style="height:34px;width:auto;display:inline-block;vertical-align:middle;"></div>
+        <p>{{site.footerTagline}}</p>
         <div class="social-links">
           <a href="https://www.instagram.com/meproductionsweden/" class="social-link" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
           <a href="https://www.facebook.com/meproductionsweden/" class="social-link" target="_blank" rel="noopener" aria-label="Facebook">FB</a>

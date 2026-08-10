@@ -1,0 +1,134 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "uploads"
+public_folder: "/uploads"
+
+locale: "sv"
+
+collections:
+  - name: "home"
+    label: "Startsida"
+    files:
+      - file: "content/home.json"
+        label: "Startsida – innehåll"
+        name: "home"
+        fields:
+          - label: "Hero (översta delen)"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Tagg-text ovanför rubriken", name: "tag", widget: "string" }
+              - { label: "Rubrik", name: "heading", widget: "string" }
+              - { label: "Rubrik – kursiv rad", name: "headingEm", widget: "string" }
+              - { label: "Ingress-text", name: "sub", widget: "text" }
+              - { label: "Knapp 1-text", name: "btnPrimary", widget: "string" }
+              - { label: "Knapp 2-text", name: "btnGhost", widget: "string" }
+          - label: "Tjänster-sektion"
+            name: "services"
+            widget: "object"
+            fields:
+              - { label: "Etikett", name: "label", widget: "string" }
+              - { label: "Rubrik", name: "heading", widget: "string" }
+              - { label: "Ingress", name: "intro", widget: "text" }
+              - label: "Tjänster (5 st, ordningen styr placeringen)"
+                name: "items"
+                widget: "list"
+                summary: "{{title}}"
+                fields:
+                  - { label: "Titel", name: "title", widget: "string" }
+                  - { label: "Beskrivning", name: "desc", widget: "text" }
+          - label: "Siffror-sektion"
+            name: "numbers"
+            widget: "object"
+            fields:
+              - { label: "Etikett", name: "label", widget: "string" }
+              - label: "Siffror (4 st, ordningen styr placeringen)"
+                name: "items"
+                widget: "list"
+                summary: "{{value}} — {{label}}"
+                fields:
+                  - { label: "Värde (t.ex. 11+, 5500+, 100%)", name: "value", widget: "string" }
+                  - { label: "Etikett", name: "label", widget: "string" }
+          - label: "Om oss-sektion"
+            name: "about"
+            widget: "object"
+            fields:
+              - { label: "Etikett", name: "label", widget: "string" }
+              - { label: "Rubrik rad 1", name: "headingLine1", widget: "string" }
+              - { label: "Rubrik rad 2", name: "headingLine2", widget: "string" }
+              - { label: "Stycke 1", name: "paragraph1", widget: "text" }
+              - { label: "Stycke 2", name: "paragraph2", widget: "text" }
+          - label: "Case-sektion (rubrik)"
+            name: "case"
+            widget: "object"
+            fields:
+              - { label: "Etikett", name: "label", widget: "string" }
+              - { label: "Rubrik", name: "heading", widget: "string" }
+          - label: "Team-sektion"
+            name: "team"
+            widget: "object"
+            fields:
+              - { label: "Etikett", name: "label", widget: "string" }
+              - { label: "Rubrik rad 1", name: "headingLine1", widget: "string" }
+              - { label: "Rubrik rad 2", name: "headingLine2", widget: "string" }
+              - { label: "Rubrik – kursiv rad", name: "headingEm", widget: "string" }
+              - { label: "Text", name: "paragraph", widget: "text" }
+          - label: "Kunder-sektion"
+            name: "clients"
+            widget: "object"
+            fields:
+              - { label: "Etikett", name: "label", widget: "string" }
+              - { label: "Rubrik", name: "heading", widget: "string" }
+              - { label: "Ingress", name: "intro", widget: "text" }
+          - label: "Kontakt-sektion (rubrik)"
+            name: "contact"
+            widget: "object"
+            fields:
+              - { label: "Etikett", name: "label", widget: "string" }
+              - { label: "Rubrik", name: "heading", widget: "string" }
+              - { label: "Text", name: "paragraph", widget: "text" }
+          - label: "Vanliga frågor"
+            name: "faq"
+            widget: "object"
+            fields:
+              - { label: "Etikett", name: "label", widget: "string" }
+              - { label: "Rubrik", name: "heading", widget: "string" }
+              - label: "Frågor (6 st, ordningen styr placeringen)"
+                name: "items"
+                widget: "list"
+                summary: "{{q}}"
+                fields:
+                  - { label: "Fråga", name: "q", widget: "string" }
+                  - { label: "Svar", name: "a", widget: "text" }
+
+  - name: "seo"
+    label: "SEO per sida"
+    files:
+      - file: "content/seo.json"
+        label: "SEO-inställningar"
+        name: "seo"
+        fields:
+          - label: "Sidor"
+            name: "pages"
+            widget: "list"
+            summary: "{{label}}"
+            fields:
+              - { label: "Sid-id (rör inte denna)", name: "id", widget: "hidden" }
+              - { label: "Namn i denna lista", name: "label", widget: "string" }
+              - { label: "Sidtitel (visas i Google & webbläsarfliken)", name: "title", widget: "string" }
+              - { label: "Meta-beskrivning (visas under titeln i Google, 150–160 tecken)", name: "description", widget: "text" }
+              - { label: "Nyckelord (kommaseparerat)", name: "keywords", widget: "string", required: false }
+              - { label: "Open Graph-titel (rubrik vid delning på Facebook/LinkedIn)", name: "ogTitle", widget: "string", required: false }
+              - { label: "Open Graph-beskrivning", name: "ogDescription", widget: "text", required: false }
+
+  - name: "site"
+    label: "Övergripande"
+    files:
+      - file: "content/site.json"
+        label: "Logotyp & sidfot"
+        name: "site"
+        fields:
+          - { label: "Alt-text för logotypen (SEO/tillgänglighet)", name: "logoAlt", widget: "string" }
+          - { label: "Sidfotstext under logotypen (startsidan)", name: "footerTagline", widget: "text" }

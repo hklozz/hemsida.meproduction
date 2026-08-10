@@ -1,0 +1,71 @@
+{
+  "hero": {
+    "tag": "Evenemangsproduktion · Göteborg & Stockholm",
+    "heading": "Evenemangsproduktion & Mässmontrar",
+    "headingEm": "från första skiss till färdigt resultat.",
+    "sub": "Från infrastruktur till teknik. Från planering till rivning. Från helhet till detaljnivå. Från A till över förväntan.",
+    "btnPrimary": "Se våra case →",
+    "btnGhost": "Kontakta oss"
+  },
+  "services": {
+    "label": "Vad vi gör",
+    "heading": "Mässmontrar & Eventproduktion – allt under ett tak.",
+    "intro": "Vi är din helhetsleverantör – oavsett om det gäller en mässmonter, ett festivalevent eller en butiksinredning. Du slipper pussla – vi tar hand om allt.",
+    "items": [
+      { "title": "Projektledning", "desc": "En dedikerad projektledare som är med dig hela vägen – från idé till efterarbete. Alltid tillgänglig, alltid ett steg före." },
+      { "title": "Idé, Design & Skiss", "desc": "Vi visualiserar projektet så att alla inblandade får en gemensam bild. Från skiss till detaljritning." },
+      { "title": "Produktion & Byggnation", "desc": "Montrar, inredningar och konstruktioner – vi bygger det mesta. Oavsett storlek, form eller material." },
+      { "title": "Skyltning & Branding", "desc": "Grafisk profil, skyltar, tryck och wrap. Vi ser till att ditt varumärke syns och sitter precis rätt." },
+      { "title": "Etablering & Rivning", "desc": "Leverans, montering, nedmontering – vi tar hand om det praktiska så att du kan fokusera på ditt event." }
+    ]
+  },
+  "numbers": {
+    "label": "ME Production i siffror",
+    "items": [
+      { "value": "11+", "label": "År i branschen" },
+      { "value": "5500+", "label": "Genomförda projekt" },
+      { "value": "100%", "label": "Helhetsleverans" },
+      { "value": "2", "label": "Kontor – Göteborg & Stockholm" }
+    ]
+  },
+  "about": {
+    "label": "Det här är vi",
+    "headingLine1": "Vi frigör tid –",
+    "headingLine2": "så du kan fokusera på rätt saker.",
+    "paragraph1": "Genom ett brett kontaktnät och gedigen erfarenhet av produktion levererar vi en helhetslösning. Du ska inte behöva vända dig till ett tryckeri, en teknikfirma och en produktionsbyrå var för sig. Låt oss sköta det åt dig.",
+    "paragraph2": "Vi älskar att bygga – att få vara på plats och se en idé formas till verklighet. Det kan vara på en mässa i Göteborg, i en skog utanför Mora, på en pir i Norge eller på ett event i Paris. Ingen utmaning är för stor eller för liten."
+  },
+  "case": {
+    "label": "Utvalda case",
+    "heading": "Sagt och gjort."
+  },
+  "team": {
+    "label": "Folket bakom allt",
+    "headingLine1": "10 personer.",
+    "headingLine2": "2 kontor.",
+    "headingEm": "Oändligt engagemang.",
+    "paragraph": "Vi bygger evenemang, montrar och upplevelser – men vi är framför allt ett gäng som brinner för det vi gör och alltid är på plats när det gäller."
+  },
+  "clients": {
+    "label": "Våra kunder",
+    "heading": "Monterbyggare & eventproducent åt Sveriges starkaste varumärken.",
+    "intro": "Från lokala varumärken till världsledande bolag – vi levererar med samma passion varje gång."
+  },
+  "contact": {
+    "label": "Kontakta oss",
+    "heading": "Låt oss prata om ditt nästa event.",
+    "paragraph": "Oavsett storlek eller budget – vi älskar utmaningar. Hör av dig så berättar vi vad vi kan göra för dig."
+  },
+  "faq": {
+    "label": "Vanliga frågor",
+    "heading": "Det du undrar – vi svarar.",
+    "items": [
+      { "q": "Vad kostar en mässmonter?", "a": "Priset på en mässmonter varierar beroende på storlek, material och komplexitet. En enklare monter kan kosta från 30 000 kr, medan en custom-byggd monter med avancerad teknik och grafik kan landa på flera hundra tusen kronor. Vi skräddarsyr alltid lösningen efter er budget och era mål – kontakta oss så tar vi fram ett kostnadsförslag utan kostnad." },
+      { "q": "Hur lång tid tar det att bygga en mässmonter?", "a": "Produktionstiden beror på montrarnas storlek och komplexitet. Normalt räknar vi med 4–8 veckor från godkänd design till färdig monter. Etablering på mässgolvet sker vanligtvis 1–2 dagar före mässöppning. Vi hanterar hela processen – från brief och design till transport, byggnation och rivning." },
+      { "q": "Vad ingår i evenemangsproduktion?", "a": "Evenemangsproduktion hos ME Production innebär att vi tar ett helhetsansvar för ditt event. Det inkluderar projektledning, monterproduktion, grafik och skyltning, samt etablering och rivning. Vi är er enda kontaktpunkt från idé till genomfört evenemang." },
+      { "q": "Jobbar ni i hela Sverige?", "a": "Ja! Vi har kontor i Göteborg och Stockholm men levererar evenemang och mässmontrar i hela Sverige – från Malmö till Kiruna. Vi hanterar transport och logistik oavsett var i landet ert event äger rum." },
+      { "q": "Kan ni hjälpa till med både mässor och festivaler?", "a": "Absolut. Vi jobbar lika hemma på en B2B-mässa som på en musikfestival. Bland våra referenskunder finns Way Out West, Vasaloppet och Volvo Cars – en bredd som visar att vi behärskar hela spektrumet av eventproduktion." },
+      { "q": "Hur går jag tillväga för att anlita er?", "a": "Enklaste sättet är att fylla i kontaktformuläret här på sidan eller ringa oss direkt. Vi sätter upp ett kort möte, lyssnar på era behov och tar fram ett förslag – utan kostnad och utan förpliktelse. Ju tidigare vi kommer in i processen, desto bättre resultat kan vi leverera." }
+    ]
+  }
+}

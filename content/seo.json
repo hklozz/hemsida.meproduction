@@ -1,0 +1,85 @@
+{
+  "pages": [
+    {
+      "id": "index",
+      "label": "Startsida",
+      "title": "ME Production – Evenemangsproduktion från A till över förväntan",
+      "description": "ME Production är din helhetsleverantör inom evenemangsproduktion. Vi sköter allt från planering och design till monter, skyltning och rivning. Göteborg & Stockholm.",
+      "keywords": "evenemangsproduktion, mässmonter, eventproduktion, skyltning, göteborg, stockholm, meproduction",
+      "ogTitle": "ME Production – Evenemangsproduktion från A till över förväntan",
+      "ogDescription": "Från minsta monter till största evenemang. Vi tar hand om hela processen."
+    },
+    {
+      "id": "ganget",
+      "label": "Gänget",
+      "title": "Gänget – ME Production",
+      "description": "Möt gänget bakom ME Production – de som bygger, riggar, planerar och levererar över förväntan varje gång.",
+      "keywords": "",
+      "ogTitle": "Gänget – ME Production",
+      "ogDescription": "Möt gänget bakom ME Production – de som bygger, riggar, planerar och levererar över förväntan varje gång."
+    },
+    {
+      "id": "hallbarhet",
+      "label": "Hållbarhet",
+      "title": "Hållbarhet – ME Production",
+      "description": "ME Production arbetar aktivt med hållbarhet – från materialval och logistik till krav på leverantörer. Ansvar är en del av varje leverans.",
+      "keywords": "",
+      "ogTitle": "Hållbarhet – ME Production",
+      "ogDescription": "ME Production arbetar aktivt med hållbarhet – från materialval och logistik till krav på leverantörer."
+    },
+    {
+      "id": "goteborg",
+      "label": "Göteborg (kontorssida)",
+      "title": "ME Production Göteborg – Evenemangsproduktion i Göteborg",
+      "description": "ME Production Göteborg – din lokala partner för mässmontrar, events och evenemangsproduktion. Vi finns på Hulda Lindgrens Gata 9–11 i Göteborg.",
+      "keywords": "evenemangsproduktion göteborg, mässmonter göteborg, eventproduktion göteborg, ME production göteborg",
+      "ogTitle": "ME Production Göteborg",
+      "ogDescription": "ME Production Göteborg – din lokala partner för mässmontrar, events och evenemangsproduktion i Göteborg."
+    },
+    {
+      "id": "stockholm",
+      "label": "Stockholm (kontorssida)",
+      "title": "ME Production Stockholm – Evenemangsproduktion i Stockholm",
+      "description": "ME Production Stockholm – din lokala partner för mässmontrar, events och evenemangsproduktion. Vi finns på Sjöviksvägen 104 i Stockholm.",
+      "keywords": "evenemangsproduktion stockholm, mässmonter stockholm, eventproduktion stockholm, ME production stockholm",
+      "ogTitle": "ME Production Stockholm",
+      "ogDescription": "ME Production Stockholm – din lokala partner för mässmontrar, events och evenemangsproduktion i Stockholm."
+    },
+    {
+      "id": "case-way-out-west",
+      "label": "Case: Way Out West",
+      "title": "Way Out West – ME Production",
+      "description": "ME Production levererade produktionsledning, infrastruktur och teknik för Way Out West i Göteborg.",
+      "keywords": "",
+      "ogTitle": "",
+      "ogDescription": ""
+    },
+    {
+      "id": "case-nordsjo",
+      "label": "Case: Nordsjö",
+      "title": "Nordsjö – Årets Monter – ME Production",
+      "description": "ME Production byggde prisbelönt mässmonter för Nordsjö på Nordbygg – och vann Årets Monter.",
+      "keywords": "",
+      "ogTitle": "",
+      "ogDescription": ""
+    },
+    {
+      "id": "case-vasaloppet",
+      "label": "Case: Vasaloppet",
+      "title": "Vasaloppet – ME Production",
+      "description": "ME Production levererade komplett produktionsledning och infrastruktur för Vasaloppet.",
+      "keywords": "",
+      "ogTitle": "",
+      "ogDescription": ""
+    },
+    {
+      "id": "case-clarion",
+      "label": "Case: Clarion Hotel Post",
+      "title": "Clarion Hotel Post – Julbelysning – ME Production",
+      "description": "ME Production levererade avancerad julbelysning och LED-installation för Clarion Hotel Post i Göteborg.",
+      "keywords": "",
+      "ogTitle": "",
+      "ogDescription": ""
+    }
+  ]
+}
