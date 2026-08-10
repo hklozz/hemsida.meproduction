@@ -37,7 +37,33 @@
   },
   "case": {
     "label": "Utvalda case",
-    "heading": "Sagt och gjort."
+    "heading": "Sagt och gjort.",
+    "items": [
+      {
+        "tag": "Festival",
+        "title": "Way Out West",
+        "description": "Produktionsledning, infrastruktur och teknik för Göteborgs ikoniska musik- och kulturfestival.",
+        "image": "https://media.meproduction.se/2019/06/WOW_4-uai-258x172.png"
+      },
+      {
+        "tag": "Mässa",
+        "title": "Nordsjö – Årets Monter",
+        "description": "En första plats och utmärkelsen \"Årets Monter\" var ett faktum.",
+        "image": "https://media.meproduction.se/2019/06/Nordsjo_3-uai-258x172.png"
+      },
+      {
+        "tag": "Event",
+        "title": "Vasaloppet",
+        "description": "En pampig parkering och 51 000 åkare i Volvospåret.",
+        "image": "https://media.meproduction.se/2019/06/vasaloppet_8-uai-258x172.png"
+      },
+      {
+        "tag": "Installation",
+        "title": "Clarion Hotel Post",
+        "description": "Avancerad julbelysning och LED-installation för en av Göteborgs mest ikoniska byggnader.",
+        "image": "https://media.meproduction.se/2019/06/Clarion_4-uai-258x172.png"
+      }
+    ]
   },
   "team": {
     "label": "Folket bakom allt",

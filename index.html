@@ -349,6 +349,46 @@
       line-height: 1.7;
     }
 
+    /* ─── NYHETER ─── */
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+    .news-card {
+      background: var(--card);
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .news-card:hover { transform: translateY(-4px); }
+    .news-img {
+      width: 100%;
+      aspect-ratio: 16/10;
+      background-size: cover;
+      background-position: center;
+      background-color: var(--dark);
+    }
+    .news-body { padding: 28px 28px 32px; }
+    .news-date {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #F2C840;
+      margin-bottom: 10px;
+    }
+    .news-body h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+    }
+    .news-body p {
+      font-size: 0.9rem;
+      color: var(--gray);
+      line-height: 1.7;
+    }
+
     /* ─── CASE / PORTFOLIO ─── */
     .cases-header {
       display: flex;
@@ -888,9 +928,10 @@
     <ul class="nav-links">
       <li><a href="#tjanster">Tjänster</a></li>
       <li><a href="#case">Case</a></li>
+      <li><a href="#nyheter">Nyheter</a></li>
       <li><a href="ganget.html">Gänget</a></li>
       <li><a href="hallbarhet.html">Hållbarhet</a></li>
-      
+
       <li><a href="#om-oss">Om oss</a></li>
       <li><a href="#kontakt">Kontakt</a></li>
     </ul>
@@ -1003,49 +1044,60 @@
     <div class="cases-grid">
 
       <a href="case-way-out-west.html" class="case-card large">
-        <div class="case-bg" style="background-image: url('https://media.meproduction.se/2019/06/WOW_4-uai-258x172.png');"></div>
+        <div class="case-bg" style="background-image: url('{{home.case.items.0.image}}');"></div>
         <div class="case-overlay"></div>
         <div class="case-info">
-          <div class="case-tag">Festival</div>
-          <h3>Way Out West</h3>
-          <p>Produktionsledning, infrastruktur och teknik för Göteborgs ikoniska musik- och kulturfestival.</p>
+          <div class="case-tag">{{home.case.items.0.tag}}</div>
+          <h3>{{home.case.items.0.title}}</h3>
+          <p>{{home.case.items.0.description}}</p>
         </div>
         <div class="case-arrow">→</div>
       </a>
 
       <a href="case-nordsjo.html" class="case-card small">
-        <div class="case-bg" style="background-image: url('https://media.meproduction.se/2019/06/Nordsjo_3-uai-258x172.png');"></div>
+        <div class="case-bg" style="background-image: url('{{home.case.items.1.image}}');"></div>
         <div class="case-overlay"></div>
         <div class="case-info">
-          <div class="case-tag">Mässa</div>
-          <h3>Nordsjö – Årets Monter</h3>
-          <p>En första plats och utmärkelsen "Årets Monter" var ett faktum.</p>
+          <div class="case-tag">{{home.case.items.1.tag}}</div>
+          <h3>{{home.case.items.1.title}}</h3>
+          <p>{{home.case.items.1.description}}</p>
         </div>
         <div class="case-arrow">→</div>
       </a>
 
       <a href="case-vasaloppet.html" class="case-card half">
-        <div class="case-bg" style="background-image: url('https://media.meproduction.se/2019/06/vasaloppet_8-uai-258x172.png');"></div>
+        <div class="case-bg" style="background-image: url('{{home.case.items.2.image}}');"></div>
         <div class="case-overlay"></div>
         <div class="case-info">
-          <div class="case-tag">Event</div>
-          <h3>Vasaloppet</h3>
-          <p>En pampig parkering och 51 000 åkare i Volvospåret.</p>
+          <div class="case-tag">{{home.case.items.2.tag}}</div>
+          <h3>{{home.case.items.2.title}}</h3>
+          <p>{{home.case.items.2.description}}</p>
         </div>
         <div class="case-arrow">→</div>
       </a>
 
       <a href="case-clarion.html" class="case-card half">
-        <div class="case-bg" style="background-image: url('https://media.meproduction.se/2019/06/Clarion_4-uai-258x172.png');"></div>
+        <div class="case-bg" style="background-image: url('{{home.case.items.3.image}}');"></div>
         <div class="case-overlay"></div>
         <div class="case-info">
-          <div class="case-tag">Installation</div>
-          <h3>Clarion Hotel Post</h3>
-          <p>Avancerad julbelysning och LED-installation för en av Göteborgs mest ikoniska byggnader.</p>
+          <div class="case-tag">{{home.case.items.3.tag}}</div>
+          <h3>{{home.case.items.3.title}}</h3>
+          <p>{{home.case.items.3.description}}</p>
         </div>
         <div class="case-arrow">→</div>
       </a>
 
+    </div>
+  </section>
+
+  <!-- NYHETER -->
+  <section id="nyheter" style="padding:120px 5vw;background:var(--black);">
+    <div class="section-label">Nyheter</div>
+    <h2 style="font-size:clamp(2.4rem,5vw,4.5rem);font-weight:900;letter-spacing:-0.03em;margin:12px 0 50px;">
+      Vad som händer hos oss.
+    </h2>
+    <div class="news-grid">
+      {{news.cards}}
     </div>
   </section>
 

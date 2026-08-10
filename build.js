@@ -68,6 +68,82 @@ function loadJson(relPath, fallback) {
   }
 }
 
+// Loads every *.json file in a folder (one file per entry, the pattern
+// Decap CMS "folder collections" use — e.g. content/news/, content/team/).
+// Returns [] if the folder doesn't exist yet (fine, nothing added yet).
+function loadFolderJson(relDir) {
+  const dirPath = path.join(ROOT, relDir);
+  let files;
+  try {
+    files = fs.readdirSync(dirPath).filter((f) => f.endsWith(".json"));
+  } catch {
+    return [];
+  }
+  return files
+    .map((f) => {
+      try {
+        return JSON.parse(fs.readFileSync(path.join(dirPath, f), "utf-8"));
+      } catch {
+        return null;
+      }
+    })
+    .filter(Boolean);
+}
+
+function newsCardsHtml(news) {
+  const sorted = [...news].sort((a, b) =>
+    String(b.date || "").localeCompare(String(a.date || ""))
+  );
+  if (sorted.length === 0) {
+    return `<p style="color:var(--gray);">Inga nyheter publicerade än.</p>`;
+  }
+  return sorted
+    .map((item) => {
+      const dateLabel = item.date
+        ? new Date(item.date).toLocaleDateString("sv-SE", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          })
+        : "";
+      return `
+      <div class="news-card">
+        <div class="news-img" style="background-image:url('${escapeHtml(item.image || "")}');" role="img" aria-label="${escapeHtml(item.imageAlt || item.title || "")}"></div>
+        <div class="news-body">
+          ${dateLabel ? `<div class="news-date">${escapeHtml(dateLabel)}</div>` : ""}
+          <h3>${escapeHtml(item.title || "")}</h3>
+          <p>${escapeHtml(item.text || "")}</p>
+        </div>
+      </div>`;
+    })
+    .join("\n");
+}
+
+function teamCardsHtml(team) {
+  const cityLabels = {
+    goteborg: "Göteborg",
+    stockholm: "Stockholm",
+    "goteborg stockholm": "Göteborg & Stockholm",
+  };
+  return team
+    .map((person) => {
+      const city = person.city || "goteborg";
+      const cityLabel = cityLabels[city] || "Göteborg";
+      return `
+      <div class="team-card reveal" data-city="${escapeHtml(city)}">
+        <div class="team-img" style="background-image:url('${escapeHtml(person.photo || "")}')"></div>
+        <div class="team-hover-overlay"></div>
+        <div class="team-info">
+          <h3>${escapeHtml(person.name || "")}</h3>
+          <span class="team-city">${escapeHtml(cityLabel)}</span>
+          ${person.email ? `<a href="mailto:${escapeHtml(person.email)}">${escapeHtml(person.email)}</a>` : ""}
+          ${person.phone ? `<span class="phone">${escapeHtml(person.phone)}</span>` : ""}
+        </div>
+      </div>`;
+    })
+    .join("\n");
+}
+
 function copyRecursive(src, dest) {
   const stat = fs.statSync(src);
   if (stat.isDirectory()) {
@@ -89,6 +165,9 @@ function main() {
   const seo = loadJson("content/seo.json", { pages: [] });
   const seoById = Object.fromEntries((seo.pages || []).map((p) => [p.id, p]));
 
+  const news = loadFolderJson("content/news");
+  const team = loadFolderJson("content/team");
+
   const entries = fs.readdirSync(ROOT);
 
   for (const entry of entries) {
@@ -98,9 +177,19 @@ function main() {
 
     if (entry.endsWith(".html")) {
       const pageId = entry.replace(/\.html$/, "");
-      const html = fs.readFileSync(srcPath, "utf-8");
+      let html = fs.readFileSync(srcPath, "utf-8");
       const data = { seo: seoById[pageId] || {}, site };
-      if (pageId === "index") data.home = home;
+      if (pageId === "index") {
+        data.home = home;
+        // Raw HTML injection (lists of cards) happens before the normal
+        // escaped-token pass, since these tokens expand to markup, not text.
+        // split/join instead of replace() avoids "$"-pattern surprises.
+        html = html.split("{{news.cards}}").join(newsCardsHtml(news));
+      }
+      if (pageId === "ganget") {
+        html = html.split("{{team.cards}}").join(teamCardsHtml(team));
+        data.teamCount = team.length;
+      }
       console.log(`Building ${entry} (page id: ${pageId})`);
       const rendered = renderTemplate(html, data);
       fs.writeFileSync(destPath, rendered, "utf-8");

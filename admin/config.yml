@@ -60,12 +60,21 @@ collections:
               - { label: "Rubrik rad 2", name: "headingLine2", widget: "string" }
               - { label: "Stycke 1", name: "paragraph1", widget: "text" }
               - { label: "Stycke 2", name: "paragraph2", widget: "text" }
-          - label: "Case-sektion (rubrik)"
+          - label: "Case-sektion"
             name: "case"
             widget: "object"
             fields:
               - { label: "Etikett", name: "label", widget: "string" }
               - { label: "Rubrik", name: "heading", widget: "string" }
+              - label: "Case-kort (4 st, ordningen styr placeringen)"
+                name: "items"
+                widget: "list"
+                summary: "{{title}}"
+                fields:
+                  - { label: "Kategori-tagg (t.ex. Festival, Mässa)", name: "tag", widget: "string" }
+                  - { label: "Titel", name: "title", widget: "string" }
+                  - { label: "Beskrivning", name: "description", widget: "text" }
+                  - { label: "Bild", name: "image", widget: "image" }
           - label: "Team-sektion"
             name: "team"
             widget: "object"
@@ -102,6 +111,41 @@ collections:
                 fields:
                   - { label: "Fråga", name: "q", widget: "string" }
                   - { label: "Svar", name: "a", widget: "text" }
+
+  - name: "news"
+    label: "Nyheter"
+    folder: "content/news"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    identifier_field: "title"
+    summary: "{{title}} — {{date}}"
+    fields:
+      - { label: "Titel", name: "title", widget: "string" }
+      - { label: "Datum", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false, picker_utc: true }
+      - { label: "Bild", name: "image", widget: "image" }
+      - { label: "Alt-text för bilden (SEO)", name: "imageAlt", widget: "string", required: false }
+      - { label: "Text", name: "text", widget: "text" }
+
+  - name: "team"
+    label: "Gänget"
+    folder: "content/team"
+    create: true
+    slug: "{{slug}}"
+    identifier_field: "name"
+    summary: "{{name}}"
+    fields:
+      - { label: "Namn", name: "name", widget: "string" }
+      - label: "Kontor"
+        name: "city"
+        widget: "select"
+        options:
+          - { label: "Göteborg", value: "goteborg" }
+          - { label: "Stockholm", value: "stockholm" }
+          - { label: "Båda", value: "goteborg stockholm" }
+        default: "goteborg"
+      - { label: "Foto", name: "photo", widget: "image" }
+      - { label: "E-post", name: "email", widget: "string", required: false }
+      - { label: "Telefon", name: "phone", widget: "string", required: false }
 
   - name: "seo"
     label: "SEO per sida"
