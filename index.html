@@ -2146,5 +2146,21 @@
     requestAnimationFrame(draw);
   </script>
 
+  <!-- Netlify Identity: needed so invite/confirmation/recovery links
+       (which point to the homepage with a #...token=... hash) actually
+       open the "set password" dialog instead of landing on a normal page. -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", (user) => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
+
 </body>
 </html>
