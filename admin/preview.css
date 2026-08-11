@@ -127,3 +127,106 @@ body {
 }
 .preview-case-overlay h3 { color: #fff; font-size: 1.15rem; font-weight: 800; margin-bottom: 6px; }
 .preview-case-overlay p { color: rgba(255,255,255,0.7); font-size: 0.82rem; line-height: 1.5; }
+
+/* Startsida — hela sidan i miniatyr */
+.preview-home { max-width: 640px; }
+
+.preview-hero-box {
+  background: #10151c;
+  border-radius: 8px;
+  padding: 32px 28px;
+  margin-bottom: 4px;
+}
+.preview-pill {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #ccc;
+  border: 1px solid rgba(255,255,255,0.2);
+  padding: 5px 12px;
+  border-radius: 20px;
+  margin-bottom: 16px;
+}
+.preview-hero-heading {
+  color: #eee;
+  font-size: 1.9rem;
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 14px;
+}
+.preview-hero-heading em { color: #F2C840; font-style: italic; }
+.preview-hero-sub { color: rgba(255,255,255,0.6); font-size: 0.9rem; line-height: 1.6; margin-bottom: 18px; max-width: 480px; }
+.preview-btn-row { display: flex; gap: 12px; }
+.preview-btn-primary, .preview-btn-ghost {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 10px 18px;
+  border-radius: 4px;
+}
+.preview-btn-primary { background: #F2C840; color: #1a1a1a; }
+.preview-btn-ghost { border: 1px solid rgba(255,255,255,0.3); color: #eee; }
+
+.preview-section { background: #fff; border-radius: 8px; padding: 26px 28px; margin-top: 4px; }
+.preview-section-dark { background: #10151c; }
+.preview-section-dark .preview-section-label { color: #F2C840; }
+.preview-section-dark .preview-section-heading { color: #eee; }
+.preview-section-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #c9a020;
+  margin-bottom: 8px;
+}
+.preview-section-heading { font-size: 1.3rem; font-weight: 800; color: #1a1a1a; margin-bottom: 10px; }
+.preview-section-intro { font-size: 0.85rem; color: #6b6560; line-height: 1.6; max-width: 520px; margin-bottom: 6px; }
+
+.preview-services-grid, .preview-numbers-grid, .preview-case-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 14px;
+  margin-top: 16px;
+}
+.preview-service-card { background: #F4EFE6; border-radius: 6px; padding: 16px; }
+.preview-service-card h4 { font-size: 0.9rem; font-weight: 800; color: #1a1a1a; margin-bottom: 6px; }
+.preview-service-card p { font-size: 0.78rem; color: #6b6560; line-height: 1.5; }
+
+.preview-number { text-align: center; }
+.preview-number-value { font-size: 1.8rem; font-weight: 800; color: #F2C840; }
+.preview-number-label { font-size: 0.75rem; color: rgba(255,255,255,0.6); margin-top: 4px; }
+
+.preview-case-grid { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
+.preview-case-grid .preview-case-card { max-width: none; }
+
+.preview-faq-list { margin-top: 12px; }
+.preview-faq-item { border-top: 1px solid #eee; padding: 12px 0; }
+.preview-faq-q { font-size: 0.88rem; font-weight: 700; color: #1a1a1a; margin-bottom: 4px; }
+.preview-faq-a { font-size: 0.82rem; color: #6b6560; line-height: 1.5; }
+
+/* SEO — Google-sökresultat-liknande kort */
+.preview-google-list { display: flex; flex-direction: column; gap: 22px; max-width: 560px; }
+.preview-google-card { font-family: arial, sans-serif; }
+.preview-google-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #999;
+  margin-bottom: 4px;
+}
+.preview-google-url { font-size: 0.8rem; color: #202124; }
+.preview-google-url::before { content: "🔒 "; }
+.preview-google-title { font-size: 1.15rem; color: #1a0dab; margin: 2px 0 4px; line-height: 1.3; }
+.preview-google-desc { font-size: 0.85rem; color: #4d5156; line-height: 1.5; }
+
+/* Övergripande — logotyp & sidfot */
+.preview-site-card { background: #10151c; border-radius: 8px; padding: 28px; max-width: 480px; }
+.preview-site-logo { font-size: 1.6rem; font-weight: 800; color: #fff; margin-bottom: 14px; }
+.preview-site-logo span { color: rgba(255,255,255,0.5); font-weight: 400; }
+.preview-site-meta { font-size: 0.8rem; color: rgba(255,255,255,0.5); margin-bottom: 16px; }
+.preview-site-footer { font-size: 0.82rem; color: rgba(255,255,255,0.6); border-top: 1px solid rgba(255,255,255,0.1); padding-top: 14px; line-height: 1.6; }
