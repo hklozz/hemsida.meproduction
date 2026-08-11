@@ -29,44 +29,37 @@
     </div>
   </nav>
 
-  <header class="case-hero" style="background-image: url('https://media.meproduction.se/2019/06/Clarion_4-uai-258x172.png');">
+  <header class="case-hero" style="background-image: url('{{page.heroImage}}');">
     <div class="case-hero-overlay"></div>
     <div class="case-hero-content">
       <a href="index.html#case" class="back-link">← Alla case</a>
-      <div class="case-tag-large">Julbelysning &amp; Installation</div>
-      <h1>Clarion Hotel Post</h1>
-      <p class="hero-sub">Avancerad julbelysning &amp; LED-installation – Göteborg</p>
+      <div class="case-tag-large">{{page.tag}}</div>
+      <h1>{{page.title}}</h1>
+      <p class="hero-sub">{{page.subtitle}}</p>
     </div>
   </header>
 
   <main class="case-main">
 
     <div class="case-meta">
-      <div class="meta-item"><span class="meta-label">Kund</span><span class="meta-value">Clarion Hotel Post</span></div>
-      <div class="meta-item"><span class="meta-label">Plats</span><span class="meta-value">Drottningtorget, Göteborg</span></div>
-      <div class="meta-item"><span class="meta-label">Kategori</span><span class="meta-value">Belysning &amp; Installation</span></div>
-      <div class="meta-item"><span class="meta-label">Säsong</span><span class="meta-value">Advent &amp; Jul</span></div>
+      <div class="meta-item"><span class="meta-label">Kund</span><span class="meta-value">{{page.customer}}</span></div>
+      <div class="meta-item"><span class="meta-label">Plats</span><span class="meta-value">{{page.location}}</span></div>
+      <div class="meta-item"><span class="meta-label">Kategori</span><span class="meta-value">{{page.category}}</span></div>
+      <div class="meta-item"><span class="meta-label">{{page.extraLabel}}</span><span class="meta-value">{{page.extraValue}}</span></div>
     </div>
 
     <div class="case-body">
       <div class="case-text">
-        <h2>Göteborg lyser upp</h2>
-        <p>Clarion Hotel Post – inrymt i det gamla Göteborgs Posthuset vid Drottningtorget – är en av Göteborgs mest ikoniska byggnader. ME Production fick uppdraget att förvandla fasaden och interiören till en magisk julupplevelse med avancerad LED-belysning och ljusinstallationer.</p>
-        <p>Projektet krävde noggrann planering, säkra riggningar och exakt timing för att göra det möjligt att tända "Göteborgs julklapp" i rätt ögonblick. Resultatet var en installation som stoppade förbipasserande i spåren.</p>
-        <h3>Vad vi levererade</h3>
+        <h2>{{page.heading}}</h2>
+        <p>{{page.paragraph1}}</p>
+        <p>{{page.paragraph2}}</p>
+        <h3>{{page.deliverablesHeading}}</h3>
         <ul>
-          <li>LED-design och ljussättning</li>
-          <li>Rigg och installation på fasad</li>
-          <li>Elnät och styrning</li>
-          <li>Projektledning och säkerhetskoordinering</li>
-          <li>Montage och demontering</li>
+{{deliverables.html}}
         </ul>
       </div>
       <div class="case-gallery">
-        <img loading="lazy" decoding="async" src="https://media.meproduction.se/2019/06/Clarion_4-uai-258x172.png" alt="Clarion Hotel Post julbelysning" />
-        <img loading="lazy" decoding="async" src="https://media.meproduction.se/2019/06/Clarion_3-uai-258x172.png" alt="Clarion Hotel Post julbelysning" onerror="this.style.display='none'" />
-        <img loading="lazy" decoding="async" src="https://media.meproduction.se/2019/06/Clarion_2-uai-258x172.png" alt="Clarion Hotel Post julbelysning" onerror="this.style.display='none'" />
-        <img loading="lazy" decoding="async" src="https://media.meproduction.se/2019/06/Clarion_1-uai-258x172.png" alt="Clarion Hotel Post julbelysning" onerror="this.style.display='none'" />
+{{gallery.html}}
       </div>
     </div>
 
@@ -74,7 +67,7 @@
 
   <section class="case-next">
     <p>Nästa case</p>
-    <a href="case-way-out-west.html" class="next-link">Way Out West →</a>
+    <a href="{{page.nextHref}}" class="next-link">{{page.nextLabel}}</a>
   </section>
 
   <footer class="case-footer">

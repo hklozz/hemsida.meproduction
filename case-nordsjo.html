@@ -29,44 +29,37 @@
     </div>
   </nav>
 
-  <header class="case-hero" style="background-image: url('https://media.meproduction.se/2019/06/Nordsjo_3-uai-258x172.png');">
+  <header class="case-hero" style="background-image: url('{{page.heroImage}}');">
     <div class="case-hero-overlay"></div>
     <div class="case-hero-content">
       <a href="index.html#case" class="back-link">← Alla case</a>
-      <div class="case-tag-large">Mässa &amp; Monter</div>
-      <h1>Nordsjö – Årets Monter</h1>
-      <p class="hero-sub">Prisbelönt mässmonter på Nordbygg</p>
+      <div class="case-tag-large">{{page.tag}}</div>
+      <h1>{{page.title}}</h1>
+      <p class="hero-sub">{{page.subtitle}}</p>
     </div>
   </header>
 
   <main class="case-main">
 
     <div class="case-meta">
-      <div class="meta-item"><span class="meta-label">Kund</span><span class="meta-value">Nordsjö / Akzo Nobel</span></div>
-      <div class="meta-item"><span class="meta-label">Plats</span><span class="meta-value">Nordbygg, Stockholm/Göteborg</span></div>
-      <div class="meta-item"><span class="meta-label">Kategori</span><span class="meta-value">Mässmonter</span></div>
-      <div class="meta-item"><span class="meta-label">Utmärkelse</span><span class="meta-value">🏆 Årets Monter</span></div>
+      <div class="meta-item"><span class="meta-label">Kund</span><span class="meta-value">{{page.customer}}</span></div>
+      <div class="meta-item"><span class="meta-label">Plats</span><span class="meta-value">{{page.location}}</span></div>
+      <div class="meta-item"><span class="meta-label">Kategori</span><span class="meta-value">{{page.category}}</span></div>
+      <div class="meta-item"><span class="meta-label">{{page.extraLabel}}</span><span class="meta-value">{{page.extraValue}}</span></div>
     </div>
 
     <div class="case-body">
       <div class="case-text">
-        <h2>Från skiss till utmärkelsen Årets Monter</h2>
-        <p>ME Production fick uppdraget att ta Nordsjös mässnärvaro till nästa nivå. Med ett brett grepp om helheten – från första skiss till sista rivningsdag – levererade vi en monter som inte bara imponerade på besökarna utan också vann branschens mest prestigefyllda pris: <strong>Årets Monter</strong>.</p>
-        <p>Uppdraget innefattade allt från design och materialval till produktion, etablering på plats och rivning. Vi koordinerade samtliga underleverantörer och stod som ensam kontaktpunkt för kunden under hela processen.</p>
-        <h3>Vad vi levererade</h3>
+        <h2>{{page.heading}}</h2>
+        <p>{{page.paragraph1}}</p>
+        <p>{{page.paragraph2}}</p>
+        <h3>{{page.deliverablesHeading}}</h3>
         <ul>
-          <li>Konceptutveckling och design</li>
-          <li>Konstruktion och produktion av monterelement</li>
-          <li>Skyltning och grafisk produktion</li>
-          <li>Etablering och montering på plats</li>
-          <li>Projektledning och underleverantörskoordinering</li>
-          <li>Rivning och lagerhållning</li>
+{{deliverables.html}}
         </ul>
       </div>
       <div class="case-gallery">
-        <img loading="lazy" decoding="async" src="https://media.meproduction.se/2019/06/Nordsjo_3-uai-258x172.png" alt="Nordsjö mässmonter" />
-        <img loading="lazy" decoding="async" src="https://media.meproduction.se/2019/06/Nordsjo_2-uai-258x172.png" alt="Nordsjö mässmonter" onerror="this.style.display='none'" />
-        <img loading="lazy" decoding="async" src="https://media.meproduction.se/2019/06/Nordsjo_1-uai-258x172.png" alt="Nordsjö mässmonter" onerror="this.style.display='none'" />
+{{gallery.html}}
       </div>
     </div>
 
@@ -74,7 +67,7 @@
 
   <section class="case-next">
     <p>Nästa case</p>
-    <a href="case-vasaloppet.html" class="next-link">Vasaloppet →</a>
+    <a href="{{page.nextHref}}" class="next-link">{{page.nextLabel}}</a>
   </section>
 
   <footer class="case-footer">

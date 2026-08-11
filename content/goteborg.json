@@ -1,0 +1,52 @@
+{
+  "hero": {
+    "locationLabel": "Här hemma i Göteborg",
+    "heading": "Evenemangsproduktion & Mässmontrar",
+    "headingEm": "i Göteborg.",
+    "sub": "Vi är från Göteborg. Vi känner staden, kontakterna och arenorna utan och innan – och vi är redo att bygga ditt nästa evenemang med den känslan.",
+    "btnPrimary": "Kontakta oss i Göteborg →",
+    "btnGhost": "Se våra case"
+  },
+  "address": {
+    "line": "Hulda Lindgrens Gata 9–11, Göteborg",
+    "area": "Västra Frölunda · Göteborgs stad",
+    "mapsQuery": "Hulda+Lindgrens+Gata+9+Göteborg"
+  },
+  "intro": {
+    "label1": "Hemmaplan",
+    "heading1Line1": "Göteborg.",
+    "heading1Line2": "Inifrån och ut.",
+    "paragraph1": "ME Production grundades i Göteborg och det är härifrån vi gör vårt bästa jobb. Vi känner Stockholmsmässan, Gothia Towers, Svenska Mässan och alla andra arenor längs Västkusten – och vi vet hur man levererar på hemmaplan.",
+    "label2": "Vad vi gör",
+    "heading2Line1": "Mässmonter, monterproduktion",
+    "heading2Line2": "& eventproduktion i Göteborg.",
+    "paragraph2": "Mässmontrar, eventproduktion, skyltning, etablering och rivning. Vi tar hela paketet – så du kan fokusera på det som faktiskt spelar roll för ditt varumärke."
+  },
+  "servicesLabel": "Vad vi levererar i Göteborg",
+  "map": {
+    "heading": "Hemma i Göteborg.",
+    "address": "Hulda Lindgrens Gata 9–11",
+    "postal": "421 31 Västra Frölunda",
+    "transitTitle": "Kollektivtrafik",
+    "transitText": "Spårvagn linje 2 & 9, Spårvagnshållplats Axel Dahlströms torg",
+    "transitSub": "5 min promenad",
+    "officeTitle": "Göteborgskontoret",
+    "phone": "+46 739 935 095",
+    "phoneHref": "+46739935095",
+    "email": "hampus.klozz@meproduction.se"
+  },
+  "team": {
+    "label": "Teamet i Göteborg",
+    "headingLine1": "Era kontakter",
+    "headingLine2": "på plats.",
+    "sub": "Erfarna ME Production-profiler med Göteborg och Västkusten som hemmaplan."
+  },
+  "cta": {
+    "heading": "Har du ett projekt",
+    "headingEm": "gång i Göteborg?",
+    "paragraph": "Hör av dig till oss – så tar vi ett snack om hur vi kan hjälpa dig.",
+    "email": "info@meproduction.se",
+    "subject": "Projekt i Göteborg",
+    "btnLabel": "Skicka ett mail →"
+  }
+}

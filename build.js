@@ -119,6 +119,86 @@ function newsCardsHtml(news) {
     .join("\n");
 }
 
+// Loads content/case-pages/*.json (the four detailed case-study pages:
+// case-way-out-west.html etc.) and stamps each with the slug derived from
+// its filename, since that's how build.js and the CMS's "next case" picker
+// both identify an entry.
+function loadCasePages() {
+  const dirPath = path.join(ROOT, "content/case-pages");
+  let files;
+  try {
+    files = fs.readdirSync(dirPath).filter((f) => f.endsWith(".json"));
+  } catch {
+    return [];
+  }
+  return files
+    .map((f) => {
+      try {
+        const data = JSON.parse(fs.readFileSync(path.join(dirPath, f), "utf-8"));
+        data.slug = f.replace(/\.json$/, "");
+        return data;
+      } catch {
+        return null;
+      }
+    })
+    .filter(Boolean);
+}
+
+function pillarsHtml(pillars) {
+  return (pillars || [])
+    .map(
+      (p, i) => `
+      <div class="pillar reveal" style="transition-delay:${(i % 3) * 0.06}s">
+        <div class="pillar-num">${escapeHtml(p.num || "")}</div>
+        <h3>${escapeHtml(p.title || "")}</h3>
+        <p>${escapeHtml(p.desc || "")}</p>
+      </div>`
+    )
+    .join("\n");
+}
+
+function caseRowsHtml(rows) {
+  return (rows || [])
+    .map((row, i) => {
+      const rtl = i % 2 === 1;
+      return `
+      <div class="case-row"${rtl ? ' style="direction:rtl;"' : ""}>
+        <div class="case-row-img" style="background-image:url('${escapeHtml(row.image || "")}');${rtl ? "direction:ltr;" : ""}"></div>
+        <div class="case-row-text"${rtl ? ' style="direction:ltr;"' : ""}>
+          <div class="case-row-tag">${escapeHtml(row.tag || "")}</div>
+          <h3 class="reveal">${escapeHtml(row.heading || "")}</h3>
+          <p class="reveal" style="transition-delay:.08s">${escapeHtml(row.paragraph || "")}</p>
+        </div>
+      </div>`;
+    })
+    .join("\n");
+}
+
+function statsHtml(stats) {
+  return (stats || [])
+    .map(
+      (s, i) => `
+      <div class="stat-item reveal" style="transition-delay:${(i * 0.08).toFixed(2)}s">
+        <strong>${escapeHtml(s.value || "")}</strong>
+        <span>${escapeHtml(s.label || "")}</span>
+      </div>`
+    )
+    .join("\n");
+}
+
+function deliverablesHtml(items) {
+  return (items || []).map((item) => `      <li>${escapeHtml(item)}</li>`).join("\n");
+}
+
+function galleryHtml(images) {
+  return (images || [])
+    .map(
+      (img) =>
+        `        <img loading="lazy" decoding="async" src="${escapeHtml(img.image || "")}" alt="${escapeHtml(img.alt || "")}" onerror="this.style.display='none'" />`
+    )
+    .join("\n");
+}
+
 function teamCardsHtml(team) {
   const cityLabels = {
     goteborg: "Göteborg",
@@ -167,6 +247,8 @@ function main() {
 
   const news = loadFolderJson("content/news");
   const team = loadFolderJson("content/team");
+  const casePages = loadCasePages();
+  const casePageBySlug = Object.fromEntries(casePages.map((p) => [p.slug, p]));
 
   const entries = fs.readdirSync(ROOT);
 
@@ -189,6 +271,25 @@ function main() {
       if (pageId === "ganget") {
         html = html.split("{{team.cards}}").join(teamCardsHtml(team));
         data.teamCount = team.length;
+      }
+      if (pageId.startsWith("case-")) {
+        // Case-study pages (case-way-out-west.html etc.) are driven entirely
+        // by content/case-pages/<slug>.json, matched by slug.
+        const slug = pageId.replace(/^case-/, "");
+        const page = casePageBySlug[slug] || {};
+        const nextPage = page.nextSlug ? casePageBySlug[page.nextSlug] : null;
+        page.nextLabel = nextPage ? `${nextPage.title} →` : "Alla case →";
+        page.nextHref = nextPage ? `case-${nextPage.slug}.html` : "index.html#case";
+        data.page = page;
+        html = html.split("{{deliverables.html}}").join(deliverablesHtml(page.deliverables));
+        html = html.split("{{gallery.html}}").join(galleryHtml(page.gallery));
+      } else if (pageId === "hallbarhet") {
+        data.page = loadJson("content/hallbarhet.json", {});
+        html = html.split("{{pillars.html}}").join(pillarsHtml(data.page.pillars));
+        html = html.split("{{caseRows.html}}").join(caseRowsHtml(data.page.caseRows));
+        html = html.split("{{stats.html}}").join(statsHtml(data.page.stats));
+      } else if (pageId === "goteborg" || pageId === "stockholm") {
+        data.page = loadJson(`content/${pageId}.json`, {});
       }
       console.log(`Building ${entry} (page id: ${pageId})`);
       const rendered = renderTemplate(html, data);

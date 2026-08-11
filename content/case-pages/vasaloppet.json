@@ -1,0 +1,29 @@
+{
+  "tag": "Sport & Event",
+  "title": "Vasaloppet",
+  "subtitle": "Produktionsledning & infrastruktur – Mora, Dalarna",
+  "heroImage": "https://media.meproduction.se/2019/06/vasaloppet_8-uai-258x172.png",
+  "customer": "Vasaloppet",
+  "location": "Mora, Dalarna",
+  "category": "Sportevent & Evenemangsproduktion",
+  "extraLabel": "Deltagare",
+  "extraValue": "~15 800 startande per lopp",
+  "heading": "Världens äldsta och längsta skidlopp",
+  "paragraph1": "Vasaloppet är inte vilket lopp som helst – det är en nationell institution med historia som sträcker sig tillbaka till 1922. ME Production fick förtroendet att leverera komplett produktionsledning och infrastruktur för evenemanget i skogarna utanför Mora.",
+  "paragraph2": "Det handlar om att skapa en hel stad i skogen under ett par intensiva dagar. Tält, teknik, logistik, stationer längs loppet, målgång och allting däremellan. Allt ska vara på plats, fungera perfekt – och sedan rivas ned utan spår.",
+  "deliverablesHeading": "Vad vi levererade",
+  "deliverables": [
+    "Komplett produktionsledning på plats",
+    "Tält, struktur och infrastruktur",
+    "Teknik och el-distribution",
+    "Logistik och koordinering",
+    "Etablering och rivning"
+  ],
+  "gallery": [
+    { "image": "https://media.meproduction.se/2019/06/vasaloppet_8-uai-258x172.png", "alt": "Vasaloppet" },
+    { "image": "https://media.meproduction.se/2019/06/vasaloppet_7-uai-258x172.png", "alt": "Vasaloppet" },
+    { "image": "https://media.meproduction.se/2019/06/vasaloppet_6-uai-258x172.png", "alt": "Vasaloppet" },
+    { "image": "https://media.meproduction.se/2019/06/vasaloppet_5-uai-258x172.png", "alt": "Vasaloppet" }
+  ],
+  "nextSlug": "clarion"
+}

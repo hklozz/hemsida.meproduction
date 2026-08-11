@@ -1,0 +1,29 @@
+{
+  "tag": "Festival",
+  "title": "Way Out West",
+  "subtitle": "Produktionsledning, infrastruktur & teknik – Göteborg",
+  "heroImage": "https://media.meproduction.se/2019/06/WOW_4-uai-258x172.png",
+  "customer": "Way Out West / Luger",
+  "location": "Slottsskogen, Göteborg",
+  "category": "Festival & Evenemangsproduktion",
+  "extraLabel": "Leverans",
+  "extraValue": "Infrastruktur, teknik, produktionsledning",
+  "heading": "Göteborgs ikoniska musik- och kulturfestival",
+  "paragraph1": "Way Out West är en av Sveriges mest älskade festivaler – varje år samlar den tusentals besökare i hjärtat av Slottsskogen i Göteborg. ME Production har haft förtroendet att leverera produktionsledning, infrastruktur och teknik för evenemanget och säkerställa att allt flödar smidigt bakom kulisserna.",
+  "paragraph2": "Från logistik och rigg till teknik och etablering – vi ser till att scenen är redo, att strömmen fungerar och att varje detalj sitter. Det är det jobbet vi älskar.",
+  "deliverablesHeading": "Vad vi levererade",
+  "deliverables": [
+    "Komplett produktionsledning",
+    "Infrastruktur och logistik på plats",
+    "Teknik & ljud",
+    "Etablering och rivning",
+    "Koordinering av underleverantörer"
+  ],
+  "gallery": [
+    { "image": "https://media.meproduction.se/2019/06/WOW_4-uai-258x172.png", "alt": "Way Out West" },
+    { "image": "https://media.meproduction.se/2019/06/WOW_3-uai-258x172.png", "alt": "Way Out West" },
+    { "image": "https://media.meproduction.se/2019/06/WOW_2-uai-258x172.png", "alt": "Way Out West" },
+    { "image": "https://media.meproduction.se/2019/06/WOW_1-uai-258x172.png", "alt": "Way Out West" }
+  ],
+  "nextSlug": "nordsjo"
+}

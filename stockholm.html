@@ -331,15 +331,15 @@
     <div class="hero-content">
       <div class="hero-location">
         <span class="hero-location-dot"></span>
-        Nu i Stockholm
+        {{page.hero.locationLabel}}
       </div>
-      <h1>Evenemangsproduktion &amp; Mässmontrar<br /><em>i Stockholm.</em></h1>
+      <h1>{{page.hero.heading}}<br /><em>{{page.hero.headingEm}}</em></h1>
       <p class="hero-sub">
-        Samma gäng. Samma kvalitet. Nu med lokal närvaro i Stockholm – redo att bygga ditt nästa evenemang precis utanför din dörr.
+        {{page.hero.sub}}
       </p>
       <div class="hero-btns">
-        <a href="mailto:hampus.klozz@meproduction.se" class="btn-primary">Kontakta Stockholm →</a>
-        <a href="index.html#case" class="btn-ghost">Se våra case</a>
+        <a href="mailto:hampus.klozz@meproduction.se" class="btn-primary">{{page.hero.btnPrimary}}</a>
+        <a href="index.html#case" class="btn-ghost">{{page.hero.btnGhost}}</a>
       </div>
     </div>
   </section>
@@ -349,34 +349,34 @@
     <div class="address-bar-left">
       <span class="address-bar-icon">📍</span>
       <div class="address-bar-text">
-        <strong>Sjöviksvägen 104, Stockholm</strong>
-        <span>Liljeholmen · Stockholms stad</span>
+        <strong>{{page.address.line}}</strong>
+        <span>{{page.address.area}}</span>
       </div>
     </div>
-    <a href="https://maps.google.com/?q=Sjöviksvägen+104+Stockholm" target="_blank" rel="noopener">Öppna i Google Maps ↗</a>
+    <a href="https://maps.google.com/?q={{page.address.mapsQuery}}" target="_blank" rel="noopener">Öppna i Google Maps ↗</a>
   </div>
 
   <!-- INTRO -->
   <div class="intro">
     <div class="intro-block">
-      <div class="intro-label reveal">Varför Stockholm</div>
-      <h2 class="reveal">Nära dig.<br />Från dag ett.</h2>
+      <div class="intro-label reveal">{{page.intro.label1}}</div>
+      <h2 class="reveal">{{page.intro.heading1Line1}}<br />{{page.intro.heading1Line2}}</h2>
       <p class="reveal" style="transition-delay:.1s">
-        ME Production har rötterna i Göteborg men hjärtat på rätt plats – och nu är det hjärtat i Stockholm också. Vi är trötta på långa restider och korta svarstider. Med kontor i Liljeholmen kan vi vara på plats, snabbt.
+        {{page.intro.paragraph1}}
       </p>
     </div>
     <div class="intro-block dark">
-      <div class="intro-label reveal">Vad vi gör</div>
-      <h2 class="reveal">Mässmonter, monterproduktion<br />&amp; eventproduktion i Stockholm.</h2>
+      <div class="intro-label reveal">{{page.intro.label2}}</div>
+      <h2 class="reveal">{{page.intro.heading2Line1}}<br />{{page.intro.heading2Line2}}</h2>
       <p class="reveal" style="transition-delay:.1s">
-        Mässmontrar, eventproduktion, skyltning, etablering och rivning. Vi tar hela paketet – så du kan fokusera på det som faktiskt spelar roll för ditt varumärke.
+        {{page.intro.paragraph2}}
       </p>
     </div>
   </div>
 
   <!-- SERVICES -->
   <section class="services">
-    <div class="reveal"><div class="intro-label">Vad vi levererar i Stockholm</div></div>
+    <div class="reveal"><div class="intro-label">{{page.servicesLabel}}</div></div>
     <h2 class="reveal">Från första skiss<br />till färdigt resultat.</h2>
     <div class="services-grid">
       <div class="service-item reveal">
@@ -421,28 +421,28 @@
     <div class="map-info">
       <div>
         <div class="intro-label">Hitta hit</div>
-        <h2 class="reveal">Vi finns här.</h2>
+        <h2 class="reveal">{{page.map.heading}}</h2>
       </div>
       <div class="map-info-item reveal">
         <span class="map-info-icon">📍</span>
         <div class="map-info-text">
           <strong>Adress</strong>
-          <span>Sjöviksvägen 104<br />117 43 Stockholm</span>
+          <span>{{page.map.address}}<br />{{page.map.postal}}</span>
         </div>
       </div>
       <div class="map-info-item reveal" style="transition-delay:.08s">
         <span class="map-info-icon">🚇</span>
         <div class="map-info-text">
-          <strong>Kollektivtrafik</strong>
-          <span>Tunnelbana Liljeholmen (röd &amp; grön linje)<br />5 min promenad</span>
+          <strong>{{page.map.transitTitle}}</strong>
+          <span>{{page.map.transitText}}<br />{{page.map.transitSub}}</span>
         </div>
       </div>
       <div class="map-info-item reveal" style="transition-delay:.16s">
         <span class="map-info-icon">📞</span>
         <div class="map-info-text">
-          <strong>Stockholmskontoret</strong>
-          <a href="tel:+46733324439">+46 733 324 439</a>
-          <a href="mailto:hampus.klozz@meproduction.se">hampus.klozz@meproduction.se</a>
+          <strong>{{page.map.officeTitle}}</strong>
+          <a href="tel:{{page.map.phoneHref}}">{{page.map.phone}}</a>
+          <a href="mailto:{{page.map.email}}">{{page.map.email}}</a>
         </div>
       </div>
     </div>
@@ -450,9 +450,9 @@
 
   <!-- TEAM STOCKHOLM -->
   <section class="team-sto">
-    <div class="intro-label reveal">Teamet i Stockholm</div>
-    <h2 class="reveal">Era kontakter<br />på plats.</h2>
-    <p class="sub reveal" style="transition-delay:.08s">Tre erfarna ME Production-profiler med Stockholmsregionen som hemmaplan.</p>
+    <div class="intro-label reveal">{{page.team.label}}</div>
+    <h2 class="reveal">{{page.team.headingLine1}}<br />{{page.team.headingLine2}}</h2>
+    <p class="sub reveal" style="transition-delay:.08s">{{page.team.sub}}</p>
     <div class="team-sto-grid">
       <div class="team-card-sto reveal" style="transition-delay:.08s">
         <div class="team-card-sto-img" style="background-image:url('https://media.meproduction.se/2019/08/6-uai-193x258.jpg')"></div>
@@ -483,9 +483,9 @@
 
   <!-- CTA -->
   <section class="cta">
-    <h2>Har du ett projekt<br />på <em>gång i Stockholm?</em></h2>
-    <p>Hör av dig till Hampus – så tar vi ett snack om hur vi kan hjälpa dig.</p>
-    <a href="mailto:hampus.klozz@meproduction.se?subject=Projekt i Stockholm" class="btn-primary" id="ctaBtn">Skicka ett mail →</a>
+    <h2>{{page.cta.heading}}<br />på <em>{{page.cta.headingEm}}</em></h2>
+    <p>{{page.cta.paragraph}}</p>
+    <a href="mailto:{{page.cta.email}}?subject={{page.cta.subject}}" class="btn-primary" id="ctaBtn">{{page.cta.btnLabel}}</a>
   </section>
 
   <!-- FOOTER -->
@@ -494,7 +494,7 @@
       <a href="index.html"><img fetchpriority="high" decoding="async" src="me_production_vit_vit_gul_prick (kopia).webp" alt="ME Production" style="height:26px;width:auto;display:inline-block;vertical-align:middle;"></a>
       <span style="font-size:0.72rem;color:rgba(255,255,255,0.3);margin-left:12px;letter-spacing:0.1em;text-transform:uppercase;">Stockholm</span>
     </div>
-    <p>Sjöviksvägen 104, Stockholm · <a href="mailto:hampus.klozz@meproduction.se">hampus.klozz@meproduction.se</a> · <a href="index.html">meproduction.se</a></p>
+    <p>{{page.address.line}} · <a href="mailto:{{page.map.email}}">{{page.map.email}}</a> · <a href="index.html">meproduction.se</a></p>
   </footer>
 
   <script>

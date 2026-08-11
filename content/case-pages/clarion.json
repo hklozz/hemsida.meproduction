@@ -1,0 +1,29 @@
+{
+  "tag": "Julbelysning & Installation",
+  "title": "Clarion Hotel Post",
+  "subtitle": "Avancerad julbelysning & LED-installation – Göteborg",
+  "heroImage": "https://media.meproduction.se/2019/06/Clarion_4-uai-258x172.png",
+  "customer": "Clarion Hotel Post",
+  "location": "Drottningtorget, Göteborg",
+  "category": "Belysning & Installation",
+  "extraLabel": "Säsong",
+  "extraValue": "Advent & Jul",
+  "heading": "Göteborg lyser upp",
+  "paragraph1": "Clarion Hotel Post – inrymt i det gamla Göteborgs Posthuset vid Drottningtorget – är en av Göteborgs mest ikoniska byggnader. ME Production fick uppdraget att förvandla fasaden och interiören till en magisk julupplevelse med avancerad LED-belysning och ljusinstallationer.",
+  "paragraph2": "Projektet krävde noggrann planering, säkra riggningar och exakt timing för att göra det möjligt att tända \"Göteborgs julklapp\" i rätt ögonblick. Resultatet var en installation som stoppade förbipasserande i spåren.",
+  "deliverablesHeading": "Vad vi levererade",
+  "deliverables": [
+    "LED-design och ljussättning",
+    "Rigg och installation på fasad",
+    "Elnät och styrning",
+    "Projektledning och säkerhetskoordinering",
+    "Montage och demontering"
+  ],
+  "gallery": [
+    { "image": "https://media.meproduction.se/2019/06/Clarion_4-uai-258x172.png", "alt": "Clarion Hotel Post julbelysning" },
+    { "image": "https://media.meproduction.se/2019/06/Clarion_3-uai-258x172.png", "alt": "Clarion Hotel Post julbelysning" },
+    { "image": "https://media.meproduction.se/2019/06/Clarion_2-uai-258x172.png", "alt": "Clarion Hotel Post julbelysning" },
+    { "image": "https://media.meproduction.se/2019/06/Clarion_1-uai-258x172.png", "alt": "Clarion Hotel Post julbelysning" }
+  ],
+  "nextSlug": "way-out-west"
+}

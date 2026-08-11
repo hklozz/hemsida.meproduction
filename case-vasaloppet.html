@@ -29,44 +29,37 @@
     </div>
   </nav>
 
-  <header class="case-hero" style="background-image: url('https://media.meproduction.se/2019/06/vasaloppet_8-uai-258x172.png');">
+  <header class="case-hero" style="background-image: url('{{page.heroImage}}');">
     <div class="case-hero-overlay"></div>
     <div class="case-hero-content">
       <a href="index.html#case" class="back-link">← Alla case</a>
-      <div class="case-tag-large">Sport &amp; Event</div>
-      <h1>Vasaloppet</h1>
-      <p class="hero-sub">Produktionsledning &amp; infrastruktur – Mora, Dalarna</p>
+      <div class="case-tag-large">{{page.tag}}</div>
+      <h1>{{page.title}}</h1>
+      <p class="hero-sub">{{page.subtitle}}</p>
     </div>
   </header>
 
   <main class="case-main">
 
     <div class="case-meta">
-      <div class="meta-item"><span class="meta-label">Kund</span><span class="meta-value">Vasaloppet</span></div>
-      <div class="meta-item"><span class="meta-label">Plats</span><span class="meta-value">Mora, Dalarna</span></div>
-      <div class="meta-item"><span class="meta-label">Kategori</span><span class="meta-value">Sportevent &amp; Evenemangsproduktion</span></div>
-      <div class="meta-item"><span class="meta-label">Deltagare</span><span class="meta-value">~15 800 startande per lopp</span></div>
+      <div class="meta-item"><span class="meta-label">Kund</span><span class="meta-value">{{page.customer}}</span></div>
+      <div class="meta-item"><span class="meta-label">Plats</span><span class="meta-value">{{page.location}}</span></div>
+      <div class="meta-item"><span class="meta-label">Kategori</span><span class="meta-value">{{page.category}}</span></div>
+      <div class="meta-item"><span class="meta-label">{{page.extraLabel}}</span><span class="meta-value">{{page.extraValue}}</span></div>
     </div>
 
     <div class="case-body">
       <div class="case-text">
-        <h2>Världens äldsta och längsta skidlopp</h2>
-        <p>Vasaloppet är inte vilket lopp som helst – det är en nationell institution med historia som sträcker sig tillbaka till 1922. ME Production fick förtroendet att leverera komplett produktionsledning och infrastruktur för evenemanget i skogarna utanför Mora.</p>
-        <p>Det handlar om att skapa en hel stad i skogen under ett par intensiva dagar. Tält, teknik, logistik, stationer längs loppet, målgång och allting däremellan. Allt ska vara på plats, fungera perfekt – och sedan rivas ned utan spår.</p>
-        <h3>Vad vi levererade</h3>
+        <h2>{{page.heading}}</h2>
+        <p>{{page.paragraph1}}</p>
+        <p>{{page.paragraph2}}</p>
+        <h3>{{page.deliverablesHeading}}</h3>
         <ul>
-          <li>Komplett produktionsledning på plats</li>
-          <li>Tält, struktur och infrastruktur</li>
-          <li>Teknik och el-distribution</li>
-          <li>Logistik och koordinering</li>
-          <li>Etablering och rivning</li>
+{{deliverables.html}}
         </ul>
       </div>
       <div class="case-gallery">
-        <img loading="lazy" decoding="async" src="https://media.meproduction.se/2019/06/vasaloppet_8-uai-258x172.png" alt="Vasaloppet" />
-        <img loading="lazy" decoding="async" src="https://media.meproduction.se/2019/06/vasaloppet_7-uai-258x172.png" alt="Vasaloppet" onerror="this.style.display='none'" />
-        <img loading="lazy" decoding="async" src="https://media.meproduction.se/2019/06/vasaloppet_6-uai-258x172.png" alt="Vasaloppet" onerror="this.style.display='none'" />
-        <img loading="lazy" decoding="async" src="https://media.meproduction.se/2019/06/vasaloppet_5-uai-258x172.png" alt="Vasaloppet" onerror="this.style.display='none'" />
+{{gallery.html}}
       </div>
     </div>
 
@@ -74,7 +67,7 @@
 
   <section class="case-next">
     <p>Nästa case</p>
-    <a href="case-clarion.html" class="next-link">Clarion Hotel Post – Julbelysning →</a>
+    <a href="{{page.nextHref}}" class="next-link">{{page.nextLabel}}</a>
   </section>
 
   <footer class="case-footer">

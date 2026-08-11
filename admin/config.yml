@@ -151,6 +151,243 @@ collections:
       - { label: "E-post", name: "email", widget: "string", required: false }
       - { label: "Telefon", name: "phone", widget: "string", required: false }
 
+  - name: "goteborg"
+    label: "Göteborg-sidan"
+    files:
+      - file: "content/goteborg.json"
+        label: "Göteborg – innehåll"
+        name: "goteborg"
+        fields:
+          - label: "Hero (översta delen)"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Tagg-text ovanför rubriken", name: "locationLabel", widget: "string" }
+              - { label: "Rubrik", name: "heading", widget: "string" }
+              - { label: "Rubrik – kursiv rad", name: "headingEm", widget: "string" }
+              - { label: "Ingress-text", name: "sub", widget: "text" }
+              - { label: "Knapp 1-text", name: "btnPrimary", widget: "string" }
+              - { label: "Knapp 2-text", name: "btnGhost", widget: "string" }
+          - label: "Adressrad (gul list under hero)"
+            name: "address"
+            widget: "object"
+            fields:
+              - { label: "Adress", name: "line", widget: "string" }
+              - { label: "Område", name: "area", widget: "string" }
+              - { label: "Google Maps-sökning (utan mellanslag, använd +)", name: "mapsQuery", widget: "string" }
+          - label: "Introsektion (två rutor)"
+            name: "intro"
+            widget: "object"
+            fields:
+              - { label: "Etikett (vänster ruta)", name: "label1", widget: "string" }
+              - { label: "Rubrik rad 1 (vänster)", name: "heading1Line1", widget: "string" }
+              - { label: "Rubrik rad 2 (vänster)", name: "heading1Line2", widget: "string" }
+              - { label: "Text (vänster)", name: "paragraph1", widget: "text" }
+              - { label: "Etikett (höger, mörk ruta)", name: "label2", widget: "string" }
+              - { label: "Rubrik rad 1 (höger)", name: "heading2Line1", widget: "string" }
+              - { label: "Rubrik rad 2 (höger)", name: "heading2Line2", widget: "string" }
+              - { label: "Text (höger)", name: "paragraph2", widget: "text" }
+          - { label: "Etikett ovanför tjänstelistan", name: "servicesLabel", widget: "string" }
+          - label: "Kartsektion"
+            name: "map"
+            widget: "object"
+            fields:
+              - { label: "Rubrik", name: "heading", widget: "string" }
+              - { label: "Adress", name: "address", widget: "string" }
+              - { label: "Postort", name: "postal", widget: "string" }
+              - { label: "Kollektivtrafik – rubrik", name: "transitTitle", widget: "string" }
+              - { label: "Kollektivtrafik – text", name: "transitText", widget: "string" }
+              - { label: "Kollektivtrafik – gångtid", name: "transitSub", widget: "string" }
+              - { label: "Kontor – rubrik", name: "officeTitle", widget: "string" }
+              - { label: "Telefon (visas)", name: "phone", widget: "string" }
+              - { label: "Telefon (för klick-att-ringa, utan mellanslag, t.ex. +46701234567)", name: "phoneHref", widget: "string" }
+              - { label: "E-post", name: "email", widget: "string" }
+          - label: "Team-sektion (lokala kontakter)"
+            name: "team"
+            widget: "object"
+            fields:
+              - { label: "Etikett", name: "label", widget: "string" }
+              - { label: "Rubrik rad 1", name: "headingLine1", widget: "string" }
+              - { label: "Rubrik rad 2", name: "headingLine2", widget: "string" }
+              - { label: "Text", name: "sub", widget: "text" }
+          - label: "Kontakt-sektion (längst ner)"
+            name: "cta"
+            widget: "object"
+            fields:
+              - { label: "Rubrik rad 1", name: "heading", widget: "string" }
+              - { label: "Rubrik – kursiv rad", name: "headingEm", widget: "string" }
+              - { label: "Text", name: "paragraph", widget: "text" }
+              - { label: "E-post för knappen", name: "email", widget: "string" }
+              - { label: "Ämnesrad för mailet", name: "subject", widget: "string" }
+              - { label: "Knapptext", name: "btnLabel", widget: "string" }
+
+  - name: "stockholm"
+    label: "Stockholm-sidan"
+    files:
+      - file: "content/stockholm.json"
+        label: "Stockholm – innehåll"
+        name: "stockholm"
+        fields:
+          - label: "Hero (översta delen)"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Tagg-text ovanför rubriken", name: "locationLabel", widget: "string" }
+              - { label: "Rubrik", name: "heading", widget: "string" }
+              - { label: "Rubrik – kursiv rad", name: "headingEm", widget: "string" }
+              - { label: "Ingress-text", name: "sub", widget: "text" }
+              - { label: "Knapp 1-text", name: "btnPrimary", widget: "string" }
+              - { label: "Knapp 2-text", name: "btnGhost", widget: "string" }
+          - label: "Adressrad (gul list under hero)"
+            name: "address"
+            widget: "object"
+            fields:
+              - { label: "Adress", name: "line", widget: "string" }
+              - { label: "Område", name: "area", widget: "string" }
+              - { label: "Google Maps-sökning (utan mellanslag, använd +)", name: "mapsQuery", widget: "string" }
+          - label: "Introsektion (två rutor)"
+            name: "intro"
+            widget: "object"
+            fields:
+              - { label: "Etikett (vänster ruta)", name: "label1", widget: "string" }
+              - { label: "Rubrik rad 1 (vänster)", name: "heading1Line1", widget: "string" }
+              - { label: "Rubrik rad 2 (vänster)", name: "heading1Line2", widget: "string" }
+              - { label: "Text (vänster)", name: "paragraph1", widget: "text" }
+              - { label: "Etikett (höger, mörk ruta)", name: "label2", widget: "string" }
+              - { label: "Rubrik rad 1 (höger)", name: "heading2Line1", widget: "string" }
+              - { label: "Rubrik rad 2 (höger)", name: "heading2Line2", widget: "string" }
+              - { label: "Text (höger)", name: "paragraph2", widget: "text" }
+          - { label: "Etikett ovanför tjänstelistan", name: "servicesLabel", widget: "string" }
+          - label: "Kartsektion"
+            name: "map"
+            widget: "object"
+            fields:
+              - { label: "Rubrik", name: "heading", widget: "string" }
+              - { label: "Adress", name: "address", widget: "string" }
+              - { label: "Postort", name: "postal", widget: "string" }
+              - { label: "Kollektivtrafik – rubrik", name: "transitTitle", widget: "string" }
+              - { label: "Kollektivtrafik – text", name: "transitText", widget: "string" }
+              - { label: "Kollektivtrafik – gångtid", name: "transitSub", widget: "string" }
+              - { label: "Kontor – rubrik", name: "officeTitle", widget: "string" }
+              - { label: "Telefon (visas)", name: "phone", widget: "string" }
+              - { label: "Telefon (för klick-att-ringa, utan mellanslag, t.ex. +46701234567)", name: "phoneHref", widget: "string" }
+              - { label: "E-post", name: "email", widget: "string" }
+          - label: "Team-sektion (lokala kontakter)"
+            name: "team"
+            widget: "object"
+            fields:
+              - { label: "Etikett", name: "label", widget: "string" }
+              - { label: "Rubrik rad 1", name: "headingLine1", widget: "string" }
+              - { label: "Rubrik rad 2", name: "headingLine2", widget: "string" }
+              - { label: "Text", name: "sub", widget: "text" }
+          - label: "Kontakt-sektion (längst ner)"
+            name: "cta"
+            widget: "object"
+            fields:
+              - { label: "Rubrik rad 1", name: "heading", widget: "string" }
+              - { label: "Rubrik – kursiv rad", name: "headingEm", widget: "string" }
+              - { label: "Text", name: "paragraph", widget: "text" }
+              - { label: "E-post för knappen", name: "email", widget: "string" }
+              - { label: "Ämnesrad för mailet", name: "subject", widget: "string" }
+              - { label: "Knapptext", name: "btnLabel", widget: "string" }
+
+  - name: "hallbarhet"
+    label: "Hållbarhet-sidan"
+    files:
+      - file: "content/hallbarhet.json"
+        label: "Hållbarhet – innehåll"
+        name: "hallbarhet"
+        fields:
+          - label: "Hero (översta delen)"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Tagg-text ovanför rubriken", name: "label", widget: "string" }
+              - { label: "Rubrik", name: "heading", widget: "string" }
+              - { label: "Rubrik – kursiv rad (efter \"Vi tar\")", name: "headingEm", widget: "string" }
+              - { label: "Ingress-text", name: "sub", widget: "text" }
+          - label: "Introsektion"
+            name: "intro"
+            widget: "object"
+            fields:
+              - { label: "Etikett", name: "label", widget: "string" }
+              - { label: "Rubrik", name: "heading", widget: "string" }
+              - { label: "Stycke 1", name: "paragraph1", widget: "text" }
+              - { label: "Stycke 2", name: "paragraph2", widget: "text" }
+              - { label: "Stycke 3", name: "paragraph3", widget: "text" }
+          - { label: "Rubrik ovanför pelarna", name: "pillarsHeading", widget: "string" }
+          - label: "Pelare (6 st, ordningen styr placeringen)"
+            name: "pillars"
+            widget: "list"
+            summary: "{{title}}"
+            fields:
+              - { label: "Nummer + etikett (t.ex. \"01 — Material\")", name: "num", widget: "string" }
+              - { label: "Titel", name: "title", widget: "string" }
+              - { label: "Beskrivning", name: "desc", widget: "text" }
+          - label: "Case-rader (2 st, breda rader med bild)"
+            name: "caseRows"
+            widget: "list"
+            summary: "{{heading}}"
+            fields:
+              - { label: "Tagg", name: "tag", widget: "string" }
+              - { label: "Rubrik", name: "heading", widget: "string" }
+              - { label: "Text", name: "paragraph", widget: "text" }
+              - { label: "Bild", name: "image", widget: "image" }
+          - label: "Statistik-rad (4 st)"
+            name: "stats"
+            widget: "list"
+            summary: "{{value}} — {{label}}"
+            fields:
+              - { label: "Värde (t.ex. 100%, 0, →, ↻)", name: "value", widget: "string" }
+              - { label: "Etikett", name: "label", widget: "string" }
+          - label: "Kontakt-sektion (längst ner)"
+            name: "cta"
+            widget: "object"
+            fields:
+              - { label: "Rubrik rad 1", name: "heading", widget: "string" }
+              - { label: "Rubrik – kursiv rad", name: "headingEm", widget: "string" }
+              - { label: "Text", name: "paragraph", widget: "text" }
+              - { label: "Knapptext", name: "btnLabel", widget: "string" }
+
+  - name: "case-pages"
+    label: "Case-sidor (detaljer)"
+    folder: "content/case-pages"
+    create: true
+    extension: "json"
+    format: "json"
+    slug: "{{slug}}"
+    identifier_field: "title"
+    summary: "{{title}}"
+    fields:
+      - { label: "Kategori-tagg", name: "tag", widget: "string" }
+      - { label: "Titel", name: "title", widget: "string" }
+      - { label: "Undertitel", name: "subtitle", widget: "string" }
+      - { label: "Bild högst upp", name: "heroImage", widget: "image" }
+      - { label: "Kund", name: "customer", widget: "string" }
+      - { label: "Plats", name: "location", widget: "string" }
+      - { label: "Kategori", name: "category", widget: "string" }
+      - { label: "Fjärde faktan – etikett (t.ex. \"Utmärkelse\", \"Deltagare\", \"Säsong\", \"Leverans\")", name: "extraLabel", widget: "string" }
+      - { label: "Fjärde faktan – värde", name: "extraValue", widget: "string" }
+      - { label: "Rubrik i texten", name: "heading", widget: "string" }
+      - { label: "Stycke 1", name: "paragraph1", widget: "text" }
+      - { label: "Stycke 2", name: "paragraph2", widget: "text" }
+      - { label: "Rubrik ovanför punktlistan", name: "deliverablesHeading", widget: "string" }
+      - { label: "Vad vi levererade (punktlista)", name: "deliverables", widget: "list" }
+      - label: "Bildgalleri"
+        name: "gallery"
+        widget: "list"
+        summary: "{{fields.alt}}"
+        fields:
+          - { label: "Bild", name: "image", widget: "image" }
+          - { label: "Alt-text för bilden (SEO)", name: "alt", widget: "string", required: false }
+      - label: "Nästa case (länken längst ner på sidan)"
+        name: "nextSlug"
+        widget: "relation"
+        collection: "case-pages"
+        search_fields: ["title"]
+        display_fields: ["title"]
+        value_field: "{{slug}}"
+
   - name: "seo"
     label: "SEO per sida"
     files:

@@ -1,0 +1,52 @@
+{
+  "hero": {
+    "locationLabel": "Nu i Stockholm",
+    "heading": "Evenemangsproduktion & Mässmontrar",
+    "headingEm": "i Stockholm.",
+    "sub": "Samma gäng. Samma kvalitet. Nu med lokal närvaro i Stockholm – redo att bygga ditt nästa evenemang precis utanför din dörr.",
+    "btnPrimary": "Kontakta Stockholm →",
+    "btnGhost": "Se våra case"
+  },
+  "address": {
+    "line": "Sjöviksvägen 104, Stockholm",
+    "area": "Liljeholmen · Stockholms stad",
+    "mapsQuery": "Sjöviksvägen+104+Stockholm"
+  },
+  "intro": {
+    "label1": "Varför Stockholm",
+    "heading1Line1": "Nära dig.",
+    "heading1Line2": "Från dag ett.",
+    "paragraph1": "ME Production har rötterna i Göteborg men hjärtat på rätt plats – och nu är det hjärtat i Stockholm också. Vi är trötta på långa restider och korta svarstider. Med kontor i Liljeholmen kan vi vara på plats, snabbt.",
+    "label2": "Vad vi gör",
+    "heading2Line1": "Mässmonter, monterproduktion",
+    "heading2Line2": "& eventproduktion i Stockholm.",
+    "paragraph2": "Mässmontrar, eventproduktion, skyltning, etablering och rivning. Vi tar hela paketet – så du kan fokusera på det som faktiskt spelar roll för ditt varumärke."
+  },
+  "servicesLabel": "Vad vi levererar i Stockholm",
+  "map": {
+    "heading": "Vi finns här.",
+    "address": "Sjöviksvägen 104",
+    "postal": "117 43 Stockholm",
+    "transitTitle": "Kollektivtrafik",
+    "transitText": "Tunnelbana Liljeholmen (röd & grön linje)",
+    "transitSub": "5 min promenad",
+    "officeTitle": "Stockholmskontoret",
+    "phone": "+46 733 324 439",
+    "phoneHref": "+46733324439",
+    "email": "hampus.klozz@meproduction.se"
+  },
+  "team": {
+    "label": "Teamet i Stockholm",
+    "headingLine1": "Era kontakter",
+    "headingLine2": "på plats.",
+    "sub": "Tre erfarna ME Production-profiler med Stockholmsregionen som hemmaplan."
+  },
+  "cta": {
+    "heading": "Har du ett projekt",
+    "headingEm": "gång i Stockholm?",
+    "paragraph": "Hör av dig till Hampus – så tar vi ett snack om hur vi kan hjälpa dig.",
+    "email": "hampus.klozz@meproduction.se",
+    "subject": "Projekt i Stockholm",
+    "btnLabel": "Skicka ett mail →"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "hero": {
+    "label": "Ansvar & hållbarhet",
+    "heading": "Vi bygger.",
+    "headingEm": "ansvar.",
+    "sub": "Varje projekt vi levererar lämnar ett avtryck – vi jobbar hårt för att det avtrycket ska vara så litet som möjligt."
+  },
+  "intro": {
+    "label": "Varför det spelar roll",
+    "heading": "Hållbarhet är inte ett tillägg. Det är en del av jobbet.",
+    "paragraph1": "Eventbranschen rör sig fort. Det byggs, etableras, rivas ned – och sedan görs det om igen. Vi vet det bättre än de flesta. Och precis därför tar vi frågan på allvar.",
+    "paragraph2": "Det handlar inte om att sätta ett grönt märke på ett erbjudande. Det handlar om att välja rätt material, planera logistiken smart, ställa samma krav på underleverantörer som vi ställer på oss själva – och att lämna varje plats i bättre skick än vi hittade den.",
+    "paragraph3": "Vi är inte perfekta. Men vi rör oss i rätt riktning, projekt för projekt."
+  },
+  "pillarsHeading": "Hur vi faktiskt arbetar med det.",
+  "pillars": [
+    { "num": "01 — Material", "title": "Återbruk före nytillverkning", "desc": "Vi designar konstruktioner för att leva länge. Monterelement, rigg och inredning köps inte nytt om det redan finns i lager – och det vi bygger nytt konstrueras för att kunna användas igen." },
+    { "num": "02 — Logistik", "title": "Färre fordon, bättre planering", "desc": "Vi samordnar transporter mellan projekt för att undvika tomkörningar. Etablering och rivning planeras i ett svep – inte som separata resor utan som en genomtänkt helhet." },
+    { "num": "03 — Leverantörer", "title": "Vi väljer partners med omsorg", "desc": "Vårt leverantörsnät byggs på förtroende – och det innebär att vi ställer frågor. Hur hanterar ni avfall? Var tillverkas det? Vi väljer hellre rätt partner än billigaste alternativ." },
+    { "num": "04 — På plats", "title": "Sortering och avfallshantering", "desc": "På evenemang som Way Out West och Vasaloppet arbetar vi aktivt med avfallssortering på plats. Rivningen avslutas inte förrän platsen är ren – det är en del av leveransen." },
+    { "num": "05 — Energi", "title": "Smart el och LED-first", "desc": "Vi väljer LED-teknik och energieffektiva lösningar som standard. Elförsörjning på evenemang planeras för att minimera överskottskapacitet och onödig förbrukning." },
+    { "num": "06 — Framåt", "title": "Kontinuerligt bättre", "desc": "Vi mäter, lär och förbättrar. Varje projekt ger oss ny kunskap om hur vi kan göra nästa ännu bättre. Det är inte en destination – det är en riktning vi aldrig slutar röra oss i." }
+  ],
+  "caseRows": [
+    { "tag": "I praktiken — Way Out West", "heading": "Tusentals besökare. Ett gemensamt ansvar.", "paragraph": "På Way Out West hanterar vi infrastruktur och etablering för ett av Göteborgs mest älskade evenemang. Det innebär samordning av hundratals leveranser, avfallshantering på festivalområdet och en rivning som lämnar Slottsskogen precis som vi hittade det – gärna lite bättre.", "image": "https://media.meproduction.se/2019/06/WOW_4-uai-258x172.png" },
+    { "tag": "I praktiken — Vasaloppet", "heading": "En skog utanför Mora. Ingen ska märka att vi var där.", "paragraph": "Vasaloppet är ett naturupplevelseevenemang lika mycket som ett sportevenemang. Vi etablerar strukturer i en miljö som måste lämnas orörd. Det kräver precision, respekt för platsen och en nedrivningsplan som är lika genomarbetad som etableringen.", "image": "https://media.meproduction.se/2019/06/vasaloppet_8-uai-258x172.png" }
+  ],
+  "stats": [
+    { "value": "100%", "label": "Platser lämnade i gott skick" },
+    { "value": "↻", "label": "Återbruk som standard" },
+    { "value": "0", "label": "Kompromisser med kvalitet" },
+    { "value": "→", "label": "Alltid rör vi oss framåt" }
+  ],
+  "cta": {
+    "heading": "Vill du ha en partner",
+    "headingEm": "som tänker ett steg längre?",
+    "paragraph": "Hör av dig – vi berättar gärna hur vi kan anpassa ett hållbart upplägg för just ditt projekt.",
+    "btnLabel": "Prata med oss →"
+  }
+}

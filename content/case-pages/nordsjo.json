@@ -1,0 +1,29 @@
+{
+  "tag": "Mässa & Monter",
+  "title": "Nordsjö – Årets Monter",
+  "subtitle": "Prisbelönt mässmonter på Nordbygg",
+  "heroImage": "https://media.meproduction.se/2019/06/Nordsjo_3-uai-258x172.png",
+  "customer": "Nordsjö / Akzo Nobel",
+  "location": "Nordbygg, Stockholm/Göteborg",
+  "category": "Mässmonter",
+  "extraLabel": "Utmärkelse",
+  "extraValue": "🏆 Årets Monter",
+  "heading": "Från skiss till utmärkelsen Årets Monter",
+  "paragraph1": "ME Production fick uppdraget att ta Nordsjös mässnärvaro till nästa nivå. Med ett brett grepp om helheten – från första skiss till sista rivningsdag – levererade vi en monter som inte bara imponerade på besökarna utan också vann branschens mest prestigefyllda pris: Årets Monter.",
+  "paragraph2": "Uppdraget innefattade allt från design och materialval till produktion, etablering på plats och rivning. Vi koordinerade samtliga underleverantörer och stod som ensam kontaktpunkt för kunden under hela processen.",
+  "deliverablesHeading": "Vad vi levererade",
+  "deliverables": [
+    "Konceptutveckling och design",
+    "Konstruktion och produktion av monterelement",
+    "Skyltning och grafisk produktion",
+    "Etablering och montering på plats",
+    "Projektledning och underleverantörskoordinering",
+    "Rivning och lagerhållning"
+  ],
+  "gallery": [
+    { "image": "https://media.meproduction.se/2019/06/Nordsjo_3-uai-258x172.png", "alt": "Nordsjö mässmonter" },
+    { "image": "https://media.meproduction.se/2019/06/Nordsjo_2-uai-258x172.png", "alt": "Nordsjö mässmonter" },
+    { "image": "https://media.meproduction.se/2019/06/Nordsjo_1-uai-258x172.png", "alt": "Nordsjö mässmonter" }
+  ],
+  "nextSlug": "vasaloppet"
+}

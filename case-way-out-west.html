@@ -29,44 +29,37 @@
     </div>
   </nav>
 
-  <header class="case-hero" style="background-image: url('https://media.meproduction.se/2019/06/WOW_4-uai-258x172.png');">
+  <header class="case-hero" style="background-image: url('{{page.heroImage}}');">
     <div class="case-hero-overlay"></div>
     <div class="case-hero-content">
       <a href="index.html#case" class="back-link">← Alla case</a>
-      <div class="case-tag-large">Festival</div>
-      <h1>Way Out West</h1>
-      <p class="hero-sub">Produktionsledning, infrastruktur &amp; teknik – Göteborg</p>
+      <div class="case-tag-large">{{page.tag}}</div>
+      <h1>{{page.title}}</h1>
+      <p class="hero-sub">{{page.subtitle}}</p>
     </div>
   </header>
 
   <main class="case-main">
 
     <div class="case-meta">
-      <div class="meta-item"><span class="meta-label">Kund</span><span class="meta-value">Way Out West / Luger</span></div>
-      <div class="meta-item"><span class="meta-label">Plats</span><span class="meta-value">Slottsskogen, Göteborg</span></div>
-      <div class="meta-item"><span class="meta-label">Kategori</span><span class="meta-value">Festival &amp; Evenemangsproduktion</span></div>
-      <div class="meta-item"><span class="meta-label">Leverans</span><span class="meta-value">Infrastruktur, teknik, produktionsledning</span></div>
+      <div class="meta-item"><span class="meta-label">Kund</span><span class="meta-value">{{page.customer}}</span></div>
+      <div class="meta-item"><span class="meta-label">Plats</span><span class="meta-value">{{page.location}}</span></div>
+      <div class="meta-item"><span class="meta-label">Kategori</span><span class="meta-value">{{page.category}}</span></div>
+      <div class="meta-item"><span class="meta-label">{{page.extraLabel}}</span><span class="meta-value">{{page.extraValue}}</span></div>
     </div>
 
     <div class="case-body">
       <div class="case-text">
-        <h2>Göteborgs ikoniska musik- och kulturfestival</h2>
-        <p>Way Out West är en av Sveriges mest älskade festivaler – varje år samlar den tusentals besökare i hjärtat av Slottsskogen i Göteborg. ME Production har haft förtroendet att leverera produktionsledning, infrastruktur och teknik för evenemanget och säkerställa att allt flödar smidigt bakom kulisserna.</p>
-        <p>Från logistik och rigg till teknik och etablering – vi ser till att scenen är redo, att strömmen fungerar och att varje detalj sitter. Det är det jobbet vi älskar.</p>
-        <h3>Vad vi levererade</h3>
+        <h2>{{page.heading}}</h2>
+        <p>{{page.paragraph1}}</p>
+        <p>{{page.paragraph2}}</p>
+        <h3>{{page.deliverablesHeading}}</h3>
         <ul>
-          <li>Komplett produktionsledning</li>
-          <li>Infrastruktur och logistik på plats</li>
-          <li>Teknik &amp; ljud</li>
-          <li>Etablering och rivning</li>
-          <li>Koordinering av underleverantörer</li>
+{{deliverables.html}}
         </ul>
       </div>
       <div class="case-gallery">
-        <img loading="lazy" decoding="async" src="https://media.meproduction.se/2019/06/WOW_4-uai-258x172.png" alt="Way Out West" />
-        <img loading="lazy" decoding="async" src="https://media.meproduction.se/2019/06/WOW_3-uai-258x172.png" alt="Way Out West" onerror="this.style.display='none'" />
-        <img loading="lazy" decoding="async" src="https://media.meproduction.se/2019/06/WOW_2-uai-258x172.png" alt="Way Out West" onerror="this.style.display='none'" />
-        <img loading="lazy" decoding="async" src="https://media.meproduction.se/2019/06/WOW_1-uai-258x172.png" alt="Way Out West" onerror="this.style.display='none'" />
+{{gallery.html}}
       </div>
     </div>
 
@@ -74,7 +67,7 @@
 
   <section class="case-next">
     <p>Nästa case</p>
-    <a href="case-nordsjo.html" class="next-link">Nordsjö – Årets Monter →</a>
+    <a href="{{page.nextHref}}" class="next-link">{{page.nextLabel}}</a>
   </section>
 
   <footer class="case-footer">

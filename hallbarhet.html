@@ -275,27 +275,27 @@
     <div class="hero-img" id="heroImg"></div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <div class="hero-label">Ansvar &amp; hållbarhet</div>
-      <h1>Vi bygger.<br />Vi tar <em>ansvar.</em></h1>
+      <div class="hero-label">{{page.hero.label}}</div>
+      <h1>{{page.hero.heading}}<br />Vi tar <em>{{page.hero.headingEm}}</em></h1>
       <p class="hero-sub">
-        Varje projekt vi levererar lämnar ett avtryck – vi jobbar hårt för att det avtrycket ska vara så litet som möjligt.
+        {{page.hero.sub}}
       </p>
     </div>
   </section>
 
   <!-- INTRO -->
   <section class="intro">
-    <div class="intro-label reveal">Varför det spelar roll</div>
+    <div class="intro-label reveal">{{page.intro.label}}</div>
     <div class="intro-text">
-      <h2 class="reveal">Hållbarhet är inte ett tillägg. Det är en del av jobbet.</h2>
+      <h2 class="reveal">{{page.intro.heading}}</h2>
       <p class="reveal" style="transition-delay:.08s">
-        Eventbranschen rör sig fort. Det byggs, etableras, rivas ned – och sedan görs det om igen. Vi vet det bättre än de flesta. Och precis därför tar vi frågan på allvar.
+        {{page.intro.paragraph1}}
       </p>
       <p class="reveal" style="transition-delay:.14s">
-        Det handlar inte om att sätta ett grönt märke på ett erbjudande. Det handlar om att <strong>välja rätt material</strong>, planera logistiken smart, ställa samma krav på underleverantörer som vi ställer på oss själva – och att lämna varje plats i bättre skick än vi hittade den.
+        {{page.intro.paragraph2}}
       </p>
       <p class="reveal" style="transition-delay:.2s">
-        Vi är inte perfekta. Men vi rör oss i rätt riktning, projekt för projekt.
+        {{page.intro.paragraph3}}
       </p>
     </div>
   </section>
@@ -303,91 +303,25 @@
   <!-- PILLARS -->
   <section class="pillars">
     <div class="pillars-header">
-      <h2 class="reveal">Hur vi faktiskt<br />arbetar med det.</h2>
+      <h2 class="reveal">{{page.pillarsHeading}}</h2>
     </div>
     <div class="pillars-grid">
-      <div class="pillar reveal">
-        <div class="pillar-num">01 — Material</div>
-        <h3>Återbruk före<br />nytillverkning</h3>
-        <p>Vi designar konstruktioner för att leva länge. Monterelement, rigg och inredning köps inte nytt om det redan finns i lager – och det vi bygger nytt konstrueras för att kunna användas igen.</p>
-      </div>
-      <div class="pillar reveal" style="transition-delay:.08s">
-        <div class="pillar-num">02 — Logistik</div>
-        <h3>Färre fordon,<br />bättre planering</h3>
-        <p>Vi samordnar transporter mellan projekt för att undvika tomkörningar. Etablering och rivning planeras i ett svep – inte som separata resor utan som en genomtänkt helhet.</p>
-      </div>
-      <div class="pillar reveal" style="transition-delay:.16s">
-        <div class="pillar-num">03 — Leverantörer</div>
-        <h3>Vi väljer partners<br />med omsorg</h3>
-        <p>Vårt leverantörsnät byggs på förtroende – och det innebär att vi ställer frågor. Hur hanterar ni avfall? Var tillverkas det? Vi väljer hellre rätt partner än billigaste alternativ.</p>
-      </div>
-      <div class="pillar reveal" style="transition-delay:.06s">
-        <div class="pillar-num">04 — På plats</div>
-        <h3>Sortering och<br />avfallshantering</h3>
-        <p>På evenemang som Way Out West och Vasaloppet arbetar vi aktivt med avfallssortering på plats. Rivningen avslutas inte förrän platsen är ren – det är en del av leveransen.</p>
-      </div>
-      <div class="pillar reveal" style="transition-delay:.12s">
-        <div class="pillar-num">05 — Energi</div>
-        <h3>Smart el och<br />LED-first</h3>
-        <p>Vi väljer LED-teknik och energieffektiva lösningar som standard. Elförsörjning på evenemang planeras för att minimera överskottskapacitet och onödig förbrukning.</p>
-      </div>
-      <div class="pillar reveal" style="transition-delay:.18s">
-        <div class="pillar-num">06 — Framåt</div>
-        <h3>Kontinuerligt<br />bättre</h3>
-        <p>Vi mäter, lär och förbättrar. Varje projekt ger oss ny kunskap om hur vi kan göra nästa ännu bättre. Det är inte en destination – det är en riktning vi aldrig slutar röra oss i.</p>
-      </div>
+      {{pillars.html}}
     </div>
   </section>
 
-  <!-- CASE ROW 1 -->
-  <div class="case-row">
-    <div class="case-row-img" style="background-image:url('https://media.meproduction.se/2019/06/WOW_4-uai-258x172.png');"></div>
-    <div class="case-row-text">
-      <div class="case-row-tag">I praktiken — Way Out West</div>
-      <h3 class="reveal">Tusentals besökare.<br />Ett gemensamt ansvar.</h3>
-      <p class="reveal" style="transition-delay:.08s">
-        På Way Out West hanterar vi infrastruktur och etablering för ett av Göteborgs mest älskade evenemang. Det innebär samordning av hundratals leveranser, avfallshantering på festivalområdet och en rivning som lämnar Slottsskogen precis som vi hittade det – gärna lite bättre.
-      </p>
-    </div>
-  </div>
-
-  <!-- CASE ROW 2 -->
-  <div class="case-row" style="direction:rtl;">
-    <div class="case-row-img" style="background-image:url('https://media.meproduction.se/2019/06/vasaloppet_8-uai-258x172.png');direction:ltr;"></div>
-    <div class="case-row-text" style="direction:ltr;">
-      <div class="case-row-tag">I praktiken — Vasaloppet</div>
-      <h3 class="reveal">En skog utanför Mora.<br />Ingen ska märka att vi var där.</h3>
-      <p class="reveal" style="transition-delay:.08s">
-        Vasaloppet är ett naturupplevelseevenemang lika mycket som ett sportevenemang. Vi etablerar strukturer i en miljö som måste lämnas orörd. Det kräver precision, respekt för platsen och en nedrivningsplan som är lika genomarbetad som etableringen.
-      </p>
-    </div>
-  </div>
+  {{caseRows.html}}
 
   <!-- STATS -->
   <div class="stats">
-    <div class="stat-item reveal">
-      <strong>100%</strong>
-      <span>Platser lämnade<br />i gott skick</span>
-    </div>
-    <div class="stat-item reveal" style="transition-delay:.08s">
-      <strong>↻</strong>
-      <span>Återbruk som<br />standard</span>
-    </div>
-    <div class="stat-item reveal" style="transition-delay:.16s">
-      <strong>0</strong>
-      <span>Kompromisser<br />med kvalitet</span>
-    </div>
-    <div class="stat-item reveal" style="transition-delay:.24s">
-      <strong>→</strong>
-      <span>Alltid rör vi oss<br />framåt</span>
-    </div>
+    {{stats.html}}
   </div>
 
   <!-- CTA -->
   <section class="cta-band">
-    <h2>Vill du ha en partner<br />som tänker <em>ett steg längre?</em></h2>
-    <p>Hör av dig – vi berättar gärna hur vi kan anpassa ett hållbart upplägg för just ditt projekt.</p>
-    <a href="mailto:info@meproduction.se?subject=Hållbarhet" class="cta-btn">Prata med oss →</a>
+    <h2>{{page.cta.heading}}<br />som tänker <em>{{page.cta.headingEm}}</em></h2>
+    <p>{{page.cta.paragraph}}</p>
+    <a href="mailto:info@meproduction.se?subject=Hållbarhet" class="cta-btn">{{page.cta.btnLabel}}</a>
   </section>
 
   <!-- FOOTER -->
