@@ -116,6 +116,8 @@ collections:
     label: "Nyheter"
     folder: "content/news"
     create: true
+    extension: "json"
+    format: "json"
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     identifier_field: "title"
     summary: "{{title}} — {{date}}"
@@ -130,6 +132,8 @@ collections:
     label: "Gänget"
     folder: "content/team"
     create: true
+    extension: "json"
+    format: "json"
     slug: "{{slug}}"
     identifier_field: "name"
     summary: "{{name}}"
