@@ -279,32 +279,6 @@
       color: var(--accent);
       padding: 0;
     }
-    /* ─── PROOF STRIP (riktiga projektbilder, statisk, ingen rörelse) ─── */
-    .proof-wrap {
-      overflow-x: auto;
-      overflow-y: hidden;
-      background: var(--dark);
-      padding: 18px 5vw 26px;
-    }
-    .proof-track {
-      display: flex;
-      gap: 14px;
-      width: max-content;
-    }
-    .proof-track img {
-      height: 96px;
-      width: auto;
-      aspect-ratio: 258/172;
-      object-fit: cover;
-      border-radius: var(--radius);
-      filter: grayscale(65%) brightness(0.92);
-      transition: filter 0.35s ease, transform 0.35s ease;
-      display: block;
-    }
-    .proof-track img:hover {
-      filter: grayscale(0%) brightness(1);
-      transform: translateY(-3px);
-    }
     @keyframes marquee {
       from { transform: translateX(0); }
       to { transform: translateX(-50%); }
@@ -1030,19 +1004,6 @@
     </div>
   </div>
 
-  <!-- PROOF STRIP: riktiga bilder från genomförda projekt, statisk (ingen rörelse mot marqueen) -->
-  <div class="proof-wrap" aria-hidden="true">
-    <div class="proof-track">
-      <img src="https://media.meproduction.se/2019/06/WOW_1-uai-258x172.png" alt="" loading="lazy" />
-      <img src="https://media.meproduction.se/2019/06/WOW_2-uai-258x172.png" alt="" loading="lazy" />
-      <img src="https://media.meproduction.se/2019/06/WOW_3-uai-258x172.png" alt="" loading="lazy" />
-      <img src="https://media.meproduction.se/2019/06/WOW_4-uai-258x172.png" alt="" loading="lazy" />
-      <img src="https://media.meproduction.se/2019/06/Clarion_1-uai-258x172.png" alt="" loading="lazy" />
-      <img src="https://media.meproduction.se/2019/06/Clarion_2-uai-258x172.png" alt="" loading="lazy" />
-      <img src="https://media.meproduction.se/2019/06/Clarion_3-uai-258x172.png" alt="" loading="lazy" />
-      <img src="https://media.meproduction.se/2019/06/Clarion_4-uai-258x172.png" alt="" loading="lazy" />
-    </div>
-  </div>
 
   <!-- TJÄNSTER -->
   <section id="tjanster">
