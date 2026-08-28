@@ -159,27 +159,19 @@
     }
     .mute-btn { display: none !important; }
     .hero-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: none;
-      border: none;
-      color: rgba(255,255,255,0.85);
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.25);
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      padding: 0;
-      margin-bottom: 24px;
+      padding: 6px 14px;
+      border-radius: 2px;
+      margin-bottom: 28px;
       width: fit-content;
-    }
-    .hero-tag::before {
-      content: '';
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: #F2C840;
-      flex-shrink: 0;
     }
     .hero h1 {
       font-size: clamp(2.4rem, 6vw, 5.5rem);
@@ -1003,7 +995,6 @@
       <span>Göteborg & Stockholm</span><span class="dot">✦</span>
     </div>
   </div>
-
 
   <!-- TJÄNSTER -->
   <section id="tjanster">
