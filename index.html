@@ -279,21 +279,20 @@
       color: var(--accent);
       padding: 0;
     }
-    /* ─── PROOF STRIP (riktiga projektbilder, native storlek) ─── */
+    /* ─── PROOF STRIP (riktiga projektbilder, statisk, ingen rörelse) ─── */
     .proof-wrap {
-      overflow: hidden;
+      overflow-x: auto;
+      overflow-y: hidden;
       background: var(--dark);
-      padding: 18px 0 26px;
+      padding: 18px 5vw 26px;
     }
     .proof-track {
       display: flex;
       gap: 14px;
       width: max-content;
-      animation: proof-scroll 42s linear infinite;
     }
-    .proof-wrap:hover .proof-track { animation-play-state: paused; }
     .proof-track img {
-      height: 132px;
+      height: 96px;
       width: auto;
       aspect-ratio: 258/172;
       object-fit: cover;
@@ -306,11 +305,6 @@
       filter: grayscale(0%) brightness(1);
       transform: translateY(-3px);
     }
-    @keyframes proof-scroll {
-      from { transform: translateX(0); }
-      to { transform: translateX(-50%); }
-    }
-
     @keyframes marquee {
       from { transform: translateX(0); }
       to { transform: translateX(-50%); }
@@ -1036,39 +1030,16 @@
     </div>
   </div>
 
-  <!-- PROOF STRIP: riktiga bilder från genomförda projekt -->
+  <!-- PROOF STRIP: riktiga bilder från genomförda projekt, statisk (ingen rörelse mot marqueen) -->
   <div class="proof-wrap" aria-hidden="true">
     <div class="proof-track">
       <img src="https://media.meproduction.se/2019/06/WOW_1-uai-258x172.png" alt="" loading="lazy" />
       <img src="https://media.meproduction.se/2019/06/WOW_2-uai-258x172.png" alt="" loading="lazy" />
-      <img src="https://media.meproduction.se/2019/06/Nordsjo_1-uai-258x172.png" alt="" loading="lazy" />
-      <img src="https://media.meproduction.se/2019/06/vasaloppet_5-uai-258x172.png" alt="" loading="lazy" />
-      <img src="https://media.meproduction.se/2019/06/Clarion_1-uai-258x172.png" alt="" loading="lazy" />
       <img src="https://media.meproduction.se/2019/06/WOW_3-uai-258x172.png" alt="" loading="lazy" />
-      <img src="https://media.meproduction.se/2019/06/Nordsjo_2-uai-258x172.png" alt="" loading="lazy" />
-      <img src="https://media.meproduction.se/2019/06/vasaloppet_6-uai-258x172.png" alt="" loading="lazy" />
-      <img src="https://media.meproduction.se/2019/06/Clarion_2-uai-258x172.png" alt="" loading="lazy" />
       <img src="https://media.meproduction.se/2019/06/WOW_4-uai-258x172.png" alt="" loading="lazy" />
-      <img src="https://media.meproduction.se/2019/06/Nordsjo_3-uai-258x172.png" alt="" loading="lazy" />
-      <img src="https://media.meproduction.se/2019/06/vasaloppet_7-uai-258x172.png" alt="" loading="lazy" />
-      <img src="https://media.meproduction.se/2019/06/Clarion_3-uai-258x172.png" alt="" loading="lazy" />
-      <img src="https://media.meproduction.se/2019/06/vasaloppet_8-uai-258x172.png" alt="" loading="lazy" />
-      <img src="https://media.meproduction.se/2019/06/Clarion_4-uai-258x172.png" alt="" loading="lazy" />
-      <!-- duplicate for seamless loop -->
-      <img src="https://media.meproduction.se/2019/06/WOW_1-uai-258x172.png" alt="" loading="lazy" />
-      <img src="https://media.meproduction.se/2019/06/WOW_2-uai-258x172.png" alt="" loading="lazy" />
-      <img src="https://media.meproduction.se/2019/06/Nordsjo_1-uai-258x172.png" alt="" loading="lazy" />
-      <img src="https://media.meproduction.se/2019/06/vasaloppet_5-uai-258x172.png" alt="" loading="lazy" />
       <img src="https://media.meproduction.se/2019/06/Clarion_1-uai-258x172.png" alt="" loading="lazy" />
-      <img src="https://media.meproduction.se/2019/06/WOW_3-uai-258x172.png" alt="" loading="lazy" />
-      <img src="https://media.meproduction.se/2019/06/Nordsjo_2-uai-258x172.png" alt="" loading="lazy" />
-      <img src="https://media.meproduction.se/2019/06/vasaloppet_6-uai-258x172.png" alt="" loading="lazy" />
       <img src="https://media.meproduction.se/2019/06/Clarion_2-uai-258x172.png" alt="" loading="lazy" />
-      <img src="https://media.meproduction.se/2019/06/WOW_4-uai-258x172.png" alt="" loading="lazy" />
-      <img src="https://media.meproduction.se/2019/06/Nordsjo_3-uai-258x172.png" alt="" loading="lazy" />
-      <img src="https://media.meproduction.se/2019/06/vasaloppet_7-uai-258x172.png" alt="" loading="lazy" />
       <img src="https://media.meproduction.se/2019/06/Clarion_3-uai-258x172.png" alt="" loading="lazy" />
-      <img src="https://media.meproduction.se/2019/06/vasaloppet_8-uai-258x172.png" alt="" loading="lazy" />
       <img src="https://media.meproduction.se/2019/06/Clarion_4-uai-258x172.png" alt="" loading="lazy" />
     </div>
   </div>
