@@ -1,8 +1,8 @@
 {
   "hero": {
     "tag": "Evenemangsproduktion · Göteborg & Stockholm",
-    "heading": "Evenemangsproduktion & Mässmontrar",
-    "headingEm": "från första skiss till färdigt resultat.",
+    "heading": "Din produktionspartner",
+    "headingEm": "för event, mässa och butiksmiljöer.",
     "sub": "Från infrastruktur till teknik. Från planering till rivning. Från helhet till detaljnivå. Från A till över förväntan.",
     "btnPrimary": "Se våra case →",
     "btnGhost": "Kontakta oss"
@@ -32,7 +32,7 @@
     "label": "Det här är vi",
     "headingLine1": "Vi frigör tid –",
     "headingLine2": "så du kan fokusera på rätt saker.",
-    "paragraph1": "Genom ett brett kontaktnät och gedigen erfarenhet av produktion levererar vi en helhetslösning. Du ska inte behöva vända dig till ett tryckeri, en teknikfirma och en produktionsbyrå var för sig. Låt oss sköta det åt dig.",
+    "paragraph1": "Som er produktionspartner finns vi med hela vägen – från idé till genomförande. Du ska inte behöva vända dig till ett tryckeri, en teknikfirma och en produktionsbyrå var för sig. Vi samlar allt under ett tak och tar ansvar för helheten.",
     "paragraph2": "Vi älskar att bygga – att få vara på plats och se en idé formas till verklighet. Det kan vara på en mässa i Göteborg, i en skog utanför Mora, på en pir i Norge eller på ett event i Paris. Ingen utmaning är för stor eller för liten."
   },
   "case": {
@@ -40,28 +40,46 @@
     "heading": "Sagt och gjort.",
     "items": [
       {
-        "tag": "Festival",
+        "index": "01",
+        "tag": "Företagsevent",
+        "title": "Stena Line",
+        "description": "BeMatrix-monter med storformatstryck för Stena Lines Europaresor.",
+        "image": "/uploads/case-foretagsevent-stenaline.jpg"
+      },
+      {
+        "index": "02",
+        "tag": "Mässor",
+        "title": "Volvo – Live Fully Now",
+        "description": "Mässkoncept och monterproduktion för Volvo på Vasaloppet.",
+        "image": "/uploads/case-massor-vasaloppet.jpg"
+      },
+      {
+        "index": "03",
+        "tag": "Lanseringar",
+        "title": "Volvo Share Out West",
+        "description": "Utomhuslansering och varumärkesaktivering för Volvo XC40.",
+        "image": "/uploads/case-lanseringar-volvo.jpg"
+      },
+      {
+        "index": "04",
+        "tag": "Publika event",
         "title": "Way Out West",
         "description": "Produktionsledning, infrastruktur och teknik för Göteborgs ikoniska musik- och kulturfestival.",
-        "image": "https://media.meproduction.se/2019/06/WOW_4-uai-258x172.png"
+        "image": "/uploads/case-publikaevent-wow.jpg"
       },
       {
-        "tag": "Mässa",
-        "title": "Nordsjö – Årets Monter",
-        "description": "En första plats och utmärkelsen \"Årets Monter\" var ett faktum.",
-        "image": "https://media.meproduction.se/2019/06/Nordsjo_3-uai-258x172.png"
+        "index": "05",
+        "tag": "Roadshows",
+        "title": "Volvo i Fäders Spår",
+        "description": "Belyst installation längs hela Vasaloppets spår, från start till mål.",
+        "image": "/uploads/case-roadshows-vasaloppet.jpg"
       },
       {
-        "tag": "Event",
-        "title": "Vasaloppet",
-        "description": "En pampig parkering och 51 000 åkare i Volvospåret.",
-        "image": "https://media.meproduction.se/2019/06/vasaloppet_8-uai-258x172.png"
-      },
-      {
-        "tag": "Installation",
-        "title": "Clarion Hotel Post",
-        "description": "Avancerad julbelysning och LED-installation för en av Göteborgs mest ikoniska byggnader.",
-        "image": "https://media.meproduction.se/2019/06/Clarion_4-uai-258x172.png"
+        "index": "06",
+        "tag": "Butiksinredning",
+        "title": "Nimbus Boats",
+        "description": "Butiksinredning och produktdisplayer för Nimbus Boats showroom.",
+        "image": "/uploads/case-butiksinredning-nimbus.jpg"
       }
     ]
   },

@@ -415,6 +415,7 @@
     .case-card.small { grid-column: span 5; }
     .case-card.full { grid-column: span 12; aspect-ratio: 21/7; }
     .case-card.half { grid-column: span 6; }
+    .case-card.third { grid-column: span 4; }
     .case-bg {
       position: absolute;
       inset: 0;
@@ -865,11 +866,13 @@
       .nav-links { display: none; }
       .case-card.large, .case-card.small { grid-column: span 12; }
       .case-card.half { grid-column: span 12; }
+      .case-card.third { grid-column: span 6; }
       .about-grid { grid-template-columns: 1fr; gap: 40px; }
       .contact-grid { grid-template-columns: 1fr; gap: 40px; }
       .footer-top { grid-template-columns: 1fr 1fr; }
     }
     @media (max-width: 600px) {
+      .case-card.third { grid-column: span 12; }
       section { padding: 70px 5vw; }
       .form-row { grid-template-columns: 1fr; }
       .footer-top { grid-template-columns: 1fr; }
@@ -954,7 +957,7 @@
     <!-- VIDEO BACKGROUND LOOP -->
     <div class="hero-video-wrap">
       <video class="hero-video" autoplay muted loop playsinline preload="auto">
-        <source src="https://videos.pexels.com/video-files/3209828/3209828-uhd_2560_1440_25fps.mp4" type="video/mp4" />
+        <source src="/uploads/hero-meproduction.mp4" type="video/mp4" />
       </video>
       <div class="hero-video-overlay"></div>
     </div>
@@ -1054,8 +1057,8 @@
     </div>
     <div class="cases-grid">
 
-      <a href="case-way-out-west.html" class="case-card large">
-        <div class="case-index">01</div>
+      <a href="#kontakt" class="case-card third">
+        <div class="case-index">{{home.case.items.0.index}}</div>
         <div class="case-bg" style="background-image: url('{{home.case.items.0.image}}');"></div>
         <div class="case-overlay"></div>
         <div class="case-info">
@@ -1066,8 +1069,8 @@
         <div class="case-arrow">→</div>
       </a>
 
-      <a href="case-nordsjo.html" class="case-card small">
-        <div class="case-index">02</div>
+      <a href="case-vasaloppet.html" class="case-card third">
+        <div class="case-index">{{home.case.items.1.index}}</div>
         <div class="case-bg" style="background-image: url('{{home.case.items.1.image}}');"></div>
         <div class="case-overlay"></div>
         <div class="case-info">
@@ -1078,8 +1081,8 @@
         <div class="case-arrow">→</div>
       </a>
 
-      <a href="case-vasaloppet.html" class="case-card half">
-        <div class="case-index">03</div>
+      <a href="#kontakt" class="case-card third">
+        <div class="case-index">{{home.case.items.2.index}}</div>
         <div class="case-bg" style="background-image: url('{{home.case.items.2.image}}');"></div>
         <div class="case-overlay"></div>
         <div class="case-info">
@@ -1090,14 +1093,38 @@
         <div class="case-arrow">→</div>
       </a>
 
-      <a href="case-clarion.html" class="case-card half">
-        <div class="case-index">04</div>
+      <a href="case-way-out-west.html" class="case-card third">
+        <div class="case-index">{{home.case.items.3.index}}</div>
         <div class="case-bg" style="background-image: url('{{home.case.items.3.image}}');"></div>
         <div class="case-overlay"></div>
         <div class="case-info">
           <div class="case-tag">{{home.case.items.3.tag}}</div>
           <h3>{{home.case.items.3.title}}</h3>
           <p>{{home.case.items.3.description}}</p>
+        </div>
+        <div class="case-arrow">→</div>
+      </a>
+
+      <a href="case-vasaloppet.html" class="case-card third">
+        <div class="case-index">{{home.case.items.4.index}}</div>
+        <div class="case-bg" style="background-image: url('{{home.case.items.4.image}}');"></div>
+        <div class="case-overlay"></div>
+        <div class="case-info">
+          <div class="case-tag">{{home.case.items.4.tag}}</div>
+          <h3>{{home.case.items.4.title}}</h3>
+          <p>{{home.case.items.4.description}}</p>
+        </div>
+        <div class="case-arrow">→</div>
+      </a>
+
+      <a href="#kontakt" class="case-card third">
+        <div class="case-index">{{home.case.items.5.index}}</div>
+        <div class="case-bg" style="background-image: url('{{home.case.items.5.image}}');"></div>
+        <div class="case-overlay"></div>
+        <div class="case-info">
+          <div class="case-tag">{{home.case.items.5.tag}}</div>
+          <h3>{{home.case.items.5.title}}</h3>
+          <p>{{home.case.items.5.description}}</p>
         </div>
         <div class="case-arrow">→</div>
       </a>
