@@ -139,6 +139,9 @@
     /* ─── MOBILE APP-STYLE FLOATING TAB BAR ─── */
     .tab-bar { display: none; }
     @media (max-width: 700px) {
+      /* iOS Safari: scroll-behavior:smooth desyncs position:fixed elements
+         mid-gesture, making them appear to detach/float during scroll. */
+      html { scroll-behavior: auto; }
       .nav-links, .nav-cta { display: none; }
       .tab-bar {
         display: flex;
@@ -296,6 +299,22 @@
     .hero h1 em {
       font-style: normal;
       color: #F2C840;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 0.5em;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.01em;
+      margin-top: 6px;
+    }
+    .hero h1 em::before {
+      content: '';
+      display: inline-block;
+      flex-shrink: 0;
+      width: 3px;
+      height: 0.85em;
+      background: #F2C840;
     }
     .hero-slogan {
       font-family: 'Anton', 'Inter', sans-serif;
