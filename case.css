@@ -320,10 +320,15 @@ a { text-decoration: none; color: inherit; }
     top: auto; bottom: 0; left: 0; right: 0;
     height: auto;
     z-index: 200;
-    background: rgba(17,17,17,0.94);
-    backdrop-filter: blur(16px);
+    background: rgba(15,15,15,0.98);
     border-top: 1px solid rgba(255,255,255,0.08);
     padding: 8px 2vw calc(8px + env(safe-area-inset-bottom));
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    will-change: transform;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    isolation: isolate;
   }
   .tab-bar a {
     flex: 1;
