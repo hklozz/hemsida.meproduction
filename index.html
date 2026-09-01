@@ -12,7 +12,7 @@
   <meta property="og:url" content="https://meproduction.se" />
   <link rel="canonical" href="https://meproduction.se" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Anton&display=swap" rel="stylesheet" />
   <style>
     @font-face { font-family: 'Candara'; font-weight: 100 900; font-style: normal;
       src: local('Candara'), local('Candara Regular'), local('Candara-Regular'),
@@ -136,42 +136,81 @@
     }
     .nav-cta:hover { background: #c9a020; transform: translateY(-1px); }
 
-    /* ─── MOBILE APP-STYLE BOTTOM TAB BAR ─── */
+    /* ─── MOBILE APP-STYLE FLOATING TAB BAR ─── */
     .tab-bar { display: none; }
     @media (max-width: 700px) {
       .nav-links, .nav-cta { display: none; }
       .tab-bar {
         display: flex;
         position: fixed;
-        top: auto; bottom: 0; left: 0; right: 0;
+        top: auto; bottom: 14px; left: 14px; right: 14px;
         height: auto;
         z-index: 200;
-        background: rgba(244,239,230,0.94);
-        backdrop-filter: blur(16px);
-        border-top: 1px solid #E4DCCC;
-        padding: 8px 2vw calc(8px + env(safe-area-inset-bottom));
+        background: rgba(18,18,18,0.92);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: 24px;
+        padding: 9px 6px calc(9px + env(safe-area-inset-bottom));
+        box-shadow: 0 14px 34px rgba(0,0,0,0.32), 0 3px 10px rgba(0,0,0,0.18);
       }
       .tab-bar a {
         flex: 1;
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 4px;
-        padding: 6px 0;
-        color: var(--gray);
-        font-size: 0.6rem;
+        gap: 3px;
+        padding: 7px 2px;
+        margin: 0 2px;
+        border-radius: 16px;
+        color: rgba(255,255,255,0.5);
+        font-size: 0.58rem;
         font-weight: 700;
         letter-spacing: 0.02em;
         text-transform: uppercase;
-        transition: color 0.2s, transform 0.2s;
+        transition: color 0.2s, transform 0.2s, background 0.25s;
       }
-      .tab-bar a svg { width: 21px; height: 21px; stroke: currentColor; fill: none; stroke-width: 1.8; transition: transform 0.2s; }
-      .tab-bar a.active { color: var(--accent); }
-      .tab-bar a.active svg { transform: translateY(-2px); stroke: #F2C840; }
+      .tab-bar a svg { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 1.8; transition: transform 0.2s; }
+      .tab-bar a.active { color: #F2C840; background: rgba(242,200,64,0.14); }
+      .tab-bar a.active svg { transform: translateY(-1px); stroke: #F2C840; }
       .tab-bar a.tab-cta { color: #F2C840; }
       .tab-bar a.tab-cta svg { stroke: #F2C840; }
-      .tab-bar a:active { transform: scale(0.9); }
-      body { padding-bottom: 70px; }
+      .tab-bar a:active { transform: scale(0.88); }
+      body { padding-bottom: 96px; }
+
+      /* Bold poster-style headers on mobile */
+      h2 {
+        font-family: 'Anton', 'Inter', sans-serif;
+        font-weight: 400;
+        letter-spacing: -0.01em;
+        text-transform: uppercase;
+      }
+      .section-label {
+        font-weight: 800;
+        letter-spacing: 0.18em;
+      }
+
+      /* Accent glow blobs behind key sections for pop */
+      #tjanster, #kontakt, .faq-section { position: relative; overflow: hidden; }
+      #tjanster::before, #kontakt::before, .faq-section::before {
+        content: '';
+        position: absolute;
+        top: -70px; right: -70px;
+        width: 240px; height: 240px;
+        background: radial-gradient(circle, rgba(242,200,64,0.18) 0%, rgba(242,200,64,0) 70%);
+        pointer-events: none;
+        z-index: 0;
+        border-radius: 50%;
+      }
+      #tjanster > *, #kontakt > *, .faq-section > * { position: relative; z-index: 1; }
+
+      /* Bigger, bouncier CTAs */
+      .btn-primary, .nav-cta, .hero-btns .btn-ghost {
+        border-radius: 999px !important;
+        box-shadow: 0 8px 20px rgba(242,200,64,0.35);
+      }
+      .btn-primary:active { transform: scale(0.96); }
+      .case-card { border-radius: 20px !important; }
+      .case-card .case-arrow { box-shadow: 0 6px 16px rgba(242,200,64,0.4); }
     }
 
     /* ─── HERO ─── */
@@ -258,6 +297,13 @@
     .hero h1 em {
       font-style: normal;
       color: #F2C840;
+    }
+    .hero-slogan {
+      font-family: 'Anton', 'Inter', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+      font-weight: 400;
+      display: block;
     }
     .hero-sub {
       font-size: clamp(1rem, 1.5vw, 1.2rem);
@@ -1057,7 +1103,7 @@
     <!-- VIDEO BACKGROUND LOOP -->
     <div class="hero-video-wrap">
       <video class="hero-video" autoplay muted loop playsinline preload="auto">
-        <source src="/uploads/hero-meproduction.mp4" type="video/mp4" />
+        <source src="/uploads/hero-meproduction-v2.mp4" type="video/mp4" />
       </video>
       <div class="hero-video-overlay"></div>
     </div>
@@ -1065,7 +1111,7 @@
     <!-- CONTENT -->
     <div class="hero-content">
       <div class="hero-tag">{{home.hero.tag}}</div>
-      <h1>{{home.hero.heading}}<br /><em>{{home.hero.headingEm}}</em></h1>
+      <h1><span class="hero-slogan">{{home.hero.heading}}</span><em>{{home.hero.headingEm}}</em></h1>
       <p class="hero-sub">
         {{home.hero.sub}}
       </p>
@@ -1316,7 +1362,7 @@
     </div>
   </section>
 
-  <!-- KUNDER -->
+  <!-- KUNDER (tillfälligt dold)
   <section class="clients">
     <div class="section-label">{{home.clients.label}}</div>
     <h2>{{home.clients.heading}}</h2>
@@ -1332,6 +1378,7 @@
       <div class="client-item">Ditt varumärke?</div>
     </div>
   </section>
+  -->
 
   <!-- KONTAKT -->
   <section id="kontakt">

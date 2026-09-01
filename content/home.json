@@ -1,16 +1,16 @@
 {
   "hero": {
     "tag": "Evenemangsproduktion · Göteborg & Stockholm",
-    "heading": "Din produktionspartner",
+    "heading": "Your Production Partner",
     "headingEm": "för event, mässa och butiksmiljöer.",
-    "sub": "Från infrastruktur till teknik. Från planering till rivning. Från helhet till detaljnivå. Från A till över förväntan.",
+    "sub": "Från infrastruktur till teknik. Från planering till rivning. Från idé till över förväntan.",
     "btnPrimary": "Se våra case →",
     "btnGhost": "Kontakta oss"
   },
   "services": {
     "label": "Vad vi gör",
-    "heading": "Mässmontrar & Eventproduktion – allt under ett tak.",
-    "intro": "Vi är din helhetsleverantör – oavsett om det gäller en mässmonter, ett festivalevent eller en butiksinredning. Du slipper pussla – vi tar hand om allt.",
+    "heading": "Mässmontrar & eventproduktion. Allt under ett tak.",
+    "intro": "Vi är din helhetsleverantör – oavsett om det är en mässmonter, ett festivalevent eller en butiksinredning. En kontakt. Ett ansvar. En leverans som håller hela vägen.",
     "items": [
       { "title": "Projektledning", "desc": "En dedikerad projektledare som är med dig hela vägen – från idé till efterarbete. Alltid tillgänglig, alltid ett steg före." },
       { "title": "Idé, Design & Skiss", "desc": "Vi visualiserar projektet så att alla inblandade får en gemensam bild. Från skiss till detaljritning." },
@@ -32,8 +32,8 @@
     "label": "Det här är vi",
     "headingLine1": "Vi frigör tid –",
     "headingLine2": "så du kan fokusera på rätt saker.",
-    "paragraph1": "Som er produktionspartner finns vi med hela vägen – från idé till genomförande. Du ska inte behöva vända dig till ett tryckeri, en teknikfirma och en produktionsbyrå var för sig. Vi samlar allt under ett tak och tar ansvar för helheten.",
-    "paragraph2": "Vi älskar att bygga – att få vara på plats och se en idé formas till verklighet. Det kan vara på en mässa i Göteborg, i en skog utanför Mora, på en pir i Norge eller på ett event i Paris. Ingen utmaning är för stor eller för liten."
+    "paragraph1": "Som er produktionspartner finns vi med hela vägen – från idé till genomförande. En kontakt istället för tre. Ett samlat ansvar för helheten, inte bara en del av den.",
+    "paragraph2": "Vi älskar att bygga – att få vara på plats och se en idé formas till verklighet. Det kan vara på en mässa i Göteborg, i en skog utanför Mora, på en pir i Norge eller på ett event i Paris. Ingen utmaning är för stor. Ingen är för liten heller."
   },
   "case": {
     "label": "Utvalda case",
@@ -93,12 +93,12 @@
   "clients": {
     "label": "Våra kunder",
     "heading": "Monterbyggare & eventproducent åt Sveriges starkaste varumärken.",
-    "intro": "Från lokala varumärken till världsledande bolag – vi levererar med samma passion varje gång."
+    "intro": "Från lokala varumärken till världsledande bolag. Samma engagemang, samma leverans, varje gång."
   },
   "contact": {
     "label": "Kontakta oss",
-    "heading": "Låt oss prata om ditt nästa event.",
-    "paragraph": "Oavsett storlek eller budget – vi älskar utmaningar. Hör av dig så berättar vi vad vi kan göra för dig."
+    "heading": "Har du en idé på gång? Vi hjälper dig hela vägen dit.",
+    "paragraph": "Du behöver inte ha allt klart för dig än. Berätta vad du planerar – stort eller smått, oavsett budget – så hör vi av oss med hur vi löser det."
   },
   "faq": {
     "label": "Vanliga frågor",
