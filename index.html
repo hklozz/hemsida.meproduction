@@ -83,12 +83,17 @@
       font-weight: 700;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--gray);
-      border-left: 1px solid #D8D0C4;
+      color: rgba(255,255,255,0.8);
+      border-left: 1px solid rgba(255,255,255,0.35);
       padding-left: 14px;
       white-space: nowrap;
+      transition: color 0.3s, border-color 0.3s;
     }
-    @media (max-width: 700px) { .nav-tagline { display: none; } }
+    nav.scrolled .nav-tagline {
+      color: var(--gray);
+      border-left-color: #D8D0C4;
+    }
+    @media (max-width: 700px) { .nav-tagline { display: none; } .nav-cta { display: none; } }
     .nav-links {
       display: flex;
       gap: 36px;
@@ -112,6 +117,43 @@
       transition: background 0.2s, transform 0.2s;
     }
     .nav-cta:hover { background: #c9a020; transform: translateY(-1px); }
+
+    /* ─── MOBILE APP-STYLE BOTTOM TAB BAR ─── */
+    .tab-bar { display: none; }
+    @media (max-width: 700px) {
+      .nav-links, .nav-cta { display: none; }
+      .tab-bar {
+        display: flex;
+        position: fixed;
+        bottom: 0; left: 0; right: 0;
+        z-index: 200;
+        background: rgba(244,239,230,0.94);
+        backdrop-filter: blur(16px);
+        border-top: 1px solid #E4DCCC;
+        padding: 8px 2vw calc(8px + env(safe-area-inset-bottom));
+      }
+      .tab-bar a {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+        padding: 6px 0;
+        color: var(--gray);
+        font-size: 0.6rem;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        transition: color 0.2s, transform 0.2s;
+      }
+      .tab-bar a svg { width: 21px; height: 21px; stroke: currentColor; fill: none; stroke-width: 1.8; transition: transform 0.2s; }
+      .tab-bar a.active { color: var(--accent); }
+      .tab-bar a.active svg { transform: translateY(-2px); stroke: #F2C840; }
+      .tab-bar a.tab-cta { color: #F2C840; }
+      .tab-bar a.tab-cta svg { stroke: #F2C840; }
+      .tab-bar a:active { transform: scale(0.9); }
+      body { padding-bottom: 70px; }
+    }
 
     /* ─── HERO ─── */
     .hero {
@@ -884,12 +926,31 @@
       .footer-top { grid-template-columns: 1fr 1fr; }
     }
     @media (max-width: 600px) {
-      .case-card.third { grid-column: span 12; }
       section { padding: 70px 5vw; }
       .form-row { grid-template-columns: 1fr; }
       .footer-top { grid-template-columns: 1fr; }
       .process-steps { grid-template-columns: 1fr; }
       .process-step { border-right: none; border-bottom: 1px solid #1f1f1f; }
+    }
+
+    /* ─── MOBILE: SWIPEABLE CASE CAROUSEL ─── */
+    @media (max-width: 700px) {
+      .cases-grid {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 14px;
+        margin: 0 -5vw;
+        padding: 0 5vw 6px;
+        scrollbar-width: none;
+      }
+      .cases-grid::-webkit-scrollbar { display: none; }
+      .case-card.third {
+        flex: 0 0 82vw;
+        scroll-snap-align: center;
+        aspect-ratio: 3/4;
+      }
+      .cases-header { align-items: center; }
     }
   </style>
 
@@ -957,15 +1018,39 @@
     <ul class="nav-links">
       <li><a href="#tjanster">Tjänster</a></li>
       <li><a href="#case">Case</a></li>
-      <li><a href="#nyheter">Nyheter</a></li>
       <li><a href="ganget.html">Gänget</a></li>
       <li><a href="hallbarhet.html">Hållbarhet</a></li>
-
       <li><a href="#om-oss">Om oss</a></li>
-      <li><a href="#kontakt">Kontakt</a></li>
     </ul>
     <a href="#kontakt" class="nav-cta">Prata med oss</a>
   </nav>
+
+  <!-- MOBILE APP-STYLE BOTTOM TAB BAR -->
+  <nav class="tab-bar" id="tabBar">
+    <a href="#" data-tab="hem">
+      <svg viewBox="0 0 24 24"><path d="M3 11l9-8 9 8" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 10v10h14V10" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Hem
+    </a>
+    <a href="#tjanster" data-tab="tjanster">
+      <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.3"/><rect x="14" y="3" width="7" height="7" rx="1.3"/><rect x="3" y="14" width="7" height="7" rx="1.3"/><rect x="14" y="14" width="7" height="7" rx="1.3"/></svg>
+      Tjänster
+    </a>
+    <a href="#case" data-tab="case">
+      <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10.5" r="1.4"/><path d="M21 16l-5.5-5.5-4 4-3-3-5.5 5.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Case
+    </a>
+    <a href="ganget.html" data-tab="ganget">
+      <svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6" stroke-linecap="round"/><circle cx="17" cy="9" r="2.2"/><path d="M15.6 14.2c2.6.4 4.9 2.5 4.9 5.8" stroke-linecap="round"/></svg>
+      Gänget
+    </a>
+    <a href="#kontakt" class="tab-cta" data-tab="kontakt">
+      <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Kontakt
+    </a>
+  </nav>
+
+  <!-- MOBILE APP-STYLE BOTTOM CTA BAR -->
+  <div class="mobile-cta-bar"><a href="#kontakt">Prata med oss →</a></div>
 
   <!-- HERO -->
   <header class="hero">
@@ -1726,6 +1811,36 @@
       const docH = document.documentElement.scrollHeight - window.innerHeight;
       progressBar.style.width = (window.scrollY / docH * 100) + '%';
     });
+
+    // ── 8b. MOBILE APP-STYLE TAB BAR (scroll-spy) ───────────────
+    const tabBar = document.getElementById('tabBar');
+    if (tabBar) {
+      const tabLinks = tabBar.querySelectorAll('a[data-tab]');
+      const setActive = (name) => {
+        tabLinks.forEach(a => a.classList.toggle('active', a.dataset.tab === name));
+      };
+      const spySections = [
+        { id: 'tjanster', tab: 'tjanster' },
+        { id: 'case', tab: 'case' },
+        { id: 'kontakt', tab: 'kontakt' }
+      ].map(s => ({ el: document.getElementById(s.id), tab: s.tab })).filter(s => s.el);
+      if (spySections.length) {
+        const spyObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const match = spySections.find(s => s.el === entry.target);
+              if (match) setActive(match.tab);
+            }
+          });
+        }, { rootMargin: '-40% 0px -50% 0px' });
+        spySections.forEach(s => spyObserver.observe(s.el));
+        window.addEventListener('scroll', () => {
+          if (window.scrollY < 200) setActive('hem');
+        }, { passive: true });
+      } else {
+        setActive('ganget');
+      }
+    }
 
     // Form AJAX – stanna på sidan
     const kontaktForm = document.getElementById('kontakt-form');

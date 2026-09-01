@@ -2,7 +2,7 @@
   "tag": "Julbelysning & Installation",
   "title": "Clarion Hotel Post",
   "subtitle": "Avancerad julbelysning & LED-installation – Göteborg",
-  "heroImage": "https://media.meproduction.se/2019/06/Clarion_4-uai-258x172.png",
+  "heroImage": "https://media.meproduction.se/2019/06/Clarion_1.png",
   "customer": "Clarion Hotel Post",
   "location": "Drottningtorget, Göteborg",
   "category": "Belysning & Installation",
@@ -20,10 +20,8 @@
     "Montage och demontering"
   ],
   "gallery": [
-    { "image": "https://media.meproduction.se/2019/06/Clarion_4-uai-258x172.png", "alt": "Clarion Hotel Post julbelysning" },
-    { "image": "https://media.meproduction.se/2019/06/Clarion_3-uai-258x172.png", "alt": "Clarion Hotel Post julbelysning" },
-    { "image": "https://media.meproduction.se/2019/06/Clarion_2-uai-258x172.png", "alt": "Clarion Hotel Post julbelysning" },
-    { "image": "https://media.meproduction.se/2019/06/Clarion_1-uai-258x172.png", "alt": "Clarion Hotel Post julbelysning" }
+    { "image": "https://media.meproduction.se/2019/06/Clarion_1.png", "alt": "Clarion Hotel Post julbelysning" },
+    { "image": "https://media.meproduction.se/2019/06/Clarion_2.png", "alt": "Clarion Hotel Post julbelysning" }
   ],
   "nextSlug": "way-out-west"
 }

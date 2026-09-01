@@ -2,7 +2,7 @@
   "tag": "Mässa & Monter",
   "title": "Nordsjö – Årets Monter",
   "subtitle": "Prisbelönt mässmonter på Nordbygg",
-  "heroImage": "https://media.meproduction.se/2019/06/Nordsjo_3-uai-258x172.png",
+  "heroImage": "https://media.meproduction.se/2019/06/Nordsjo_3.png",
   "customer": "Nordsjö / Akzo Nobel",
   "location": "Nordbygg, Stockholm/Göteborg",
   "category": "Mässmonter",
@@ -21,9 +21,9 @@
     "Rivning och lagerhållning"
   ],
   "gallery": [
-    { "image": "https://media.meproduction.se/2019/06/Nordsjo_3-uai-258x172.png", "alt": "Nordsjö mässmonter" },
-    { "image": "https://media.meproduction.se/2019/06/Nordsjo_2-uai-258x172.png", "alt": "Nordsjö mässmonter" },
-    { "image": "https://media.meproduction.se/2019/06/Nordsjo_1-uai-258x172.png", "alt": "Nordsjö mässmonter" }
+    { "image": "https://media.meproduction.se/2019/06/Nordsjo_3.png", "alt": "Nordsjö mässmonter" },
+    { "image": "https://media.meproduction.se/2019/06/Nordsjo_2.png", "alt": "Nordsjö mässmonter" },
+    { "image": "https://media.meproduction.se/2019/06/Nordsjo_1.png", "alt": "Nordsjö mässmonter" }
   ],
   "nextSlug": "vasaloppet"
 }

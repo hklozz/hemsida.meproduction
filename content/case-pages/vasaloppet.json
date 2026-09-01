@@ -2,7 +2,7 @@
   "tag": "Sport & Event",
   "title": "Vasaloppet",
   "subtitle": "Produktionsledning & infrastruktur – Mora, Dalarna",
-  "heroImage": "https://media.meproduction.se/2019/06/vasaloppet_8-uai-258x172.png",
+  "heroImage": "/uploads/case-roadshows-vasaloppet.jpg",
   "customer": "Vasaloppet",
   "location": "Mora, Dalarna",
   "category": "Sportevent & Evenemangsproduktion",
@@ -20,10 +20,8 @@
     "Etablering och rivning"
   ],
   "gallery": [
-    { "image": "https://media.meproduction.se/2019/06/vasaloppet_8-uai-258x172.png", "alt": "Vasaloppet" },
-    { "image": "https://media.meproduction.se/2019/06/vasaloppet_7-uai-258x172.png", "alt": "Vasaloppet" },
-    { "image": "https://media.meproduction.se/2019/06/vasaloppet_6-uai-258x172.png", "alt": "Vasaloppet" },
-    { "image": "https://media.meproduction.se/2019/06/vasaloppet_5-uai-258x172.png", "alt": "Vasaloppet" }
+    { "image": "/uploads/case-roadshows-vasaloppet.jpg", "alt": "Vasaloppet" },
+    { "image": "/uploads/case-massor-vasaloppet.jpg", "alt": "Vasaloppet" }
   ],
   "nextSlug": "clarion"
 }

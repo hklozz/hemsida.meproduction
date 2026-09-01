@@ -2,7 +2,7 @@
   "tag": "Festival",
   "title": "Way Out West",
   "subtitle": "Produktionsledning, infrastruktur & teknik – Göteborg",
-  "heroImage": "https://media.meproduction.se/2019/06/WOW_4-uai-258x172.png",
+  "heroImage": "https://media.meproduction.se/2019/06/WOW_4.png",
   "customer": "Way Out West / Luger",
   "location": "Slottsskogen, Göteborg",
   "category": "Festival & Evenemangsproduktion",
@@ -20,10 +20,10 @@
     "Koordinering av underleverantörer"
   ],
   "gallery": [
-    { "image": "https://media.meproduction.se/2019/06/WOW_4-uai-258x172.png", "alt": "Way Out West" },
-    { "image": "https://media.meproduction.se/2019/06/WOW_3-uai-258x172.png", "alt": "Way Out West" },
-    { "image": "https://media.meproduction.se/2019/06/WOW_2-uai-258x172.png", "alt": "Way Out West" },
-    { "image": "https://media.meproduction.se/2019/06/WOW_1-uai-258x172.png", "alt": "Way Out West" }
+    { "image": "https://media.meproduction.se/2019/06/WOW_4.png", "alt": "Way Out West" },
+    { "image": "https://media.meproduction.se/2019/06/WOW_3.png", "alt": "Way Out West" },
+    { "image": "https://media.meproduction.se/2019/06/WOW_2.png", "alt": "Way Out West" },
+    { "image": "https://media.meproduction.se/2019/06/WOW_1.png", "alt": "Way Out West" }
   ],
   "nextSlug": "nordsjo"
 }
