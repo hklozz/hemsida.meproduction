@@ -75,8 +75,26 @@
       font-weight: 900;
       letter-spacing: -0.04em;
       color: var(--white);
+      position: relative;
+      display: inline-block;
     }
     .nav-logo span { color: var(--accent); }
+    .logo-glow {
+      position: absolute;
+      width: 13px; height: 13px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(242,200,64,0.95) 0%, rgba(242,200,64,0.35) 45%, rgba(242,200,64,0) 75%);
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      animation: logoGlowPulse 3.2s ease-in-out infinite;
+      z-index: 1;
+    }
+    .logo-glow-1 { left: 29.1%; top: 72.3%; }
+    .logo-glow-2 { left: 84.1%; top: 17.0%; animation-delay: 1.1s; }
+    @keyframes logoGlowPulse {
+      0%, 100% { opacity: 0.5; transform: translate(-50%, -50%) scale(0.85); }
+      50% { opacity: 1; transform: translate(-50%, -50%) scale(1.3); }
+    }
     .nav-brand { display: flex; align-items: center; gap: 14px; }
     .nav-tagline {
       font-size: 0.62rem;
@@ -299,36 +317,58 @@
       background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.4));
     }
 
-    /* ─── MARQUEE ─── */
-    .marquee-wrap {
-      border-top: 1px solid #D8D0C4;
-      border-bottom: 1px solid #D8D0C4;
-      overflow: hidden;
-      padding: 16px 0;
-      background: var(--dark);
-    }
-    .marquee-track {
+    /* ─── SERVICES LIST (numbered rows) ─── */
+    .services-list { display: flex; flex-direction: column; }
+    .service-row {
       display: flex;
-      gap: 0;
-      width: max-content;
-      animation: marquee 24s linear infinite;
+      align-items: center;
+      gap: 32px;
+      padding: 32px 0;
+      border-bottom: 1px solid #D8D0C4;
+      transition: background 0.25s;
     }
-    .marquee-track span {
+    .service-row:first-of-type { border-top: 1px solid #D8D0C4; }
+    .service-row-num {
+      flex: 0 0 50px;
       font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
+      font-weight: 700;
       color: var(--gray);
-      padding: 0 40px;
-      white-space: nowrap;
+      letter-spacing: 0.08em;
     }
-    .marquee-track span.dot {
-      color: var(--accent);
-      padding: 0;
+    .service-row-title {
+      flex: 0 0 300px;
+      font-size: clamp(1.2rem, 2vw, 1.7rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin: 0;
+      transition: color 0.25s;
     }
-    @keyframes marquee {
-      from { transform: translateX(0); }
-      to { transform: translateX(-50%); }
+    .service-row-desc {
+      flex: 1;
+      font-size: 0.92rem;
+      color: var(--gray);
+      line-height: 1.7;
+      margin: 0;
+    }
+    .service-row-arrow {
+      flex: 0 0 42px;
+      width: 42px; height: 42px;
+      border-radius: 50%;
+      border: 1px solid #D8D0C4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      transition: background 0.25s, border-color 0.25s, transform 0.25s, color 0.25s;
+    }
+    .service-row:hover { background: rgba(242,200,64,0.07); }
+    .service-row:hover .service-row-title { color: #c9a020; }
+    .service-row:hover .service-row-arrow { background: #F2C840; border-color: #F2C840; color: #fff; transform: translate(2px,-2px); }
+    @media (max-width: 800px) {
+      .service-row { flex-wrap: wrap; gap: 10px 20px; padding: 24px 0; }
+      .service-row-title { flex: 1 1 auto; }
+      .service-row-desc { flex: 1 1 100%; order: 3; }
+      .service-row-arrow { display: none; }
     }
 
     /* ─── SECTIONS ─── */
@@ -359,50 +399,6 @@
 
     /* ─── SERVICES ─── */
     #tjanster { background: var(--dark); }
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2px;
-    }
-    .service-card {
-      background: var(--card);
-      padding: 40px 36px;
-      position: relative;
-      overflow: hidden;
-      transition: background 0.3s;
-      cursor: default;
-    }
-    .service-card::before {
-      content: '';
-      position: absolute;
-      bottom: 0; left: 0;
-      width: 100%; height: 3px;
-      background: #F2C840;
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.3s;
-    }
-    .service-card:hover::before { transform: scaleX(1); }
-    .service-card:hover { background: #DDD5C8; }
-    .service-num {
-      font-size: 0.68rem;
-      font-weight: 700;
-      color: #AAA098;
-      letter-spacing: 0.12em;
-      margin-bottom: 20px;
-      opacity: 0.8;
-    }
-    .service-card h3 {
-      font-size: 1.15rem;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      margin-bottom: 12px;
-    }
-    .service-card p {
-      font-size: 0.9rem;
-      color: var(--gray);
-      line-height: 1.7;
-    }
 
     /* ─── NYHETER ─── */
     .news-grid {
@@ -953,6 +949,12 @@
       }
       .cases-header { align-items: center; }
     }
+
+    /* ─── MOBILE: HERO HEIGHT (leave room for tab bar) ─── */
+    @media (max-width: 700px) {
+      .hero { min-height: calc(100svh - 70px); padding-bottom: 6vh; }
+      .hero-btns { gap: 12px; }
+    }
   </style>
 
   <!-- SEO: Open Graph extra -->
@@ -1013,7 +1015,7 @@
   <!-- NAV -->
   <nav id="navbar">
     <div class="nav-brand">
-      <a href="#" class="nav-logo"><img fetchpriority="high" decoding="async" id="nav-logo-img" src="me_production_vit_vit_gul_prick (kopia).webp" alt="{{site.logoAlt}}" style="height:34px;width:auto;display:inline-block;vertical-align:middle;"></a>
+      <a href="#" class="nav-logo"><img fetchpriority="high" decoding="async" id="nav-logo-img" src="me_production_vit_vit_gul_prick (kopia).webp" alt="{{site.logoAlt}}" style="height:34px;width:auto;display:inline-block;vertical-align:middle;"><span class="logo-glow logo-glow-1"></span><span class="logo-glow logo-glow-2"></span></a>
       <span class="nav-tagline">Your Production Partner</span>
     </div>
     <ul class="nav-links">
@@ -1084,30 +1086,6 @@
     </div>
   </header>
 
-  <!-- MARQUEE -->
-  <div class="marquee-wrap" aria-hidden="true">
-    <div class="marquee-track">
-      <span>Mässmontrar</span><span class="dot">✦</span>
-      <span>Festivaler</span><span class="dot">✦</span>
-      <span>Skyltning</span><span class="dot">✦</span>
-      <span>Projektledning</span><span class="dot">✦</span>
-      <span>Produktionsledning</span><span class="dot">✦</span>
-      <span>Evenemangsproduktion</span><span class="dot">✦</span>
-      <span>Etablering</span><span class="dot">✦</span>
-      <span>Design & Skiss</span><span class="dot">✦</span>
-      <span>Göteborg & Stockholm</span><span class="dot">✦</span>
-      <span>Mässmontrar</span><span class="dot">✦</span>
-      <span>Festivaler</span><span class="dot">✦</span>
-      <span>Skyltning</span><span class="dot">✦</span>
-      <span>Projektledning</span><span class="dot">✦</span>
-      <span>Produktionsledning</span><span class="dot">✦</span>
-      <span>Evenemangsproduktion</span><span class="dot">✦</span>
-      <span>Etablering</span><span class="dot">✦</span>
-      <span>Design & Skiss</span><span class="dot">✦</span>
-      <span>Göteborg & Stockholm</span><span class="dot">✦</span>
-    </div>
-  </div>
-
   <!-- TJÄNSTER -->
   <section id="tjanster">
     <div class="section-label">{{home.services.label}}</div>
@@ -1115,31 +1093,36 @@
     <p class="section-intro">
       {{home.services.intro}}
     </p>
-    <div class="services-grid">
-      <div class="service-card">
-        <div class="service-num">01</div>
-        <h3>{{home.services.items.0.title}}</h3>
-        <p>{{home.services.items.0.desc}}</p>
+    <div class="services-list">
+      <div class="service-row">
+        <div class="service-row-num">01</div>
+        <h3 class="service-row-title">{{home.services.items.0.title}}</h3>
+        <p class="service-row-desc">{{home.services.items.0.desc}}</p>
+        <div class="service-row-arrow">↗</div>
       </div>
-      <div class="service-card">
-        <div class="service-num">02</div>
-        <h3>{{home.services.items.1.title}}</h3>
-        <p>{{home.services.items.1.desc}}</p>
+      <div class="service-row">
+        <div class="service-row-num">02</div>
+        <h3 class="service-row-title">{{home.services.items.1.title}}</h3>
+        <p class="service-row-desc">{{home.services.items.1.desc}}</p>
+        <div class="service-row-arrow">↗</div>
       </div>
-      <div class="service-card">
-        <div class="service-num">03</div>
-        <h3>{{home.services.items.2.title}}</h3>
-        <p>{{home.services.items.2.desc}}</p>
+      <div class="service-row">
+        <div class="service-row-num">03</div>
+        <h3 class="service-row-title">{{home.services.items.2.title}}</h3>
+        <p class="service-row-desc">{{home.services.items.2.desc}}</p>
+        <div class="service-row-arrow">↗</div>
       </div>
-      <div class="service-card">
-        <div class="service-num">04</div>
-        <h3>{{home.services.items.3.title}}</h3>
-        <p>{{home.services.items.3.desc}}</p>
+      <div class="service-row">
+        <div class="service-row-num">04</div>
+        <h3 class="service-row-title">{{home.services.items.3.title}}</h3>
+        <p class="service-row-desc">{{home.services.items.3.desc}}</p>
+        <div class="service-row-arrow">↗</div>
       </div>
-      <div class="service-card">
-        <div class="service-num">05</div>
-        <h3>{{home.services.items.4.title}}</h3>
-        <p>{{home.services.items.4.desc}}</p>
+      <div class="service-row">
+        <div class="service-row-num">05</div>
+        <h3 class="service-row-title">{{home.services.items.4.title}}</h3>
+        <p class="service-row-desc">{{home.services.items.4.desc}}</p>
+        <div class="service-row-arrow">↗</div>
       </div>
     </div>
   </section>
@@ -1557,7 +1540,7 @@
   <footer>
     <div class="footer-top">
       <div class="footer-brand">
-        <div class="nav-logo"><img fetchpriority="high" decoding="async" src="me_production_svart_svart_gul_prick (kopia 2).webp" alt="{{site.logoAlt}}" style="height:34px;width:auto;display:inline-block;vertical-align:middle;"></div>
+        <div class="nav-logo"><img fetchpriority="high" decoding="async" src="me_production_svart_svart_gul_prick (kopia 2).webp" alt="{{site.logoAlt}}" style="height:34px;width:auto;display:inline-block;vertical-align:middle;"><span class="logo-glow logo-glow-1"></span><span class="logo-glow logo-glow-2"></span></div>
         <p>{{site.footerTagline}}</p>
         <div class="social-links">
           <a href="https://www.instagram.com/meproductionsweden/" class="social-link" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
@@ -1650,7 +1633,7 @@
     followCursor();
 
     // Cursor grow on links/buttons
-    document.querySelectorAll('a, button, .service-card, .case-card').forEach(el => {
+    document.querySelectorAll('a, button, .service-row, .case-card').forEach(el => {
       el.addEventListener('mouseenter', () => {
         cursorRing.style.width  = '60px';
         cursorRing.style.height = '60px';
@@ -1710,7 +1693,7 @@
       { sel: '.section-label',  cls: 'reveal' },
       { sel: 'h2',              cls: 'reveal' },
       { sel: '.section-intro',  cls: 'reveal' },
-      { sel: '.service-card',   cls: 'reveal' },
+      { sel: '.service-row',    cls: 'reveal' },
       { sel: '.case-card',      cls: 'reveal' },
       { sel: '.number-item',    cls: 'reveal' },
       { sel: '.about-visual',   cls: 'reveal reveal-left' },

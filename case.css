@@ -299,11 +299,46 @@ a { text-decoration: none; color: inherit; }
 
 @media (max-width: 600px) {
   .nav { padding: 16px 20px; }
-  .nav-links { gap: 16px; }
-  .nav-links a:not(.nav-cta) { display: none; }
   .case-hero-content { padding: 28px 20px; }
   .meta-item { flex: 0 0 100%; }
   .case-body { padding: 28px 20px; }
   .case-next { padding: 50px 20px; }
   .case-footer { padding: 28px 20px; }
+}
+
+/* ─── MOBILE APP-STYLE TAB BAR ─── */
+.tab-bar { display: none; }
+@media (max-width: 700px) {
+  .nav-links { display: none; }
+  .tab-bar {
+    display: flex;
+    position: fixed;
+    top: auto; bottom: 0; left: 0; right: 0;
+    height: auto;
+    z-index: 200;
+    background: rgba(17,17,17,0.94);
+    backdrop-filter: blur(16px);
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding: 8px 2vw calc(8px + env(safe-area-inset-bottom));
+  }
+  .tab-bar a {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 0;
+    color: rgba(255,255,255,0.55);
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    transition: color 0.2s, transform 0.2s;
+  }
+  .tab-bar a svg { width: 21px; height: 21px; stroke: currentColor; fill: none; stroke-width: 1.8; transition: transform 0.2s; }
+  .tab-bar a.active { color: var(--yellow); }
+  .tab-bar a.active svg { transform: translateY(-2px); }
+  .tab-bar a.tab-cta { color: var(--yellow); }
+  .tab-bar a:active { transform: scale(0.9); }
+  body { padding-bottom: 70px; }
 }
