@@ -458,19 +458,14 @@
       .nav-links { display: none; }
       .tab-bar {
         display: flex;
-        position: fixed;
-        top: auto; bottom: 0; left: 0; right: 0;
+        position: sticky;
+        bottom: 0;
+        width: 100%;
         height: auto;
         z-index: 200;
         background: rgba(15,15,15,0.98);
         border-top: 1px solid rgba(255,255,255,0.08);
         padding: 8px 2vw calc(8px + env(safe-area-inset-bottom));
-        transform: translateZ(0);
-        -webkit-transform: translateZ(0);
-        will-change: transform;
-        backface-visibility: hidden;
-        -webkit-backface-visibility: hidden;
-        isolation: isolate;
       }
       .tab-bar a {
         flex: 1;
@@ -491,7 +486,6 @@
       .tab-bar a.active svg { transform: translateY(-2px); }
       .tab-bar a.tab-cta { color: var(--yellow); }
       .tab-bar a:active { transform: scale(0.9); }
-      body { padding-bottom: 70px; }
     }
   </style>
 
@@ -531,13 +525,6 @@
     </ul>
   </nav>
 
-  <div class="tab-bar">
-    <a href="index.html"><svg viewBox="0 0 24 24"><path d="M3 11l9-8 9 8" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 10v10h14V10" stroke-linecap="round" stroke-linejoin="round"/></svg>Hem</a>
-    <a href="index.html#tjanster"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.3"/><rect x="14" y="3" width="7" height="7" rx="1.3"/><rect x="3" y="14" width="7" height="7" rx="1.3"/><rect x="14" y="14" width="7" height="7" rx="1.3"/></svg>Tjänster</a>
-    <a href="index.html#case"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10.5" r="1.4"/><path d="M21 16l-5.5-5.5-4 4-3-3-5.5 5.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Case</a>
-    <a href="ganget.html" class="active"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6" stroke-linecap="round"/><circle cx="17" cy="9" r="2.2"/><path d="M15.6 14.2c2.6.4 4.9 2.5 4.9 5.8" stroke-linecap="round"/></svg>Gänget</a>
-    <a href="index.html#kontakt" class="tab-cta"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6" stroke-linecap="round" stroke-linejoin="round"/></svg>Kontakt</a>
-  </div>
 
   <!-- HERO -->
   <section class="hero">
@@ -706,6 +693,14 @@
       });
     }
   </script>
+
+  <div class="tab-bar">
+    <a href="index.html"><svg viewBox="0 0 24 24"><path d="M3 11l9-8 9 8" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 10v10h14V10" stroke-linecap="round" stroke-linejoin="round"/></svg>Hem</a>
+    <a href="index.html#tjanster"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.3"/><rect x="14" y="3" width="7" height="7" rx="1.3"/><rect x="3" y="14" width="7" height="7" rx="1.3"/><rect x="14" y="14" width="7" height="7" rx="1.3"/></svg>Tjänster</a>
+    <a href="index.html#case"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10.5" r="1.4"/><path d="M21 16l-5.5-5.5-4 4-3-3-5.5 5.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Case</a>
+    <a href="ganget.html" class="active"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6" stroke-linecap="round"/><circle cx="17" cy="9" r="2.2"/><path d="M15.6 14.2c2.6.4 4.9 2.5 4.9 5.8" stroke-linecap="round"/></svg>Gänget</a>
+    <a href="index.html#kontakt" class="tab-cta"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6" stroke-linecap="round" stroke-linejoin="round"/></svg>Kontakt</a>
+  </div>
 
 </body>
 </html>

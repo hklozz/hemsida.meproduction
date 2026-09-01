@@ -317,19 +317,14 @@ a { text-decoration: none; color: inherit; }
   .nav-links { display: none; }
   .tab-bar {
     display: flex;
-    position: fixed;
-    top: auto; bottom: 0; left: 0; right: 0;
+    position: sticky;
+    bottom: 0;
+    width: 100%;
     height: auto;
     z-index: 200;
     background: rgba(15,15,15,0.98);
     border-top: 1px solid rgba(255,255,255,0.08);
     padding: 8px 2vw calc(8px + env(safe-area-inset-bottom));
-    transform: translateZ(0);
-    -webkit-transform: translateZ(0);
-    will-change: transform;
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-    isolation: isolate;
   }
   .tab-bar a {
     flex: 1;
@@ -350,5 +345,4 @@ a { text-decoration: none; color: inherit; }
   .tab-bar a.active svg { transform: translateY(-2px); }
   .tab-bar a.tab-cta { color: var(--yellow); }
   .tab-bar a:active { transform: scale(0.9); }
-  body { padding-bottom: 70px; }
 }
