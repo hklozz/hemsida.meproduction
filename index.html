@@ -77,6 +77,18 @@
       color: var(--white);
     }
     .nav-logo span { color: var(--accent); }
+    .nav-brand { display: flex; align-items: center; gap: 14px; }
+    .nav-tagline {
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gray);
+      border-left: 1px solid #D8D0C4;
+      padding-left: 14px;
+      white-space: nowrap;
+    }
+    @media (max-width: 700px) { .nav-tagline { display: none; } }
     .nav-links {
       display: flex;
       gap: 36px;
@@ -938,7 +950,10 @@
 
   <!-- NAV -->
   <nav id="navbar">
-    <a href="#" class="nav-logo"><img fetchpriority="high" decoding="async" id="nav-logo-img" src="me_production_vit_vit_gul_prick (kopia).webp" alt="{{site.logoAlt}}" style="height:34px;width:auto;display:inline-block;vertical-align:middle;"></a>
+    <div class="nav-brand">
+      <a href="#" class="nav-logo"><img fetchpriority="high" decoding="async" id="nav-logo-img" src="me_production_vit_vit_gul_prick (kopia).webp" alt="{{site.logoAlt}}" style="height:34px;width:auto;display:inline-block;vertical-align:middle;"></a>
+      <span class="nav-tagline">Your Production Partner</span>
+    </div>
     <ul class="nav-links">
       <li><a href="#tjanster">Tjänster</a></li>
       <li><a href="#case">Case</a></li>
