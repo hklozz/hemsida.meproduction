@@ -39,7 +39,7 @@
       --font: 'Candara', 'Candara Condensed', 'Inter', sans-serif;
     }
 
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
 
     body {
       background: var(--black);
@@ -158,6 +158,7 @@
         box-shadow: 0 14px 34px rgba(0,0,0,0.32), 0 3px 10px rgba(0,0,0,0.18);
       }
       .tab-bar a {
+        position: relative;
         flex: 1;
         display: flex;
         flex-direction: column;
@@ -171,10 +172,19 @@
         font-weight: 700;
         letter-spacing: 0.02em;
         text-transform: uppercase;
-        transition: color 0.2s, transform 0.2s, background 0.25s;
+        transition: color 0.2s, transform 0.2s;
       }
       .tab-bar a svg { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 1.8; transition: transform 0.15s cubic-bezier(.34,1.56,.64,1); }
-      .tab-bar a.active { color: #F2C840; background: rgba(242,200,64,0.14); }
+      .tab-bar a.active { color: #F2C840; }
+      .tab-bar a.active::before {
+        content: '';
+        position: absolute;
+        inset: 2px 4px;
+        background: rgba(242,200,64,0.14);
+        border-radius: 14px;
+        transform: rotate(-3deg);
+        z-index: -1;
+      }
       .tab-bar a.active svg { transform: translateY(-1px); stroke: #F2C840; }
       .tab-bar a.tab-cta { color: #F2C840; }
       .tab-bar a.tab-cta svg { stroke: #F2C840; }
@@ -972,6 +982,13 @@
     }
     .form-submit:hover { background: #c9a020; }
 
+    /* Mobile "bottom sheet" form popup — trigger/close/handle/backdrop
+       are inert on desktop, only activated inside the 700px media query. */
+    .mobile-form-trigger { display: none; }
+    #formBackdrop { display: none; }
+    #closeContactForm { display: none; }
+    .contact-form-handle { display: none; }
+
     /* ─── FOOTER ─── */
     footer {
       background: var(--dark);
@@ -1111,7 +1128,18 @@
     @media (max-width: 600px) {
       section { padding: 70px 5vw; }
       .form-row { grid-template-columns: 1fr; }
-      .footer-top { grid-template-columns: 1fr; }
+
+      /* Footer: 2-col grid for the link columns instead of a full
+         vertical stack (brand block spans both, on its own row) —
+         cuts the footer's mobile height roughly in half. */
+      footer { padding: 36px 5vw 22px; }
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 28px 20px; margin-bottom: 24px; padding-bottom: 24px; }
+      .footer-brand { grid-column: 1 / -1; }
+      .footer-brand p { margin: 12px 0 16px; font-size: 0.85rem; max-width: none; }
+      .footer-col h4 { margin-bottom: 12px; font-size: 0.7rem; }
+      .footer-col ul li { margin-bottom: 8px; }
+      .footer-col ul li a { font-size: 0.82rem; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; gap: 4px; font-size: 0.72rem; }
     }
 
     /* ─── MOBILE: SWIPEABLE CASE CAROUSEL ─── */
@@ -1153,9 +1181,125 @@
         border-radius: 14px;
       }
 
-      /* Numbers: 2x2 instead of 4 stacked full-width blocks */
-      .numbers-grid { grid-template-columns: 1fr 1fr; gap: 28px 16px; }
-      .number-item h3 { font-size: 2.5rem; }
+      /* Numbers: one compact row instead of stacked/2x2 blocks */
+      .numbers-grid { grid-template-columns: repeat(4, 1fr); gap: 6px; text-align: center; }
+      .number-item h3 { font-size: clamp(1.3rem, 5.5vw, 1.7rem); }
+      .number-item p { font-size: 0.55rem; letter-spacing: 0.01em; margin-top: 4px; line-height: 1.25; }
+
+      /* Contact form → bottom-sheet popup instead of a long inline form */
+      .mobile-form-trigger {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        background: var(--card);
+        border: 1px solid #D8D0C4;
+        border-radius: var(--radius);
+        padding: 20px 22px;
+        font-family: var(--font);
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--white);
+        cursor: pointer;
+      }
+      .mobile-form-trigger span:last-child { color: #F2C840; font-size: 1.2rem; }
+      #formBackdrop {
+        display: block;
+        position: fixed; inset: 0;
+        background: rgba(0,0,0,0.55);
+        z-index: 299;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s;
+      }
+      #formBackdrop.open { opacity: 1; pointer-events: auto; }
+      .contact-form {
+        position: fixed;
+        left: 0; right: 0; bottom: 0;
+        z-index: 300;
+        max-height: 86vh;
+        overflow-y: auto;
+        border-radius: 22px 22px 0 0;
+        padding: 22px 24px calc(28px + env(safe-area-inset-bottom));
+        box-shadow: 0 -14px 40px rgba(0,0,0,0.35);
+        transform: translateY(100%);
+        visibility: hidden;
+        transition: transform 0.35s cubic-bezier(.32,.72,0,1), visibility 0s linear 0.35s;
+      }
+      .contact-form.open {
+        transform: translateY(0);
+        visibility: visible;
+        transition: transform 0.35s cubic-bezier(.32,.72,0,1);
+      }
+      .contact-form-handle {
+        display: block;
+        width: 40px; height: 4px;
+        background: #D8D0C4;
+        border-radius: 4px;
+        margin: 0 auto 14px;
+      }
+      #closeContactForm {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 14px; right: 16px;
+        width: 32px; height: 32px;
+        border-radius: 50%;
+        border: none;
+        background: rgba(17,17,17,0.06);
+        color: var(--white);
+        font-size: 1.3rem;
+        line-height: 1;
+        cursor: pointer;
+      }
+
+      /* FAQ: only show the first 3 questions, rest behind a gold + reveal */
+      .faq-item.faq-extra { display: none; }
+      .faq-item.faq-extra.show { display: block; }
+      .faq-show-more {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin: 18px auto 0;
+        background: none;
+        border: 1px solid #F2C840;
+        border-radius: 999px;
+        padding: 12px 22px;
+        font-family: var(--font);
+        font-size: 0.85rem;
+        font-weight: 700;
+        color: var(--white);
+        cursor: pointer;
+      }
+      .faq-show-more-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 18px; height: 18px;
+        border-radius: 50%;
+        background: #F2C840;
+        color: #1a1a1a;
+        font-size: 0.95rem;
+        line-height: 1;
+        transition: transform 0.25s;
+      }
+      .faq-show-more.open .faq-show-more-icon { transform: rotate(45deg); }
+
+      /* Om oss: the 3/4 portrait image is fine in a 2-col desktop grid,
+         but stacked full-width on mobile it's a huge slab — flatten it
+         and tighten the text block below. */
+      .about-img { aspect-ratio: 4/3; }
+      .about-badge { width: 108px; height: 108px; bottom: -16px; right: -16px; padding: 12px; }
+      .about-badge strong { font-size: 1.5rem; }
+      .about-text p { font-size: 0.92rem; line-height: 1.65; margin-bottom: 12px; }
+      .about-list { margin: 16px 0; }
+      .about-list li { padding: 8px 0; font-size: 0.85rem; }
+      #om-oss .about-grid { gap: 24px; }
+
+      /* Nyheter: single-card section shouldn't reserve huge whitespace */
+      #nyheter { padding: 48px 5vw !important; }
+      #nyheter h2 { margin: 8px 0 20px !important; font-size: clamp(1.8rem, 7vw, 2.6rem) !important; }
     }
 
     /* ─── MOBILE: HERO HEIGHT (leave room for tab bar) ─── */
@@ -1181,7 +1325,7 @@
       "@type": "Organization",
       "name": "ME Production",
       "url": "https://meproduction.se",
-      "description": "ME Production är din helhetsleverantör inom evenemangsproduktion.",
+      "description": "ME Production är din produktionspartner inom evenemangsproduktion.",
       "address": [
         {"@type": "PostalAddress", "streetAddress": "Hulda Lindgrens Gata 9-11", "addressLocality": "Göteborg", "addressCountry": "SE"},
         {"@type": "PostalAddress", "streetAddress": "Sjöviksvägen 104", "addressLocality": "Stockholm", "addressCountry": "SE"}
@@ -1201,6 +1345,7 @@
     .faq-item summary::after { content: '+'; font-size: 1.4rem; font-weight: 300; color: #F2C840; flex-shrink: 0; transition: transform .25s; }
     .faq-item[open] summary::after { transform: rotate(45deg); }
     .faq-item p { padding: 0 0 17px; color: #444; line-height: 1.65; font-size: 0.93rem; }
+    .faq-show-more { display: none; }
   </style>
 
   <script type="application/ld+json">
@@ -1416,9 +1561,9 @@
   </section>
 
   <!-- NYHETER -->
-  <section id="nyheter" style="padding:120px 5vw;background:var(--black);">
+  <section id="nyheter" style="padding:64px 5vw;background:var(--black);">
     <div class="section-label">Nyheter</div>
-    <h2 style="font-size:clamp(2.4rem,5vw,4.5rem);font-weight:900;letter-spacing:-0.03em;margin:12px 0 50px;">
+    <h2 style="font-size:clamp(2.4rem,5vw,4.5rem);font-weight:900;letter-spacing:-0.03em;margin:10px 0 32px;">
       Vad som händer hos oss.
     </h2>
     <div class="news-grid">
@@ -1470,7 +1615,7 @@
           {{home.about.paragraph2}}
         </p>
         <ul class="about-list">
-          <li>Helhetsleverantör – tryckeri, teknik och produktion under ett tak</li>
+          <li>Produktionspartner – tryckeri, teknik och produktion under ett tak</li>
           <li>Varje projekt är unikt – vi anpassar kompetens och leverantörer</li>
           <li>Vi har byggt på mässor, festivaler och event i hela världen</li>
           <li>Kontor i Göteborg (Västra Frölunda) & Stockholm</li>
@@ -1575,7 +1720,16 @@
           </li>
         </ul>
       </div>
+
+      <button type="button" id="openContactForm" class="mobile-form-trigger">
+        <span>✉️ Skicka förfrågan</span>
+        <span aria-hidden="true">→</span>
+      </button>
+      <div id="formBackdrop"></div>
+
       <div class="contact-form">
+        <div class="contact-form-handle" aria-hidden="true"></div>
+        <button type="button" id="closeContactForm" aria-label="Stäng formuläret">×</button>
         <form action="https://formspree.io/f/mnjlwerq" method="POST" id="kontakt-form">
           <div class="form-row">
             <div class="form-group">
@@ -1698,19 +1852,22 @@
           <summary>{{home.faq.items.2.q}}</summary>
           <p>{{home.faq.items.2.a}}</p>
         </details>
-        <details class="faq-item">
+        <details class="faq-item faq-extra">
           <summary>{{home.faq.items.3.q}}</summary>
           <p>{{home.faq.items.3.a}}</p>
         </details>
-        <details class="faq-item">
+        <details class="faq-item faq-extra">
           <summary>{{home.faq.items.4.q}}</summary>
           <p>{{home.faq.items.4.a}}</p>
         </details>
-        <details class="faq-item">
+        <details class="faq-item faq-extra">
           <summary>{{home.faq.items.5.q}}</summary>
           <p>{{home.faq.items.5.a}}</p>
         </details>
       </div>
+      <button type="button" id="faqShowMore" class="faq-show-more">
+        <span class="faq-show-more-icon">+</span> Visa fler frågor
+      </button>
     </div>
   </section>
 
@@ -2017,30 +2174,44 @@
     });
 
     // ── 8b. MOBILE APP-STYLE TAB BAR (scroll-spy) ───────────────
+    // Instead of IntersectionObserver bands (which leave "dead zones"
+    // between the watched sections, so the wrong tab stays lit while
+    // scrolling through e.g. Om oss/Process), track scroll position
+    // against every landmark's offset — always exactly one tab active,
+    // no gaps, whichever landmark you've most recently scrolled past.
     const tabBar = document.getElementById('tabBar');
     if (tabBar) {
       const tabLinks = tabBar.querySelectorAll('a[data-tab]');
       const setActive = (name) => {
         tabLinks.forEach(a => a.classList.toggle('active', a.dataset.tab === name));
       };
-      const spySections = [
-        { id: 'tjanster', tab: 'tjanster' },
-        { id: 'case', tab: 'case' },
-        { id: 'kontakt', tab: 'kontakt' }
-      ].map(s => ({ el: document.getElementById(s.id), tab: s.tab })).filter(s => s.el);
-      if (spySections.length) {
-        const spyObserver = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              const match = spySections.find(s => s.el === entry.target);
-              if (match) setActive(match.tab);
-            }
-          });
-        }, { rootMargin: '-40% 0px -50% 0px' });
-        spySections.forEach(s => spyObserver.observe(s.el));
+      const landmarkIds = [
+        { tab: 'tjanster', id: 'tjanster' },
+        { tab: 'case', id: 'case' },
+        { tab: 'kontakt', id: 'kontakt' }
+      ];
+      const landmarks = [{ tab: 'hem', offset: 0 }]
+        .concat(landmarkIds
+          .map(l => ({ tab: l.tab, el: document.getElementById(l.id) }))
+          .filter(l => l.el)
+          .map(l => ({ tab: l.tab, offset: l.el.offsetTop })))
+        .sort((a, b) => a.offset - b.offset);
+      if (landmarks.length > 1) {
+        let ticking = false;
+        const updateActive = () => {
+          ticking = false;
+          const y = window.scrollY + window.innerHeight * 0.3;
+          let current = landmarks[0];
+          for (const l of landmarks) {
+            if (y >= l.offset) current = l;
+          }
+          setActive(current.tab);
+        };
         window.addEventListener('scroll', () => {
-          if (window.scrollY < 200) setActive('hem');
+          if (!ticking) { ticking = true; requestAnimationFrame(updateActive); }
         }, { passive: true });
+        window.addEventListener('resize', updateActive);
+        updateActive();
       } else {
         setActive('ganget');
       }
@@ -2079,6 +2250,43 @@
         }
       });
     }
+
+    // Mobile contact form → bottom-sheet popup
+    (function () {
+      var trigger = document.getElementById('openContactForm');
+      var panel = document.querySelector('.contact-form');
+      var backdrop = document.getElementById('formBackdrop');
+      var closeBtn = document.getElementById('closeContactForm');
+      if (!trigger || !panel || !backdrop) return;
+      function openForm() {
+        panel.classList.add('open');
+        backdrop.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeForm() {
+        panel.classList.remove('open');
+        backdrop.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+      trigger.addEventListener('click', openForm);
+      if (closeBtn) closeBtn.addEventListener('click', closeForm);
+      backdrop.addEventListener('click', closeForm);
+    })();
+
+    // FAQ: reveal remaining questions behind the gold "+"
+    (function () {
+      var showMoreBtn = document.getElementById('faqShowMore');
+      if (!showMoreBtn) return;
+      showMoreBtn.addEventListener('click', function () {
+        var isOpen = showMoreBtn.classList.toggle('open');
+        document.querySelectorAll('.faq-item.faq-extra').forEach(function (item) {
+          item.classList.toggle('show', isOpen);
+        });
+        showMoreBtn.innerHTML = isOpen
+          ? '<span class="faq-show-more-icon">+</span> Visa färre frågor'
+          : '<span class="faq-show-more-icon">+</span> Visa fler frågor';
+      });
+    })();
 
     // Mute toggle
     const video = document.querySelector('.hero-video');
