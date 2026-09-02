@@ -290,6 +290,7 @@
       backdrop-filter: blur(8px);
       border: 1px solid rgba(255,255,255,0.25);
       color: #fff;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
       font-size: 0.72rem;
       font-weight: 700;
       letter-spacing: 0.12em;
@@ -298,6 +299,7 @@
       border-radius: 2px;
       margin-bottom: 28px;
       width: fit-content;
+      transform: rotate(-1.5deg);
     }
     .hero h1 {
       font-size: clamp(2.4rem, 6vw, 5.5rem);
@@ -459,6 +461,11 @@
     .service-row:hover { background: rgba(242,200,64,0.07); }
     .service-row:hover .service-row-title { color: #c9a020; }
     .service-row:hover .service-row-arrow { background: #F2C840; border-color: #F2C840; color: #fff; transform: translate(2px,-2px); }
+    /* Slight stagger + tilt on the icons so the list doesn't feel too gridded */
+    .service-row:nth-child(even) .service-row-icon { transform: translateY(6px) rotate(-4deg); }
+    .service-row:nth-child(odd) .service-row-icon { transform: translateY(-4px) rotate(3deg); }
+    .service-row:hover .service-row-icon { transform: translateY(0) rotate(0deg) scale(1.06) !important; }
+    @media (max-width: 800px) { .service-row-icon { transform: none !important; } }
     @media (max-width: 800px) {
       .service-row { flex-wrap: wrap; gap: 10px 16px; padding: 24px 0; }
       .service-row-num { display: none; }
@@ -681,6 +688,11 @@
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 40px;
     }
+    /* Staggered rhythm instead of a perfectly aligned grid */
+    .number-item:nth-child(2) { transform: translateY(32px); }
+    .number-item:nth-child(3) { transform: translateY(-16px); }
+    .number-item:nth-child(4) { transform: translateY(20px); }
+    @media (max-width: 700px) { .number-item { transform: none !important; } }
     .number-item h3 {
       font-family: 'Anton', 'Inter', sans-serif;
       font-size: clamp(2.8rem, 5vw, 4.5rem);
