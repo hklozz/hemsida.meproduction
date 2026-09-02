@@ -171,12 +171,13 @@
         text-transform: uppercase;
         transition: color 0.2s, transform 0.2s, background 0.25s;
       }
-      .tab-bar a svg { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 1.8; transition: transform 0.2s; }
+      .tab-bar a svg { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 1.8; transition: transform 0.15s cubic-bezier(.34,1.56,.64,1); }
       .tab-bar a.active { color: #F2C840; background: rgba(242,200,64,0.14); }
       .tab-bar a.active svg { transform: translateY(-1px); stroke: #F2C840; }
       .tab-bar a.tab-cta { color: #F2C840; }
       .tab-bar a.tab-cta svg { stroke: #F2C840; }
-      .tab-bar a:active { transform: scale(0.88); }
+      .tab-bar a:active { transform: scale(0.94); }
+      .tab-bar a:active svg { transform: scale(1.18); }
       body { padding-bottom: 96px; }
 
       /* Bold poster-style section labels on mobile */
@@ -1109,8 +1110,6 @@
       section { padding: 70px 5vw; }
       .form-row { grid-template-columns: 1fr; }
       .footer-top { grid-template-columns: 1fr; }
-      .process-steps { grid-template-columns: 1fr; }
-      .process-step { border-right: none; border-bottom: 1px solid #1f1f1f; }
     }
 
     /* ─── MOBILE: SWIPEABLE CASE CAROUSEL ─── */
@@ -1131,6 +1130,30 @@
         aspect-ratio: 3/4;
       }
       .cases-header { align-items: center; }
+
+      /* Process ("Hur vi jobbar") as a horizontal swipe too — cuts a long
+         vertical stack of 4 steps down to one compact swipeable row. */
+      .process-steps {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 12px;
+        margin: 0 -5vw;
+        padding: 4px 5vw 6px;
+        scrollbar-width: none;
+        border: none;
+      }
+      .process-steps::-webkit-scrollbar { display: none; }
+      .process-step {
+        flex: 0 0 76vw;
+        scroll-snap-align: center;
+        border: 1px solid #D8D0C4;
+        border-radius: 14px;
+      }
+
+      /* Numbers: 2x2 instead of 4 stacked full-width blocks */
+      .numbers-grid { grid-template-columns: 1fr 1fr; gap: 28px 16px; }
+      .number-item h3 { font-size: 2.5rem; }
     }
 
     /* ─── MOBILE: HERO HEIGHT (leave room for tab bar) ─── */
@@ -1288,6 +1311,18 @@
         <p class="service-row-desc">{{home.services.items.4.desc}}</p>
         <div class="service-row-arrow">↗</div>
       </div>
+    </div>
+  </section>
+
+  <!-- 3D MONTERDESIGNER -->
+  <section id="monterdesign" style="background:#1a1a1a;padding:90px 5vw;position:relative;overflow:hidden;">
+    <div style="position:absolute;top:50%;right:6vw;transform:translateY(-50%);font-size:min(22vw,280px);line-height:1;opacity:0.06;pointer-events:none;user-select:none;">🎪</div>
+    <div style="position:absolute;top:-60px;left:-60px;width:280px;height:280px;background:radial-gradient(circle,rgba(242,200,64,0.14) 0%,rgba(242,200,64,0) 70%);pointer-events:none;"></div>
+    <div style="max-width:640px;position:relative;z-index:1;">
+      <div class="section-label" style="color:#F2C840;">// Nytt verktyg</div>
+      <h2 style="color:#F4EFE6;">Designa din monter i 3D — helt gratis.</h2>
+      <p class="section-intro" style="color:rgba(244,239,230,0.6);">Välj storlek, väggar, matta, belysning, förråd och möbler – se din monter växa fram i realtid och få pris direkt. Inget möte krävs för att komma igång.</p>
+      <a href="https://meproduction.monterhyra.com" target="_blank" rel="noopener" class="btn-primary" style="display:inline-block;">Skapa din monter →</a>
     </div>
   </section>
 
