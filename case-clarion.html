@@ -83,5 +83,20 @@
     <a href="index.html#kontakt" class="tab-cta"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6" stroke-linecap="round" stroke-linejoin="round"/></svg>Kontakt</a>
   </div>
 
+  <script>
+    (function () {
+      var bar = document.querySelector('.tab-bar');
+      if (!bar || !window.visualViewport) return;
+      function pin() {
+        var vv = window.visualViewport;
+        var gap = window.innerHeight - (vv.height + vv.offsetTop);
+        bar.style.transform = gap > 0.5 ? 'translateY(-' + gap + 'px)' : '';
+      }
+      window.visualViewport.addEventListener('resize', pin);
+      window.visualViewport.addEventListener('scroll', pin);
+      pin();
+    })();
+  </script>
+
 </body>
 </html>

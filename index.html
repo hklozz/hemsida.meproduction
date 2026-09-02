@@ -145,10 +145,8 @@
       .nav-links, .nav-cta { display: none; }
       .tab-bar {
         display: flex;
-        position: sticky;
-        bottom: 14px;
-        width: calc(100% - 28px);
-        margin: 0 auto;
+        position: fixed;
+        bottom: 14px; left: 14px; right: 14px;
         height: auto;
         z-index: 200;
         background: rgba(16,16,16,0.98);
@@ -179,6 +177,7 @@
       .tab-bar a.tab-cta { color: #F2C840; }
       .tab-bar a.tab-cta svg { stroke: #F2C840; }
       .tab-bar a:active { transform: scale(0.88); }
+      body { padding-bottom: 96px; }
 
       /* Bold poster-style section labels on mobile */
       .section-label {
@@ -1127,7 +1126,7 @@
     <!-- CONTENT -->
     <div class="hero-content">
       <div class="hero-tag">{{home.hero.tag}}</div>
-      <h1><span class="hero-slogan">{{home.hero.heading}}</span><em><span class="hero-bar"></span> event <span class="hero-bar"></span> mässa <span class="hero-bar"></span> och <span class="hero-bar"></span> butiksmiljöer</em></h1>
+      <h1><span class="hero-slogan">{{home.hero.heading}}</span><em><span class="hero-bar"></span> event <span class="hero-bar"></span> mässa <span class="hero-bar"></span> butiksmiljöer</em></h1>
       <p class="hero-sub">
         {{home.hero.sub}}
       </p>
@@ -1676,6 +1675,25 @@
       Kontakt
     </a>
   </div>
+
+  <script>
+    // iOS Safari: the dynamic toolbar resizes the visual viewport during
+    // scroll without synchronously repainting position:fixed elements,
+    // making them appear to detach/jump. Pin the tab bar to the true
+    // visual viewport bottom in real time as a compensating transform.
+    (function () {
+      var bar = document.querySelector('.tab-bar');
+      if (!bar || !window.visualViewport) return;
+      function pin() {
+        var vv = window.visualViewport;
+        var gap = window.innerHeight - (vv.height + vv.offsetTop);
+        bar.style.transform = gap > 0.5 ? 'translateY(-' + gap + 'px)' : '';
+      }
+      window.visualViewport.addEventListener('resize', pin);
+      window.visualViewport.addEventListener('scroll', pin);
+      pin();
+    })();
+  </script>
 
   <script>
     /* ============================================================
