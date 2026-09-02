@@ -121,8 +121,10 @@
       letter-spacing: 0.08em;
       text-transform: uppercase;
     }
-    .nav-links a { opacity: 0.7; transition: opacity 0.2s; }
+    .nav-links { opacity: 0; pointer-events: none; transition: opacity 0.3s; }
+    .nav-links a { color: var(--white); opacity: 0.7; transition: opacity 0.2s; }
     .nav-links a:hover { opacity: 1; }
+    nav.scrolled .nav-links { opacity: 1; pointer-events: auto; }
     .nav-cta {
       background: #F2C840;
       color: #fff;
