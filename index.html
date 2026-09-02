@@ -1166,16 +1166,16 @@
 
   <!-- FAQ STYLES -->
   <style>
-    .faq-section { background: #F4EFE6; padding: 100px 5vw; }
-    .faq-section .section-label { color: var(--gray, #666); font-size: 0.72rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 16px; }
-    .faq-section h2 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; margin-bottom: 48px; }
+    .faq-section { background: #F4EFE6; padding: 64px 5vw; }
+    .faq-section .section-label { color: var(--gray, #666); font-size: 0.72rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 12px; }
+    .faq-section h2 { font-size: clamp(1.8rem, 3.4vw, 2.6rem); font-weight: 900; margin-bottom: 28px; }
     .faq-list { max-width: 800px; margin: 0 auto; }
     .faq-item { border-bottom: 1px solid rgba(17,17,17,0.12); }
-    .faq-item summary { list-style: none; cursor: pointer; padding: 24px 0; font-size: 1.05rem; font-weight: 700; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+    .faq-item summary { list-style: none; cursor: pointer; padding: 17px 0; font-size: 1rem; font-weight: 700; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
     .faq-item summary::-webkit-details-marker { display: none; }
     .faq-item summary::after { content: '+'; font-size: 1.4rem; font-weight: 300; color: #F2C840; flex-shrink: 0; transition: transform .25s; }
     .faq-item[open] summary::after { transform: rotate(45deg); }
-    .faq-item p { padding: 0 0 24px; color: #444; line-height: 1.7; font-size: 0.97rem; }
+    .faq-item p { padding: 0 0 17px; color: #444; line-height: 1.65; font-size: 0.93rem; }
   </style>
 
   <script type="application/ld+json">
@@ -1500,7 +1500,7 @@
   -->
 
   <!-- KONTAKT -->
-  <section id="kontakt">
+  <section id="kontakt" style="padding-top:70px;padding-bottom:70px;">
     <div class="contact-grid">
       <div class="contact-info">
         <div class="section-label">{{home.contact.label}}</div>
@@ -1581,15 +1581,15 @@
   </section>
 
   <!-- KONTOR / KARTA -->
-  <section id="kontor" style="background:#111 !important;padding:100px 5vw;text-align:center;">
+  <section id="kontor" style="background:#111 !important;padding:56px 5vw;text-align:center;">
     <div class="section-label" style="color:#F2C840;">Var finns vi</div>
-    <h2 style="color:#fff;font-size:clamp(2rem,4vw,3rem);margin:12px 0 16px;">Två kontor. Hela Sverige.</h2>
-    <p class="section-intro" style="color:rgba(255,255,255,0.55);max-width:540px;margin:0 auto 60px;">Vi är stationerade i Göteborg och Stockholm – men levererar från Malmö till Kiruna och allt däremellan.</p>
+    <h2 style="color:#fff;font-size:clamp(1.6rem,3vw,2.2rem);margin:10px 0 8px;">Två kontor. Hela Sverige.</h2>
+    <p class="section-intro" style="color:rgba(255,255,255,0.55);max-width:480px;margin:0 auto 28px;font-size:0.92rem;">Stationerade i Göteborg och Stockholm – levererar från Malmö till Kiruna.</p>
 
     <!-- SVG SVERIGE-KARTA -->
-    <div style="display:flex;flex-direction:column;align-items:center;gap:60px;">
+    <div style="display:flex;flex-direction:column;align-items:center;">
       <svg viewBox="0 0 340 620" xmlns="http://www.w3.org/2000/svg"
-           style="width:min(220px,55vw);height:auto;filter:drop-shadow(0 0 40px rgba(242,200,64,0.12));">
+           style="width:min(140px,38vw);height:auto;filter:drop-shadow(0 0 40px rgba(242,200,64,0.12));">
 
         <!-- Sverige-siluett (geografiskt korrekt, koordinater konverterade från WGS84) -->
         <path d="
@@ -1638,33 +1638,7 @@
           <text x="196" y="452" fill="rgba(255,255,255,0.7)" font-size="10" font-family="Candara,Inter,sans-serif">Liljeholmen</text>
         </a>
       </svg>
-
-      <!-- Adresskort under kartan -->
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:700px;width:100%;">
-        <a href="goteborg.html" style="text-decoration:none;display:block;border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:28px 28px;text-align:left;transition:border-color .2s,transform .2s;" onmouseover="this.style.borderColor='#F2C840';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.1)';this.style.transform='none'">
-          <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
-            <span style="width:7px;height:7px;border-radius:50%;background:#F2C840;display:inline-block;"></span>
-            <span style="color:#F2C840;font-size:0.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;">Göteborg</span>
-          </div>
-          <div style="color:#fff;font-size:1rem;font-weight:700;margin-bottom:4px;">Hulda Lindgrens Gata 9–11</div>
-          <div style="color:rgba(255,255,255,0.45);font-size:0.85rem;">Västra Frölunda, 421 32</div>
-        </a>
-        <a href="stockholm.html" style="text-decoration:none;display:block;border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:28px 28px;text-align:left;transition:border-color .2s,transform .2s;" onmouseover="this.style.borderColor='#F2C840';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.1)';this.style.transform='none'">
-          <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
-            <span style="width:7px;height:7px;border-radius:50%;background:#F2C840;display:inline-block;"></span>
-            <span style="color:#F2C840;font-size:0.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;">Stockholm</span>
-          </div>
-          <div style="color:#fff;font-size:1rem;font-weight:700;margin-bottom:4px;">Sjöviksvägen 104</div>
-          <div style="color:rgba(255,255,255,0.45);font-size:0.85rem;">Liljeholmen, 117 43</div>
-        </a>
-      </div>
     </div>
-
-    <style>
-      @media(max-width:600px){
-        #kontor > div > div[style*="grid"] { grid-template-columns: 1fr !important; }
-      }
-    </style>
   </section>
 
 
